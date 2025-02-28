@@ -1,0 +1,6 @@
+require("__proceduralsystems__.prototypes.entities")
+---require("__proceduralsystems__.prototypes.fluid")
+require("__proceduralsystems__.prototypes.item")
+require("__proceduralsystems__.prototypes.item-groups")
+require("__proceduralsystems__.prototypes.fuel-category")
+require("__proceduralsystems__.prototypes.recipe-category")

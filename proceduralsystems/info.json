@@ -1,0 +1,13 @@
+{
+    "name": "proceduralsystems",
+    "version": "1.0.0",
+    "title": "Procedural Systems",
+    "author": "ZDK, 2025",
+    "factorio_version": "2.0",
+    "dependencies": ["base >= 2.0",
+        "space-age >= 2.0",
+        "corrundum >= 1.0.23"
+    ],
+    "space_travel_required": true,
+    "description": "○🌐Procedural systems"
+  }
