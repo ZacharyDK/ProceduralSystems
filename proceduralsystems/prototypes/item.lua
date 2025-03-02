@@ -475,7 +475,19 @@ data:extend(
       weight = 8 * kg,
       random_tint_color = item_tints.yellowing_coal
     },
-
+    {
+      type = "item",
+      name = "terra-asteroid-chunk",
+      icon = "__proceduralsystems__/graphics/icons/terra-asteroid-chunk.png",
+      subgroup = "space-material",
+      order = "t[terra]-e[chunk]",
+      inventory_move_sound = space_age_item_sounds.rock_inventory_move,
+      pick_sound = space_age_item_sounds.rock_inventory_pickup,
+      drop_sound = space_age_item_sounds.rock_inventory_move,
+      stack_size = 1,
+      weight = 100 * kg,
+      random_tint_color = item_tints.iron_rust,
+    },
 }
 
 )

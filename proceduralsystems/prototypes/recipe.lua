@@ -150,7 +150,7 @@ data:extend(
     },
     results = 
     {
-      {type="fluid", name="gycerol", amount=150},
+      {type="fluid", name="glycerol", amount=150},
       {type="fluid", name="fatty-acids", amount=450},
     },
     crafting_machine_tint =
@@ -162,7 +162,7 @@ data:extend(
     },
     allow_productivity = true,
     allow_quality = false, 
-    main_product = "gycerol",
+    main_product = "glycerol",
     auto_recycle = false,
   },
   {
@@ -188,7 +188,7 @@ data:extend(
     ingredients =
     {
       {type = "item", name = "iron-plate", amount = 1},
-      {type = "fluid", name = "sulfuric-dilute", amount = 100},
+      {type = "fluid", name = "sulfuric-acid-dilute", amount = 100},
       {type = "fluid", name = "glycerol", amount = 300},
     },
     results = 
@@ -1421,7 +1421,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/fluid/blue.png,
+        icon = "__proceduralsystem__/graphics/icons/fluid/blue.png",
         scale = 0.9,
       }
     },
@@ -1461,7 +1461,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/fluid/blue-gray.png,
+        icon = "__proceduralsystem__/graphics/icons/fluid/blue-gray.png",
         scale = 0.9,
       }
     },
@@ -1501,7 +1501,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/fluid/black.png,
+        icon = "__proceduralsystem__/graphics/icons/fluid/black.png",
         scale = 0.9,
       }
     },
@@ -1541,7 +1541,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/fluid/green.png,
+        icon = "__proceduralsystem__/graphics/icons/fluid/green.png",
         scale = 0.9,
       }
     },
@@ -1581,7 +1581,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/fluid/fluid-droplet-mineral-oil.png,
+        icon = "__proceduralsystem__/graphics/icons/fluid/fluid-droplet-mineral-oil.png",
         scale = 0.9,
       }
     },
@@ -1621,7 +1621,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/fluid/red.png,
+        icon = "__proceduralsystem__/graphics/icons/fluid/red.png",
         scale = 0.9,
       }
     },
@@ -1663,7 +1663,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/covellite/covellite-1.png,
+        icon = "__proceduralsystem__/graphics/icons/ores_malcom/covellite/covellite-1.png",
         scale = 0.9,
       }
     },
@@ -1698,7 +1698,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/pyrite/pyrite-1.png,
+        icon = "__proceduralsystem__/graphics/icons/ores_malcom/pyrite/pyrite-1.png",
         scale = 0.9,
       }
     },
@@ -1733,7 +1733,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/tenorite/tenorite-1.png,
+        icon = "__proceduralsystem__/graphics/icons/ores_malcom/tenorite/tenorite-1.png",
         scale = 0.9,
       }
     },
@@ -1768,7 +1768,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/malachite/malachite-1.png,
+        icon = "__proceduralsystem__/graphics/icons/ores_malcom/malachite/malachite-1.png",
         scale = 0.9,
       }
     },
@@ -1803,7 +1803,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/siderite/siderite-1.png,
+        icon = "__proceduralsystem__/graphics/icons/ores_malcom/siderite/siderite-1.png",
         scale = 0.9,
       }
     },
@@ -1838,7 +1838,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/hematite/hematite-1.png,
+        icon = "__proceduralsystem__/graphics/icons/ores_malcom/hematite/hematite-1.png",
         scale = 0.9,
       }
     },
@@ -2152,7 +2152,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/covellite/covellite-1.png,
+        icon = "__proceduralsystem__/graphics/icons/ores_malcom/covellite/covellite-1.png",
         scale = 0.9,
       },
       {
@@ -2199,7 +2199,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/hematite/hematite-1.png,
+        icon = "__proceduralsystem__/graphics/icons/ores_malcom/hematite/hematite-1.png",
         scale = 0.9,
       },
       {
@@ -2246,7 +2246,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/malachite/malachite-1.png,
+        icon = "__proceduralsystem__/graphics/icons/ores_malcom/malachite/malachite-1.png",
         scale = 0.9,
       },
       {
@@ -2293,7 +2293,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/pyrite/pyrite-1.png,
+        icon = "__proceduralsystem__/graphics/icons/ores_malcom/pyrite/pyrite-1.png",
         scale = 0.9,
       },
       {
@@ -2340,7 +2340,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/siderite/siderite-1.png,
+        icon = "__proceduralsystem__/graphics/icons/ores_malcom/siderite/siderite-1.png",
         scale = 0.9,
       },
       {
@@ -2387,7 +2387,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/tenorite/tenorite-1.png,
+        icon = "__proceduralsystem__/graphics/icons/ores_malcom/tenorite/tenorite-1.png",
         scale = 0.9,
       },
       {
@@ -2438,9 +2438,11 @@ data:extend(
     name = "dangerous-fluoroketone",
     icons = 
     {
-      icon = "__space-age__/graphics/icon/fluid/fluoroketone-hot.png",
-      scale = 0.9,
-    }
+      {
+        icon = "__space-age__/graphics/icon/fluid/fluoroketone-hot.png",
+        scale = 0.9,
+      }
+    },
     category = "fluorination",
     --subgroup = "aquilo-processes",
     --order = "z[fluoroketone]-e[fluoroketone]",
@@ -2476,9 +2478,11 @@ data:extend(
     category = "crafting-with-fluid",
     icons = 
     {
-      icon = "__space-age__/graphics/icon/thruster-barrel-fill.png",
-      scale = 0.9,
-    }
+      {
+        icon = "__space-age__/graphics/icon/thruster-barrel-fill.png",
+        scale = 0.9,
+      }
+    },
     auto_recycle = false,
     energy_required = 1,
     ingredients =
@@ -2507,9 +2511,11 @@ data:extend(
     category = "crafting-with-fluid",
     icons = 
     {
-      icon = "__space-age__/graphics/icon/thruster-barrel-empty.png",
-      scale = 0.9,
-    }
+      {
+        icon = "__space-age__/graphics/icon/thruster-barrel-empty.png",
+        scale = 0.9,
+      }
+    },
     auto_recycle = false,
     energy_required = 1,
     ingredients =
@@ -2539,9 +2545,11 @@ data:extend(
     category = "crafting-with-fluid",
     icons = 
     {
-      icon = "__space-age__/graphics/icon/oxidizer-barrel-fill.png",
-      scale = 0.9,
-    }
+      {
+        icon = "__space-age__/graphics/icon/oxidizer-barrel-fill.png",
+        scale = 0.9,
+      }
+    },
     auto_recycle = false,
     energy_required = 1,
     ingredients =
@@ -2570,9 +2578,11 @@ data:extend(
     category = "crafting-with-fluid",
     icons = 
     {
-      icon = "__space-age__/graphics/icon/oxidizer-barrel-empty.png",
-      scale = 0.9,
-    }
+      {
+        icon = "__space-age__/graphics/icon/oxidizer-barrel-empty.png",
+        scale = 0.9,
+      }
+    },
     auto_recycle = false,
     energy_required = 1,
     ingredients =

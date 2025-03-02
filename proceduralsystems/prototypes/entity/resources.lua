@@ -670,7 +670,7 @@ data:extend(
       }
     ),
 
-    --Fluoride
+    --Fluorite
     resource(
       {
         name = "fluorite",
