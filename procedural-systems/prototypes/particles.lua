@@ -1,6 +1,6 @@
 local sounds = require("__base__.prototypes.entity.sounds")
 local particle_animations = require("__space-age__/prototypes/particle-animations")
-local ps_particle_animations = require("__proceduralsystems__/prototypes/particle-animations")
+local ps_particle_animations = require("__procedural-systems__/prototypes/particle-animations")
 
 
 local particle_counter = 0

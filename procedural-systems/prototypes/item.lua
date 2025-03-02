@@ -26,16 +26,16 @@ return {
   icons = 
   {
     {
-      icon = "__proceduralsystems__/graphics/icons/procedural-ore.png",
+      icon = "__procedural-systems__/graphics/icons/procedural-ore.png",
       tint = input_tint,
     }
   },
   pictures =
   {
-    { size = 64, filename = "__proceduralsystems__/graphics/icons/procedural-ore.png",   scale = 0.5, mipmap_count = 4, tint = input_tint},
-    { size = 64, filename = "__proceduralsystems__/graphics/icons/procedural-ore-1.png", scale = 0.5, mipmap_count = 4, tint = input_tint},
-    { size = 64, filename = "__proceduralsystems__/graphics/icons/procedural-ore-2.png", scale = 0.5, mipmap_count = 4, tint = input_tint},
-    { size = 64, filename = "__proceduralsystems__/graphics/icons/procedural-ore-3.png", scale = 0.5, mipmap_count = 4, tint = input_tint }
+    { size = 64, filename = "__procedural-systems__/graphics/icons/procedural-ore.png",   scale = 0.5, mipmap_count = 4, tint = input_tint},
+    { size = 64, filename = "__procedural-systems__/graphics/icons/procedural-ore-1.png", scale = 0.5, mipmap_count = 4, tint = input_tint},
+    { size = 64, filename = "__procedural-systems__/graphics/icons/procedural-ore-2.png", scale = 0.5, mipmap_count = 4, tint = input_tint},
+    { size = 64, filename = "__procedural-systems__/graphics/icons/procedural-ore-3.png", scale = 0.5, mipmap_count = 4, tint = input_tint }
   },
   order = in_order,
   subgroup = "procedural-ore", --I'd prefer if these were below aquilo...
@@ -51,7 +51,7 @@ return {
 end
 
 function create_single_sprite_tinted_entry(input_name, subpath,input_tint, in_order)
-  fullpath = "__proceduralsystems__/graphics/icons/" .. subpath
+  fullpath = "__procedural-systems__/graphics/icons/" .. subpath
   return {
     type = "item",
     name = input_name,
@@ -94,7 +94,7 @@ end
 
 function create_item_picture_table_assit(input_name, subfolder, name_postfix, num_pictures, in_order)
 
-  picture_table_root = "__proceduralsystems__/graphics/icons/" .. subfolder .. "/" .. input_name .. "/"
+  picture_table_root = "__procedural-systems__/graphics/icons/" .. subfolder .. "/" .. input_name .. "/"
   icon_path = picture_table_root .. input_name .. "-1.png"
   picture_table = create_picture_table(picture_table_root,input_name,num_pictures)
   return {
@@ -136,7 +136,7 @@ end
 
 function create_item_picture_table_assit_tinted(input_name, subfolder, name_postfix, num_pictures, in_order, in_tint)
 
-  picture_table_root = "__proceduralsystems__/graphics/icons/" .. subfolder .. "/" .. input_name .. "/"
+  picture_table_root = "__procedural-systems__/graphics/icons/" .. subfolder .. "/" .. input_name .. "/"
   icon_path = picture_table_root .. input_name .. "-1.png"
   picture_table = create_picture_table_tinted(picture_table_root,input_name,num_pictures,in_tint)
   return {
@@ -170,7 +170,7 @@ data:extend(
         type = "tool",
         name = "alpha-science-pack",
         localised_description = {"item-description.science-pack"},
-        icon = "__proceduralsystems__/graphics/icons/alpha-64.png",
+        icon = "__procedural-systems__/graphics/icons/alpha-64.png",
         icon_size = 64,
         subgroup = "procedural-science-pack",
         color_hint = { text = "Y" },
@@ -191,7 +191,7 @@ data:extend(
       type = "tool",
       name = "beta-science-pack",
       localised_description = {"item-description.science-pack"},
-      icon = "__proceduralsystems__/graphics/icons/beta-64.png",
+      icon = "__procedural-systems__/graphics/icons/beta-64.png",
       icon_size = 64,
       subgroup = "procedural-science-pack",
       color_hint = { text = "Y" },
@@ -212,7 +212,7 @@ data:extend(
       type = "tool",
       name = "gamma-science-pack",
       localised_description = {"item-description.science-pack"},
-      icon = "__proceduralsystems__/graphics/icons/gamma-64.png",
+      icon = "__procedural-systems__/graphics/icons/gamma-64.png",
       icon_size = 64,
       subgroup = "procedural-science-pack",
       color_hint = { text = "Y" },
@@ -233,7 +233,7 @@ data:extend(
       type = "tool",
       name = "delta-science-pack",
       localised_description = {"item-description.science-pack"},
-      icon = "__proceduralsystems__/graphics/icons/delta-64.png",
+      icon = "__procedural-systems__/graphics/icons/delta-64.png",
       icon_size = 64,
       subgroup = "procedural-science-pack",
       color_hint = { text = "Y" },
@@ -254,7 +254,7 @@ data:extend(
       type = "tool",
       name = "epilson-science-pack",
       localised_description = {"item-description.science-pack"},
-      icon = "__proceduralsystems__/graphics/icons/epilson-64.png",
+      icon = "__procedural-systems__/graphics/icons/epilson-64.png",
       icon_size = 64,
       subgroup = "procedural-science-pack",
       color_hint = { text = "Y" },
@@ -275,7 +275,7 @@ data:extend(
       type = "tool",
       name = "omega-science-pack",
       localised_description = {"item-description.science-pack"},
-      icon = "__proceduralsystems__/graphics/icons/omega-64.png",
+      icon = "__procedural-systems__/graphics/icons/omega-64.png",
       icon_size = 64,
       subgroup = "procedural-science-pack",
       color_hint = { text = "Y" },
@@ -335,7 +335,7 @@ data:extend(
     {
       type = "item",
       name = "blast-furnace",
-      icon = "__proceduralsystems__/graphics/icons/blast-furnace.png",
+      icon = "__procedural-systems__/graphics/icons/blast-furnace.png",
       subgroup = "smelting-machine",
       order = "z[steel-furnace]",
       inventory_move_sound = item_sounds.metal_large_inventory_move,
@@ -348,7 +348,7 @@ data:extend(
     {
       type = "item",
       name = "dangerous-cryogenic-plant",
-      icon = "__proceduralsystems__/graphics/icons/cryogenic-plant.png",
+      icon = "__procedural-systems__/graphics/icons/cryogenic-plant.png",
       subgroup = "production-machine",
       order = "z[cryogenic-plant]",
       inventory_move_sound = item_sounds.mechanical_large_inventory_move,
@@ -362,7 +362,7 @@ data:extend(
     {
       type = "item",
       name = "froth-floatation-plant",
-      icon = "__proceduralsystems__/graphics/icons/froth-floatator.png",
+      icon = "__procedural-systems__/graphics/icons/froth-floatator.png",
       subgroup = "production-machine",
       order = "w[chemical-plant]",
       inventory_move_sound = item_sounds.fluid_inventory_move,
@@ -376,7 +376,7 @@ data:extend(
     {
       type = "item",
       name = "blast-fuel",
-      icon = "__proceduralsystems__/graphics/icons/blast-fuel.png",
+      icon = "__procedural-systems__/graphics/icons/blast-fuel.png",
       fuel_category = "chemical",
       fuel_value = "12.2MJ",
       fuel_acceleration_multiplier = 0.9,
@@ -452,7 +452,7 @@ data:extend(
     {
       type = "item",
       name = "thruster-barrel",
-      icon = "__proceduralsystems__/graphics/icons/thruster-barrel-fill.png",
+      icon = "__procedural-systems__/graphics/icons/thruster-barrel-fill.png",
       subgroup = "space-related",
       order = "e[thruster]",
       inventory_move_sound = item_sounds.fluid_inventory_move,
@@ -465,7 +465,7 @@ data:extend(
     {
       type = "item",
       name = "oxidizer-barrel",
-      icon = "__proceduralsystems__/graphics/icons/oxidizer-barrel-fill.png",
+      icon = "__procedural-systems__/graphics/icons/oxidizer-barrel-fill.png",
       subgroup = "space-related",
       order = "f[oxidizer]",
       inventory_move_sound = item_sounds.fluid_inventory_move,
@@ -478,7 +478,7 @@ data:extend(
     {
       type = "item",
       name = "terra-asteroid-chunk",
-      icon = "__proceduralsystems__/graphics/icons/terra-asteroid-chunk.png",
+      icon = "__procedural-systems__/graphics/icons/terra-asteroid-chunk.png",
       subgroup = "space-material",
       order = "t[terra]-e[chunk]",
       inventory_move_sound = space_age_item_sounds.rock_inventory_move,

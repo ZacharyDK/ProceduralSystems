@@ -8,7 +8,7 @@ data:extend(
       icons = 
       {
          {
-            icon = "__proceduralsystems__/graphics/icons/fluid/glycerol-64.png",
+            icon = "__procedural-systems__/graphics/icons/fluid/glycerol-64.png",
             icon_size = 64,
          }
       },
@@ -27,7 +27,7 @@ data:extend(
       icons = 
       {
          {
-            icon = "__proceduralsystems__/graphics/icons/fluid/alpha-linolenic-acid-64",
+            icon = "__procedural-systems__/graphics/icons/fluid/alpha-linolenic-acid-64.png",
             icon_size = 64,
          }
       },
@@ -46,7 +46,7 @@ data:extend(
       icons = 
       {
          {
-            icon = "__proceduralsystems__/graphics/icons/fluid/blue.png",
+            icon = "__procedural-systems__/graphics/icons/fluid/blue.png",
             icon_size = 64,
          }
       },
@@ -65,7 +65,7 @@ data:extend(
       icons = 
       {
          {
-            icon = "__proceduralsystems__/graphics/icons/fluid/blue-gray.png",
+            icon = "__procedural-systems__/graphics/icons/fluid/blue-gray.png",
             icon_size = 64,
          }
       },
@@ -84,7 +84,7 @@ data:extend(
       icons = 
       {
          {
-            icon = "__proceduralsystems__/graphics/icons/fluid/black.png",
+            icon = "__procedural-systems__/graphics/icons/fluid/black.png",
             icon_size = 64,
          }
       },
@@ -103,7 +103,7 @@ data:extend(
       icons = 
       {
          {
-            icon = "__proceduralsystems__/graphics/icons/fluid/green.png",
+            icon = "__procedural-systems__/graphics/icons/fluid/green.png",
             icon_size = 64,
          }
       },
@@ -122,7 +122,7 @@ data:extend(
       icons = 
       {
          {
-            icon = "__proceduralsystems__/graphics/icons/fluid/fluid-droplet-mineral-oil.png",
+            icon = "__procedural-systems__/graphics/icons/fluid/fluid-droplet-mineral-oil.png",
             icon_size = 64,
          }
       },
@@ -141,7 +141,7 @@ data:extend(
       icons = 
       {
          {
-            icon = "__proceduralsystems__/graphics/icons/fluid/red.png",
+            icon = "__procedural-systems__/graphics/icons/fluid/red.png",
             icon_size = 64,
          }
       },
@@ -160,7 +160,7 @@ data:extend(
       icons = 
       {
          {
-            icon = "__proceduralsystems__/graphics/icons/fluid/molecule-hydrofluoric-acid.png",
+            icon = "__procedural-systems__/graphics/icons/fluid/molecule-hydrofluoric-acid.png",
             icon_size = 64,
          }
       },

@@ -7,7 +7,7 @@ local function resource(resource_parameters, autoplace_parameters, graphics_para
     {
         type = "resource",
         name = resource_parameters.name,
-        icon = "__proceduralsystems__/graphics/icons/" .. graphics_parameters.icon_subfolder .. "/" .. graphics_parameters.icon_image,
+        icon = "__procedural-systems__/graphics/icons/" .. graphics_parameters.icon_subfolder .. "/" .. graphics_parameters.icon_image,
         flags = {"placeable-neutral"},
         order="a-b-"..resource_parameters.order,
         tree_removal_probability = 0.8,
@@ -49,8 +49,8 @@ local function resource(resource_parameters, autoplace_parameters, graphics_para
         {
         sheet =
         {
-            --filename = "__proceduralsystems__/graphics/entity/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
-            filename = "__proceduralsystems__/graphics/entity/" .. graphics_parameters.entity_subfolder .. "/" .. graphics_parameters.entity_image_sheet,
+            --filename = "__procedural-systems__/graphics/entity/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
+            filename = "__procedural-systems__/graphics/entity/" .. graphics_parameters.entity_subfolder .. "/" .. graphics_parameters.entity_image_sheet,
             priority = "extra-high",
             size = 128,
             frame_count = 8,
@@ -95,7 +95,7 @@ data:extend(
     {
         type = "resource",
         name = "petroleum-geyser-p",
-        icon = "__proceduralsystems__/graphics/icons/gray-geyser.png",
+        icon = "__procedural-systems__/graphics/icons/gray-geyser.png",
         flags = {"placeable-neutral"},
         category = "basic-fluid",
         subgroup = "mineable-fluids",
@@ -150,7 +150,7 @@ data:extend(
         {
           layers =
           {
-            util.sprite_load("__proceduralsystems__/graphics/entity/gray-geyser/gray-geyser",
+            util.sprite_load("__procedural-systems__/graphics/entity/gray-geyser/gray-geyser",
             {
               priority = "high",
               frame_count = 4,
@@ -167,7 +167,7 @@ data:extend(
             render_layer = "smoke",
             animation =
             {
-              filename = "__proceduralsystems__/graphics/entity/gray-geyser/gray-geyser-gas-outer.png",
+              filename = "__procedural-systems__/graphics/entity/gray-geyser/gray-geyser-gas-outer.png",
               frame_count = 47,
               line_length = 16,
               width = 90,
@@ -183,7 +183,7 @@ data:extend(
             render_layer = "smoke",
             animation =
             {
-               filename = "__proceduralsystems__/graphics/entity/gray-geyser/gray-geyser-gas-inner.png",
+               filename = "__procedural-systems__/graphics/entity/gray-geyser/gray-geyser-gas-inner.png",
                frame_count = 47,
                line_length = 16,
                width = 40,
@@ -202,7 +202,7 @@ data:extend(
     {
         type = "resource",
         name = "steam-geyser-p",
-        icon = "__proceduralsystems__/graphics/icons/gray-geyser.png",
+        icon = "__procedural-systems__/graphics/icons/gray-geyser.png",
         flags = {"placeable-neutral"},
         category = "basic-fluid",
         subgroup = "mineable-fluids",
@@ -258,7 +258,7 @@ data:extend(
         {
           layers =
           {
-            util.sprite_load("__proceduralsystems__/graphics/entity/gray-geyser/gray-geyser",
+            util.sprite_load("__procedural-systems__/graphics/entity/gray-geyser/gray-geyser",
             {
               priority = "high",
               frame_count = 4,
@@ -275,7 +275,7 @@ data:extend(
             render_layer = "smoke",
             animation =
             {
-              filename = "__proceduralsystems__/graphics/entity/gray-geyser/gray-geyser-gas-outer.png",
+              filename = "__procedural-systems__/graphics/entity/gray-geyser/gray-geyser-gas-outer.png",
               frame_count = 47,
               line_length = 16,
               width = 90,
@@ -291,7 +291,7 @@ data:extend(
             render_layer = "smoke",
             animation =
             {
-               filename = "__proceduralsystems__/graphics/entity/gray-geyser/gray-geyser-gas-inner.png",
+               filename = "__procedural-systems__/graphics/entity/gray-geyser/gray-geyser-gas-inner.png",
                frame_count = 47,
                line_length = 16,
                width = 40,
@@ -310,7 +310,7 @@ data:extend(
     {
         type = "resource",
         name = "water-geyser-p",
-        icon = "__proceduralsystems__/graphics/icons/gray-geyser.png",
+        icon = "__procedural-systems__/graphics/icons/gray-geyser.png",
         flags = {"placeable-neutral"},
         category = "basic-fluid",
         subgroup = "mineable-fluids",
@@ -365,7 +365,7 @@ data:extend(
         {
           layers =
           {
-            util.sprite_load("__proceduralsystems__/graphics/entity/gray-geyser/gray-geyser",
+            util.sprite_load("__procedural-systems__/graphics/entity/gray-geyser/gray-geyser",
             {
               priority = "high",
               frame_count = 4,
@@ -382,7 +382,7 @@ data:extend(
             render_layer = "smoke",
             animation =
             {
-              filename = "__proceduralsystems__/graphics/entity/gray-geyser/gray-geyser-gas-outer.png",
+              filename = "__procedural-systems__/graphics/entity/gray-geyser/gray-geyser-gas-outer.png",
               frame_count = 47,
               line_length = 16,
               width = 90,
@@ -398,7 +398,7 @@ data:extend(
             render_layer = "smoke",
             animation =
             {
-               filename = "__proceduralsystems__/graphics/entity/gray-geyser/gray-geyser-gas-inner.png",
+               filename = "__procedural-systems__/graphics/entity/gray-geyser/gray-geyser-gas-inner.png",
                frame_count = 47,
                line_length = 16,
                width = 40,

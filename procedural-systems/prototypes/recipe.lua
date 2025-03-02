@@ -16,7 +16,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystems__/graphics/icons/froth-floatator.png",
+        icon = "__procedural-systems__/graphics/icons/froth-floatator.png",
         scale = 0.9,
         --shift = util.by_pixel(140, 140),
       }
@@ -59,7 +59,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystems__/graphics/icons/blast-furnace.png",
+        icon = "__procedural-systems__/graphics/icons/blast-furnace.png",
         scale = 0.9,
         --shift = util.by_pixel(140, 140),
       }
@@ -98,7 +98,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystems__/graphics/icons/blast-furnace.png",
+        icon = "__procedural-systems__/graphics/icons/blast-furnace.png",
         scale = 0.9,
         --shift = util.by_pixel(140, 140),
       }
@@ -137,7 +137,7 @@ data:extend(
   --Saponification
   {
     type = "recipe",
-    icon = "__proceduralsystems__/graphics/icons/fluid/glycerol-64.png",
+    icon = "__procedural-systems__/graphics/icons/fluid/glycerol-64.png",
     icon_size = 64,
     name = "saponification-from-light-oil",
     energy_required = 30,
@@ -175,7 +175,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/fluid/glycerol-64.png",
+        icon = "__procedural-systems__/graphics/icons/fluid/glycerol-64.png",
         icon_size = 64,
         scale = 0.6,
         shift = util.by_pixel(140, 140),
@@ -217,7 +217,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/fluid/glycerol-64.png",
+        icon = "__procedural-systems__/graphics/icons/fluid/glycerol-64.png",
         icon_size = 64,
         scale = 0.6,
         shift = util.by_pixel(140, 140),
@@ -260,7 +260,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/fluid/glycerol-64.png",
+        icon = "__procedural-systems__/graphics/icons/fluid/glycerol-64.png",
         icon_size = 64,
         scale = 0.6,
         shift = util.by_pixel(140, 140),
@@ -300,7 +300,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/fluid/alpha-linolenic-acid-64.png",
+        icon = "__procedural-systems__/graphics/icons/fluid/alpha-linolenic-acid-64.png",
         icon_size = 64,
         scale = 0.6,
         shift = util.by_pixel(140, 140),
@@ -376,7 +376,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__space-age__/graphics/icons/wood.png",
+        icon = "__base__/graphics/icons/wood.png",
         scale = 0.9
       },
       {
@@ -458,7 +458,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystems__/graphics/icons/blast-fuel.png",
+        icon = "__procedural-systems__/graphics/icons/blast-fuel.png",
         scale = 0.9
       },
     },
@@ -567,7 +567,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/tenorite/tenorite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/tenorite/tenorite-1.png",
         scale = 0.9
       },
     },
@@ -602,7 +602,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/hematite/hematite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/hematite/hematite-1.png",
         scale = 0.9
       },
     },
@@ -638,7 +638,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/tenorite/tenorite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/tenorite/tenorite-1.png",
         scale = 0.9
       },
     },
@@ -673,7 +673,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/hematite/hematite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/hematite/hematite-1.png",
         scale = 0.9
       },
     },
@@ -710,7 +710,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/tenorite/tenorite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/tenorite/tenorite-1.png",
         scale = 0.9
       },
     },
@@ -746,7 +746,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/hematite/hematite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/hematite/hematite-1.png",
         scale = 0.9
       },
     },
@@ -791,7 +791,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/tenorite/tenorite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/tenorite/tenorite-1.png",
         scale = 0.6,
         shift = util.by_pixel(140, 140),
       }
@@ -835,7 +835,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/hematite/hematite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/hematite/hematite-1.png",
         scale = 0.6,
         shift = util.by_pixel(140, 140),
       }
@@ -881,7 +881,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/malachite/malachite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/malachite/malachite-1.png",
         scale = 0.6,
         shift = util.by_pixel(140, 140),
       }
@@ -925,7 +925,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/siderite/siderite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/siderite/siderite-1.png",
         scale = 0.6,
         shift = util.by_pixel(140, 140),
       }
@@ -971,7 +971,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/covellite/covellite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/covellite/covellite-1.png",
         scale = 0.6,
         shift = util.by_pixel(140, 140),
       }
@@ -1015,7 +1015,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/pyrite/pyrite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/pyrite/pyrite-1.png",
         scale = 0.6,
         shift = util.by_pixel(140, 140),
       }
@@ -1065,7 +1065,7 @@ data:extend(
         icon = "__quality__/graphics/icons/recycling.png"
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/slag/slag-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/slag/slag-1.png",
         scale = 0.4
       },
       {
@@ -1097,7 +1097,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystems__/graphics/icons/fluid/molecule-hydrofluoric-acid.png",
+        icon = "__procedural-systems__/graphics/icons/fluid/molecule-hydrofluoric-acid.png",
         scale = 0.9
       },
     },
@@ -1140,7 +1140,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/fluoride/fluoride-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/fluorite/fluorite-1.png",
         scale = 0.6,
         shift = util.by_pixel(140, 140),
       }
@@ -1179,11 +1179,11 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/slag/slag-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/slag/slag-1.png",
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/slash.png",
+        icon = "__procedural-systems__/graphics/icons/slash.png",
       }
     },
 
@@ -1297,11 +1297,11 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/slag/slag-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/slag/slag-1.png",
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/slash.png",
+        icon = "__procedural-systems__/graphics/icons/slash.png",
       }
     },
 
@@ -1337,7 +1337,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/slag/slag-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/slag/slag-1.png",
         scale = 0.9
       },
       {
@@ -1346,7 +1346,7 @@ data:extend(
         shift = util.by_pixel(140, 140),
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/slash.png",
+        icon = "__procedural-systems__/graphics/icons/slash.png",
       }
     },
 
@@ -1421,7 +1421,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/fluid/blue.png",
+        icon = "__procedural-systems__/graphics/icons/fluid/blue.png",
         scale = 0.9,
       }
     },
@@ -1461,7 +1461,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/fluid/blue-gray.png",
+        icon = "__procedural-systems__/graphics/icons/fluid/blue-gray.png",
         scale = 0.9,
       }
     },
@@ -1501,7 +1501,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/fluid/black.png",
+        icon = "__procedural-systems__/graphics/icons/fluid/black.png",
         scale = 0.9,
       }
     },
@@ -1541,7 +1541,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/fluid/green.png",
+        icon = "__procedural-systems__/graphics/icons/fluid/green.png",
         scale = 0.9,
       }
     },
@@ -1581,7 +1581,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/fluid/fluid-droplet-mineral-oil.png",
+        icon = "__procedural-systems__/graphics/icons/fluid/fluid-droplet-mineral-oil.png",
         scale = 0.9,
       }
     },
@@ -1621,7 +1621,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/fluid/red.png",
+        icon = "__procedural-systems__/graphics/icons/fluid/red.png",
         scale = 0.9,
       }
     },
@@ -1663,7 +1663,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/covellite/covellite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/covellite/covellite-1.png",
         scale = 0.9,
       }
     },
@@ -1698,7 +1698,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/pyrite/pyrite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/pyrite/pyrite-1.png",
         scale = 0.9,
       }
     },
@@ -1733,7 +1733,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/tenorite/tenorite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/tenorite/tenorite-1.png",
         scale = 0.9,
       }
     },
@@ -1768,7 +1768,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/malachite/malachite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/malachite/malachite-1.png",
         scale = 0.9,
       }
     },
@@ -1803,7 +1803,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/siderite/siderite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/siderite/siderite-1.png",
         scale = 0.9,
       }
     },
@@ -1838,7 +1838,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/hematite/hematite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/hematite/hematite-1.png",
         scale = 0.9,
       }
     },
@@ -1884,7 +1884,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/low-quality/tenorite/tenorite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/low-quality/tenorite/tenorite-1.png",
         scale = 0.6,
         shift = util.by_pixel(140, 140),
       }
@@ -1928,7 +1928,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/low-quality/hematite/hematite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/low-quality/hematite/hematite-1.png",
         scale = 0.6,
         shift = util.by_pixel(140, 140),
       }
@@ -1974,7 +1974,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/low-quality/malachite/malachite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/low-quality/malachite/malachite-1.png",
         scale = 0.6,
         shift = util.by_pixel(140, 140),
       }
@@ -2018,7 +2018,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/low-quality/siderite/siderite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/low-quality/siderite/siderite-1.png",
         scale = 0.6,
         shift = util.by_pixel(140, 140),
       }
@@ -2064,7 +2064,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/low-quality/covellite/covellite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/low-quality/covellite/covellite-1.png",
         scale = 0.6,
         shift = util.by_pixel(140, 140),
       }
@@ -2108,7 +2108,7 @@ data:extend(
         scale = 0.9
       },
       {
-        icon = "__proceduralsystems__/graphics/icons/ores_malcom/low-quality/pyrite/pyrite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/low-quality/pyrite/pyrite-1.png",
         scale = 0.6,
         shift = util.by_pixel(140, 140),
       }
@@ -2152,7 +2152,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/covellite/covellite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/covellite/covellite-1.png",
         scale = 0.9,
       },
       {
@@ -2199,7 +2199,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/hematite/hematite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/hematite/hematite-1.png",
         scale = 0.9,
       },
       {
@@ -2246,7 +2246,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/malachite/malachite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/malachite/malachite-1.png",
         scale = 0.9,
       },
       {
@@ -2293,7 +2293,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/pyrite/pyrite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/pyrite/pyrite-1.png",
         scale = 0.9,
       },
       {
@@ -2340,7 +2340,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/siderite/siderite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/siderite/siderite-1.png",
         scale = 0.9,
       },
       {
@@ -2387,7 +2387,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__proceduralsystem__/graphics/icons/ores_malcom/tenorite/tenorite-1.png",
+        icon = "__procedural-systems__/graphics/icons/ores_malcom/tenorite/tenorite-1.png",
         scale = 0.9,
       },
       {
@@ -2439,7 +2439,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__space-age__/graphics/icon/fluid/fluoroketone-hot.png",
+        icon = "__space-age__/graphics/icons/fluid/fluoroketone-hot.png",
         scale = 0.9,
       }
     },
@@ -2479,7 +2479,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__space-age__/graphics/icon/thruster-barrel-fill.png",
+        icon = "__procedural-systems__/graphics/icons/thruster-barrel-fill.png",
         scale = 0.9,
       }
     },
@@ -2512,7 +2512,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__space-age__/graphics/icon/thruster-barrel-empty.png",
+        icon = "__procedural-systems__/graphics/icons/thruster-barrel-empty.png",
         scale = 0.9,
       }
     },
@@ -2546,7 +2546,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__space-age__/graphics/icon/oxidizer-barrel-fill.png",
+        icon = "__procedural-systems__/graphics/icons/oxidizer-barrel-fill.png",
         scale = 0.9,
       }
     },
@@ -2579,7 +2579,7 @@ data:extend(
     icons = 
     {
       {
-        icon = "__space-age__/graphics/icon/oxidizer-barrel-empty.png",
+        icon = "__procedural-systems__/graphics/icons/oxidizer-barrel-empty.png",
         scale = 0.9,
       }
     },
@@ -2605,4 +2605,54 @@ data:extend(
       quaternary = {r = 48, g = 147, b = 239, a = 1.000}, --rgb(48, 147, 239)
     },
   },
+  --Crushing
+  {
+    type = "recipe",
+    name = "terra-asteroid-crushing",
+    icon = "__procedural-systems__/graphics/icons/terra-asteroid-crushing.png",
+    category = "crushing",
+    subgroup="space-crushing",
+    order = "e-b-a",
+    auto_recycle = false,
+    enabled = false,
+    ingredients =
+    {
+      {type = "item", name = "terra-asteroid-chunk", amount = 1},
+    },
+    energy_required = 5,
+    results =
+    {
+      {type = "item", name = "stone", amount = 10},
+      {type = "item", name = "terra-asteroid-chunk", amount = 1, probability = 0.3}
+    },
+    allow_productivity = true,
+    allow_decomposition = false,
+    allow_quality = true,
+  },
+  {
+    type = "recipe",
+    name = "terra-asteroid-reprocessing",
+    icon = "__procedural-systems__/graphics/icons/terra-asteroid-reprocessing.png",
+    category = "crushing",
+    subgroup="space-crushing",
+    order = "g-c-a",
+    auto_recycle = false,
+    enabled = false,
+    ingredients =
+    {
+      {type = "item", name = "terra-asteroid-chunk", amount = 1},
+    },
+    energy_required = 5,
+    results =
+    {
+      {type = "item", name = "terra-asteroid-chunk", amount = 1, probability = 0.98},
+      {type = "item", name = "carbonic-asteroid-chunk", amount = 1, probability = 0.02},
+    },
+    allow_productivity = false,
+    allow_decomposition = false,
+    allow_quality = false,
+  },
+
+
+
 })

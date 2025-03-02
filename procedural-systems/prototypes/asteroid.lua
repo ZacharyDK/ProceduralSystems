@@ -56,15 +56,15 @@ local shared_resistances =
   explosion =
   {
     decrease = {0, 0, 0, 0, 0},
-    percent = {0, 50, 30, 10, 99}
+    percent = {0, 50, 20, 20, 50}
   },
   laser =
   {
-    decrease = {0, 0, 0, 0, 0},
-    percent = {0, 20, 90, 95, 99}
+    decrease = {0, 0, 5, 10, 20},
+    percent = {0, 15, 50, 60, 65}
   }
 }
-local shared_health = {0, 100, 400, 2000, 5000}
+local shared_health = {0, 75, 300, 1750, 4000}
 local shared_mass = {0, 200000, 500000, 5000000, 100000000}
 local asteroids_data =
 {
@@ -128,7 +128,7 @@ local function asteroid_variation(asteroid_type, suffix, scale, size)
   {
     color_texture =
     {
-      filename = "__proceduralsystems__/graphics/entity/asteroid/".. asteroid_type .."/"..asteroid_sizes[size].."/".."asteroid-" .. asteroid_type .. "-" .. asteroid_sizes[size] .. "-colour-" .. suffix .. ".png",
+      filename = "__procedural-systems__/graphics/entity/asteroid/".. asteroid_type .."/"..asteroid_sizes[size].."/".."asteroid-" .. asteroid_type .. "-" .. asteroid_sizes[size] .. "-colour-" .. suffix .. ".png",
       size =  sizes_resolution[size][1],
       scale = scale
     },
@@ -137,7 +137,7 @@ local function asteroid_variation(asteroid_type, suffix, scale, size)
 
     normal_map =
     {
-      filename = "__proceduralsystems__/graphics/entity/asteroid/".. asteroid_type .."/"..asteroid_sizes[size].."/".."asteroid-" .. asteroid_type .. "-" .. asteroid_sizes[size] .. "-normal-" .. suffix .. ".png",
+      filename = "__procedural-systems__/graphics/entity/asteroid/".. asteroid_type .."/"..asteroid_sizes[size].."/".."asteroid-" .. asteroid_type .. "-" .. asteroid_sizes[size] .. "-normal-" .. suffix .. ".png",
       premul_alpha = false,
       size = sizes_resolution[size][1],
       scale = scale
@@ -145,7 +145,7 @@ local function asteroid_variation(asteroid_type, suffix, scale, size)
 
     roughness_map =
     {
-      filename = "__proceduralsystems__/graphics/entity/asteroid/".. asteroid_type .."/"..asteroid_sizes[size].."/".."asteroid-" .. asteroid_type .. "-" .. asteroid_sizes[size] .. "-roughness-" .. suffix .. ".png",
+      filename = "__procedural-systems__/graphics/entity/asteroid/".. asteroid_type .."/"..asteroid_sizes[size].."/".."asteroid-" .. asteroid_type .. "-" .. asteroid_sizes[size] .. "-roughness-" .. suffix .. ".png",
       premul_alpha = false,
       size = sizes_resolution[size][1],
       scale = scale
@@ -466,7 +466,7 @@ for asteroid_size, asteroid_size_name in pairs(asteroid_sizes) do
         name = asteroid_name,
         overkill_fraction = asteroid_size_name ~= "chunk" and 0.01 or nil,
         localised_description = {"entity-description."..asteroid_type.."-asteroid"},
-        icon = "__proceduralsystems__/graphics/icons/"..asteroid_name..".png",
+        icon = "__procedural-systems__/graphics/icons/"..asteroid_name..".png",
         icon_size = 64,
         selection_box = asteroid_size_name ~= "chunk" and {{-selection_radius, -selection_radius}, {selection_radius, selection_radius}} or nil,
         collision_box = asteroid_size_name ~= "chunk" and {{-collision_radius, -collision_radius}, {collision_radius, collision_radius}} or nil,

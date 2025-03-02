@@ -94,7 +94,7 @@ data:extend(
     {
         type = "assembling-machine",
         name = "froth-floatation-plant",
-        icon = "__proceduralsystems__/graphics/icons/froth-floatator.png",
+        icon = "__procedural-systems__/graphics/icons/froth-floatator.png",
         flags = {"placeable-neutral","placeable-player", "player-creation"},
         minable = {mining_time = 0.1, result = "froth-floatation-plant"},
         fast_replaceable_group = "chemical-plant",
@@ -116,7 +116,7 @@ data:extend(
         animation = make_4way_animation_from_spritesheet({ layers =
         {
             {
-            filename = "__proceduralsystems__/graphics/entity/froth-floatator.png",
+            filename = "__procedural-systems__/graphics/entity/froth-floatator.png",
             width = 220,
             height = 292,
             frame_count = 24,
@@ -412,7 +412,7 @@ data:extend(
     {
         type = "furnace",
         name = "blast-furnace",
-        icon = "__proceduralsystems__/graphics/icons/blast-furnace.png",
+        icon = "__procedural-systems__/graphics/icons/blast-furnace.png",
         flags = {"placeable-neutral", "placeable-player", "player-creation"},
         minable = {mining_time = 0.2, result = "blast-furnace"},
         fast_replaceable_group = "furnace",
@@ -480,7 +480,7 @@ data:extend(
             layers =
             {
               {
-                filename = "__proceduralsystems__/graphics/entity/blast-furnace/blast-furnace.png",
+                filename = "__procedural-systems__/graphics/entity/blast-furnace/blast-furnace.png",
                 priority = "high",
                 width = 171,
                 height = 174,
@@ -488,7 +488,7 @@ data:extend(
                 scale = 0.5
               },
               {
-                filename = "__proceduralsystems__/graphics/entity/blast-furnace/blast-furnace-shadow.png",
+                filename = "__procedural-systems__/graphics/entity/blast-furnace/blast-furnace-shadow.png",
                 priority = "high",
                 width = 277,
                 height = 85,
@@ -505,7 +505,7 @@ data:extend(
               effect = "flicker",
               animation =
               {
-                filename = "__proceduralsystems__/graphics/entity/blast-furnace/blast-furnace-fire.png",
+                filename = "__procedural-systems__/graphics/entity/blast-furnace/blast-furnace-fire.png",
                 priority = "high",
                 line_length = 8,
                 width = 57,
@@ -521,7 +521,7 @@ data:extend(
               effect = "flicker",
               animation =
               {
-                filename = "__proceduralsystems__/graphics/entity/blast-furnace/blast-furnace-glow.png",
+                filename = "__procedural-systems__/graphics/entity/blast-furnace/blast-furnace-glow.png",
                 priority = "high",
                 width = 60,
                 height = 43,
@@ -535,7 +535,7 @@ data:extend(
               effect = "flicker",
               animation =
               {
-                filename = "__proceduralsystems__/graphics/entity/blast-furnace/blast-furnace-working.png",
+                filename = "__procedural-systems__/graphics/entity/blast-furnace/blast-furnace-working.png",
                 priority = "high",
                 line_length = 1,
                 width = 128,
@@ -551,7 +551,7 @@ data:extend(
               effect = "flicker",
               animation =
               {
-                filename = "__proceduralsystems__/graphics/entity/blast-furnace/blast-furnace-ground-light.png",
+                filename = "__procedural-systems__/graphics/entity/blast-furnace/blast-furnace-ground-light.png",
                 priority = "high",
                 line_length = 1,
                 width = 152,
@@ -567,7 +567,7 @@ data:extend(
           {
             pictures =
             {
-              filename = "__proceduralsystems__/graphics/entity/blast-furnace/blast-furnace-reflection.png",
+              filename = "__procedural-systems__/graphics/entity/blast-furnace/blast-furnace-reflection.png",
               priority = "extra-high",
               width = 20,
               height = 24,
@@ -584,7 +584,7 @@ data:extend(
     {
         type = "assembling-machine",
         name = "dangerous-cryogenic-plant",
-        icon = "__proceduralsystems__/graphics/icons/cryogenic-plant.png",
+        icon = "__procedural-systems__/graphics/icons/cryogenic-plant.png",
         flags = {"placeable-neutral","player-creation"},
         minable = {mining_time = 0.2, result = "dangerous-cryogenic-plant"},
         fast_replaceable_group = "cryogenic-plant",
@@ -614,7 +614,7 @@ data:extend(
           emissions_per_minute = { pollution = 6 }
         },
         energy_usage = "1700kW",
-        graphics_set = require("__proceduralsystems__.prototypes.entity.cryogenic-plant-pictures").graphics_set,
+        graphics_set = require("__procedural-systems__.prototypes.entity.cryogenic-plant-pictures").graphics_set,
         open_sound = sounds.metal_large_open,
         close_sound = sounds.metal_large_close,
         working_sound =
@@ -654,8 +654,8 @@ data:extend(
           },
           {
             production_type = "input",
-            pipe_picture =  require("__proceduralsystems__.prototypes.entity.cryogenic-plant-pictures").pipe_picture,
-            pipe_picture_frozen =  require("__proceduralsystems__.prototypes.entity.cryogenic-plant-pictures").pipe_picture_frozen,
+            pipe_picture =  require("__procedural-systems__.prototypes.entity.cryogenic-plant-pictures").pipe_picture,
+            pipe_picture_frozen =  require("__procedural-systems__.prototypes.entity.cryogenic-plant-pictures").pipe_picture_frozen,
             always_draw_covers = true, -- fighting against FluidBoxPrototype::always_draw_covers crazy default
             pipe_covers = pipecoverspictures(),
             volume = 1000,
@@ -675,8 +675,8 @@ data:extend(
           },
           {
             production_type = "output",
-            pipe_picture =  require("__proceduralsystems__.prototypes.entity.cryogenic-plant-pictures").pipe_picture,
-            pipe_picture_frozen =  require("__proceduralsystems__.prototypes.entity.cryogenic-plant-pictures").pipe_picture_frozen,
+            pipe_picture =  require("__procedural-systems__.prototypes.entity.cryogenic-plant-pictures").pipe_picture,
+            pipe_picture_frozen =  require("__procedural-systems__.prototypes.entity.cryogenic-plant-pictures").pipe_picture_frozen,
             always_draw_covers = true, -- fighting against FluidBoxPrototype::always_draw_covers crazy default
             pipe_covers = pipecoverspictures(),
             volume = 100,

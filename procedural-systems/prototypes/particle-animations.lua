@@ -13,7 +13,7 @@ particle_animations.get_terra_asteroid_particle_small_pictures = function(option
   {
     sheet =
     {
-      filename = "__proceduralsystems__/graphics/particle/asteroid-particle/terra-asteroid-particle-small.png",
+      filename = "__procedural-systems__/graphics/particle/asteroid-particle/terra-asteroid-particle-small.png",
       priority = "extra-high",
       width = 14,
       height = 16,
@@ -33,10 +33,10 @@ particle_animations.get_terra_asteroid_particle_medium_pictures = function(optio
   {
     sheet =
     {
-      filename = "__proceduralsystems__/graphics/particle/asteroid-particle/terra-asteroid-particle-medium.png",
+      filename = "__procedural-systems__/graphics/particle/asteroid-particle/terra-asteroid-particle-medium.png",
       priority = "extra-high",
       width = 22,
-      height = 20,
+      height = 22,
       frame_count = 12,
       animation_speed = 0.3,
       variation_count = 10,
@@ -53,7 +53,7 @@ particle_animations.get_terra_asteroid_particle_big_pictures = function(options)
   {
     sheet =
     {
-      filename = "__proceduralsystems__/graphics/particle/asteroid-particle/terra-asteroid-particle-big.png",
+      filename = "__procedural-systems__/graphics/particle/asteroid-particle/terra-asteroid-particle-big.png",
       priority = "extra-high",
       width = 36,
       height = 36,
@@ -73,9 +73,9 @@ particle_animations.get_terra_asteroid_particle_top_small_pictures = function(op
   {
     sheet =
     {
-      filename = "__proceduralsystems__/graphics/particle/asteroid-particle/terra-asteroid-particle-top-small.png",
+      filename = "__procedural-systems__/graphics/particle/asteroid-particle/terra-asteroid-particle-top-small.png",
       priority = "extra-high",
-      width = 62,
+      width = 58,
       height = 56,
       frame_count = 16,
       animation_speed = 0.2,
@@ -93,10 +93,10 @@ particle_animations.get_terra_asteroid_particle_top_big_pictures = function(opti
   {
     sheet =
     {
-      filename = "__proceduralsystems__/graphics/particle/asteroid-particle/terra-asteroid-particle-top-big.png",
+      filename = "__procedural-systems__/graphics/particle/asteroid-particle/terra-asteroid-particle-top-big.png",
       priority = "extra-high",
       width = 82,
-      height = 86,
+      height = 82,
       frame_count = 16,
       animation_speed = 0.2,
       variation_count = 6,
