@@ -325,12 +325,12 @@ data:extend(
     create_item_picture_table_assit("siderite","ores_malcom/low-quality","-rough",3,"k"),
     create_item_picture_table_assit("tenorite","ores_malcom/low-quality","-rough",4,"j"),
 
-    create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","alpha",4,"a",{r = 200, g = 0,  b = 0, a = 1}),
-    create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","beta",4,"b",{r = 222,  g = 138, b = 20, a = 1}),
-    create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","gamma",4,"c",{r = 232, g = 221,  b = 12, a = 1}),
-    create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","delta",4,"d",{r = 0, g = 200, b = 0, a = 1}),
-    create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","epilson",4,"e",{r = 37,  g = 18, b = 230, a = 1}),
-    create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","omega",4,"f",{r = 102,  g = 18, b = 212, a = 1}),
+    create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-alpha",4,"a",{r = 200, g = 0,  b = 0, a = 1}),
+    create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-beta",4,"b",{r = 222,  g = 138, b = 20, a = 1}),
+    create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-gamma",4,"c",{r = 232, g = 221,  b = 12, a = 1}),
+    create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-delta",4,"d",{r = 0, g = 200, b = 0, a = 1}),
+    create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-epilson",4,"e",{r = 37,  g = 18, b = 230, a = 1}),
+    create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-omega",4,"f",{r = 102,  g = 18, b = 212, a = 1}),
 
     {
       type = "item",

@@ -2429,9 +2429,6 @@ data:extend(
   },
 
   --TODO consider preserving gangue water to repurifiy and reuse. 
-  --Centrifudge recipes for alpha - omega ores. 
-  --Procedural recipes for alpha - omega crystals.
-  --Procedural recipes for alpha - omega science
 
   {
     type = "recipe",
@@ -2470,8 +2467,58 @@ data:extend(
     }
   },
 
+  
+  --Crushing
+  {
+    type = "recipe",
+    name = "terra-asteroid-crushing",
+    icon = "__procedural-systems__/graphics/icons/terra-asteroid-crushing.png",
+    category = "crushing",
+    subgroup="space-crushing",
+    order = "e-b-a",
+    auto_recycle = false,
+    enabled = false,
+    ingredients =
+    {
+      {type = "item", name = "terra-asteroid-chunk", amount = 1},
+    },
+    energy_required = 5,
+    results =
+    {
+      {type = "item", name = "stone", amount = 10},
+      {type = "item", name = "terra-asteroid-chunk", amount = 1, probability = 0.3}
+    },
+    allow_productivity = true,
+    allow_decomposition = false,
+    allow_quality = true,
+  },
+  {
+    type = "recipe",
+    name = "terra-asteroid-reprocessing",
+    icon = "__procedural-systems__/graphics/icons/terra-asteroid-reprocessing.png",
+    category = "crushing",
+    subgroup="space-crushing",
+    order = "g-c-a",
+    auto_recycle = false,
+    enabled = false,
+    ingredients =
+    {
+      {type = "item", name = "terra-asteroid-chunk", amount = 1},
+    },
+    energy_required = 5,
+    results =
+    {
+      {type = "item", name = "terra-asteroid-chunk", amount = 1, probability = 0.98},
+      {type = "item", name = "carbonic-asteroid-chunk", amount = 1, probability = 0.02},
+    },
+    allow_productivity = false,
+    allow_decomposition = false,
+    allow_quality = false,
+  },
+
   --Thurster and oxider barrel and unbarrel 
   --Note that you still have to make it in space.
+  --[[
   {
     type = "recipe",
     name = "thruster-fluid-barrel-p",
@@ -2605,53 +2652,7 @@ data:extend(
       quaternary = {r = 48, g = 147, b = 239, a = 1.000}, --rgb(48, 147, 239)
     },
   },
-  --Crushing
-  {
-    type = "recipe",
-    name = "terra-asteroid-crushing",
-    icon = "__procedural-systems__/graphics/icons/terra-asteroid-crushing.png",
-    category = "crushing",
-    subgroup="space-crushing",
-    order = "e-b-a",
-    auto_recycle = false,
-    enabled = false,
-    ingredients =
-    {
-      {type = "item", name = "terra-asteroid-chunk", amount = 1},
-    },
-    energy_required = 5,
-    results =
-    {
-      {type = "item", name = "stone", amount = 10},
-      {type = "item", name = "terra-asteroid-chunk", amount = 1, probability = 0.3}
-    },
-    allow_productivity = true,
-    allow_decomposition = false,
-    allow_quality = true,
-  },
-  {
-    type = "recipe",
-    name = "terra-asteroid-reprocessing",
-    icon = "__procedural-systems__/graphics/icons/terra-asteroid-reprocessing.png",
-    category = "crushing",
-    subgroup="space-crushing",
-    order = "g-c-a",
-    auto_recycle = false,
-    enabled = false,
-    ingredients =
-    {
-      {type = "item", name = "terra-asteroid-chunk", amount = 1},
-    },
-    energy_required = 5,
-    results =
-    {
-      {type = "item", name = "terra-asteroid-chunk", amount = 1, probability = 0.98},
-      {type = "item", name = "carbonic-asteroid-chunk", amount = 1, probability = 0.02},
-    },
-    allow_productivity = false,
-    allow_decomposition = false,
-    allow_quality = false,
-  },
+  --]]
 
 
 
