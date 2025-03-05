@@ -9,12 +9,14 @@ data:extend({
     {
         type = "technology",
         name = "planet-discovery-interstellar",
-        icons = util.technology_icon_constant_planet("__procedural-systems__/graphics/technology/planet-desat.png"),
-        icon_size = 256, --default is 256
+        icon = "__procedural-systems__/graphics/technology/planet-desat.png",
+        icon_size = 64, --default is 256
+
+
         essential = true,
         effects =
         {   
-
+            --[[
             {
                 type = "unlock-space-location",
                 space_location = "main-system-alpha-edge",
@@ -30,11 +32,13 @@ data:extend({
               space_location = "alpha-star-p",
               use_icon_overlay_constant = true
             },
+            --]]
             {
               type = "unlock-space-location",
-              space_location = "alpha-system-edge-p",
+              space_location = "alpha-test",
               use_icon_overlay_constant = true
             },
+          
             {
               type = "unlock-recipe",
               recipe = "terra-asteroid-crushing",
@@ -79,8 +83,8 @@ data:extend({
     {
       type = "technology",
       name = "interstellar-processing",
-      icons = util.technology_icon_constant_planet("__procedural-systems__/graphics/technology/planet-desat.png"),
-      icon_size = 256, --default is 256
+      icon = "__procedural-systems__/graphics/icons/planet-icon-desat.png",
+      icon_size = 64, --default is 256
       essential = true,
       effects =
       {   
@@ -118,8 +122,8 @@ data:extend({
     {
       type = "technology",
       name = "froth-floatation-and-soaponification",
-      icons = util.technology_icon_constant_planet("__procedural-systems__/graphics/technology/planet-desat.png"),
-      icon_size = 256, --default is 256
+      icon = "__procedural-systems__/graphics/icons/froth-floatator.png",
+      icon_size = 64, --default is 256
       essential = true,
       effects =
       {   
@@ -198,8 +202,8 @@ data:extend({
     {
       type = "technology",
       name = "blasting-and-charcolation",
-      icons = util.technology_icon_constant_planet("__procedural-systems__/graphics/technology/planet-desat.png"),
-      icon_size = 256, --default is 256
+      icon = "__procedural-systems__/graphics/icons/blast-furnace.png",
+      icon_size = 64, --default is 256
       essential = true,
       effects =
       {             
@@ -280,8 +284,8 @@ data:extend({
     {
       type = "technology",
       name = "intersellar-pressure-oxidation",
-      icons = util.technology_icon_constant_planet("__procedural-systems__/graphics/technology/planet-desat.png"),
-      icon_size = 256, --default is 256
+      icon = "__procedural-systems__/graphics/technology/planet-desat.png",
+      icon_size = 64, --default is 256
       essential = true,
       effects =
       {             
@@ -348,7 +352,7 @@ data:extend({
     {
       type = "technology",
       name = "intersellar-fluorination-and-pressure-washing",
-      icons = util.technology_icon_constant_planet("__procedural-systems__/graphics/technology/planet-desat.png"),
+      icon = "__procedural-systems__/graphics/technology/cryogenic-plant.png",
       icon_size = 256, --default is 256
       essential = true,
       effects =

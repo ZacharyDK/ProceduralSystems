@@ -44,7 +44,13 @@ data:extend(
   create_autoplace_control("epilson-ore-raw"),
   create_autoplace_control("omega-ore-raw"),
 
-
+  {
+    type = "autoplace-control",
+    name = "procedural_volcanism",
+    order = "c-z-a",
+    category = "terrain",
+    can_be_disabled = false
+  },
 }
 )
 
