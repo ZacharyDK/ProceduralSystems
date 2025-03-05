@@ -1,3 +1,5 @@
+require("__procedural-systems__.utility.random-stream")
+
 require("__procedural-systems__.prototypes.entities")
 require("__procedural-systems__.prototypes.fluid")
 require("__procedural-systems__.prototypes.item")

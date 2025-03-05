@@ -1,4 +1,8 @@
 local planet_map_gen = require("__space-age__/prototypes/planet/planet-map-gen")
+local ore_expression = require("__procedural-systems__/prototypes/planet/procedural-ore-expressions")
+
+
+ore_expression.handle_expression_generation()
 
 planet_map_gen.procedural = function(in_name_postfix,in_entity_table)
   out = 
@@ -11,6 +15,9 @@ planet_map_gen.procedural = function(in_name_postfix,in_entity_table)
       aux = "procedural_aux",
       cliffiness = "cliffiness_basic",
       cliff_elevation = "cliff_elevation_from_elevation",
+
+      ["entity:fluorite:probability"] = "procedural_fluorite_probability",
+      ["entity:fluorite:richness"] = "procedural_fluorite_richness",
 
       --["entity:stone:probability"] = "procedural_stone_probability",
       --["entity:stone:richness"] = "procedural_stone_richness",
@@ -46,7 +53,8 @@ planet_map_gen.procedural = function(in_name_postfix,in_entity_table)
           --["volcanic-ash-soil"] = {},
           --end of nauvis tiles
           
-
+          ["water" .. "-" .. in_name_postfix] = {},
+          ["deepwater" .. "-" .. in_name_postfix] = {},
 
            --NOT SURE WHY EVERYTHING IS NOT COPIED?!??!?!
           ["procedural-volcanic-ash-flats" .. "-" .. in_name_postfix] = {},
@@ -126,11 +134,12 @@ planet_map_gen.procedural = function(in_name_postfix,in_entity_table)
     return out
   end
 
+  --[[ --NOT WORKING
   if(table_size(in_ores) > 0) then
     for k,v in pairs(in_ores) do
-      local prob_key = "[entity:" .. v .. ":probability]"
+      local prob_key = "entity:" .. v .. ":probability"
       local prob_value = "procedural_" .. v .. "_probability"
-      local richness_key = "[entity:" .. v .. ":richness]"
+      local richness_key = "entity:" .. v .. ":richness"
       local richness_value = "procedural_" .. v .. "_richness"
       local autoplace_control_key = "[" .. v .. "]"
       out.property_expression_names[prob_key] = prob_value
@@ -138,6 +147,7 @@ planet_map_gen.procedural = function(in_name_postfix,in_entity_table)
       out.autoplace_controls[autoplace_control_key] = {}
     end
   end
+  --]]
 return out
 end
 

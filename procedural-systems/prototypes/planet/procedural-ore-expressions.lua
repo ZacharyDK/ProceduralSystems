@@ -1,6 +1,7 @@
+local ore_expression_util = {}
 
-local function create_ore_expression_table(in_name,in_postfix)
-    local addendum = in_name .. "_" .. in_postfix
+ore_expression_util.create_ore_expression_table = function(in_name)
+    local addendum = in_name --remove the postfix. I tried but idk.
     local out = 
     {
         starting = 
@@ -41,7 +42,7 @@ local function create_ore_expression_table(in_name,in_postfix)
         {
             type = "noise-expression",
             name = "procedural_" .. addendum .. "_richness",
-            expression = "procedural_coal_region * random_penalty_between(0.9, 1, 1)\z
+            expression = "procedural_" .. addendum .. "_region * random_penalty_between(0.9, 1, 1)\z
                             * 18000 * procedural_starting_area_multiplier\z
                             * control:procedural_" .. addendum .. ":richness / procedural_" .. addendum .. "_size"
         }
@@ -50,8 +51,8 @@ local function create_ore_expression_table(in_name,in_postfix)
 end
 
 
-local function create_geyser_expression_table(in_name,in_postfix)
-    local addendum = in_name .. "_" .. in_postfix
+ore_expression_util.create_geyser_expression_table = function(in_name)
+    local addendum = in_name
     local out = 
     {
 
@@ -147,9 +148,34 @@ local function create_geyser_expression_table(in_name,in_postfix)
     return out
 end
 
-local function extend_expression_table(in_table)
+ore_expression_util.extend_expression_table = function(in_table)
     for k,v in pairs(in_table) do
         data:extend{v}
     end
 end 
 
+ore_expression_util.handle_expression_generation = function()
+    local ore_array = 
+    {
+        ["A"] = "covellite",
+        ["malachite"] = "malachite",
+        ["tenorite"] = "tenorite",
+        ["pyrite"] = "pyrite",
+        ["siderite"] = "siderite",
+        ["hematite"] = "hematite",
+        ["fluorite"] = "fluorite",
+        ["alpha"] = "alpha-ore-raw",
+    }
+
+
+    for k,v in pairs(ore_array) do 
+        log(serpent.block("............"))
+        log(serpent.block(v .. ":"))
+        local exp = ore_expression_util.create_ore_expression_table(v)
+
+        log(serpent.block(exp))
+        ore_expression_util.extend_expression_table(exp)
+    end
+end
+
+return ore_expression_util

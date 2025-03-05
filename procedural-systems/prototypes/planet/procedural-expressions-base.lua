@@ -998,5 +998,37 @@ data:extend{
     expression = "floor(clamp(distance / (18 * 32) - 0.25, 0, 4)) + (-99 * no_enemies_mode)" -- negative number means no demolisher
   }
   --]]  
+  {
+    type = "noise-expression",
+    name ="procedural_lava_spawn_excluder",
+    expression = "distance > 10"
+  },
+  {
+    type = "noise-expression",
+    name ="procedural_lava_lowland_range", -- lower weight than lava_hot_lowland_range
+    expression = "100 * min(procedural_lowland_biome * lava_spawn_excluder\z
+                            * range_select_base(procedural_elev, -5000, 0, 1, -1000, 1),\z
+                            100 * (1 - procedural_metal_tile))"
+  },
+  {
+    type = "noise-expression",
+    name ="procedural_lava_mountains_range",
+    expression = "1100 * range_select_base(procedural_mountain_lava_spots, 0.2, 10, 1, 0, 1)"
+  },
+  {
+    type = "noise-expression",
+    name ="procedural_lava_hot_lowland_range", -- higher weight than lava_lowland_range. Max elevation is variable so coastline is not always worm or hot.
+    expression = "200 * min(procedural_lowland_biome * lava_spawn_excluder\z
+                            * range_select_base(procedural_elev, -5000, min(0, 5 * (-2 + 4 * procedural_rock_noise)), 1, -1000, 1),\z
+                            100 * (1 - procedural_metal_tile))"
+  },
+  {
+    type = "noise-expression",
+    name ="procedural_lava_hot_mountains_range",
+    expression = "1000 * range_select_base(procedural_mountain_lava_spots, 0.05, 0.3, 1, 0, 1)"
+  },
+
+
+
 }
 

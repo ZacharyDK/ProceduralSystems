@@ -93,7 +93,7 @@ PlanetsLib:extend({
         icon_size = 64,
         starmap_icon = "__procedural-systems__/graphics/planet/starmap-planet-desat.png",
         starmap_icon_size = 512,
-        map_gen_settings = planet_map_gen.procedural("alpha",{}),
+        map_gen_settings = planet_map_gen.procedural("alpha",{"fluorite","alpha-ore-raw","malachite","siderite"}),
         gravity_pull = 20,
 		draw_orbit = false,
 		magnitude = 1,

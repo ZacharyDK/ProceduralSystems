@@ -43,7 +43,7 @@ local procedural_tile_base =
     layer = procedural_tile_offset + 5,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-jagged-ground.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-jagged-ground.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -85,7 +85,7 @@ local procedural_tile_base =
     layer_group = "water-overlay",
     sprite_usage_surface = "any",
     variants = tile_variations_template(
-      "__procedural-systems__/graphics/terrain/desat/lava.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/lava.png",
       "__base__/graphics/terrain/masks/transition-1.png",
       {
         max_size = 4,
@@ -148,7 +148,7 @@ local procedural_tile_base =
         main =
         {
           {
-            picture = "__procedural-systems__/graphics/terrain/desat/lava-hot.png",
+            picture = "__procedural-systems__/graphics/terrain/desat-rocky-1/lava-hot.png",
             count = 1,
             scale = 0.5,
             size = 1
@@ -197,8 +197,8 @@ local procedural_tile_base =
     layer = procedural_tile_offset + 2,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions_and_light(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-cracks-hot.png",
-      "__procedural-systems__/graphics/terrain/desat/volcanic-cracks-hot-light.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-cracks-hot.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-cracks-hot-light.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -230,8 +230,8 @@ local procedural_tile_base =
     layer = procedural_tile_offset + 3,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions_and_light(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-cracks-warm.png",
-      "__procedural-systems__/graphics/terrain/desat/volcanic-cracks-warm-lightmap1.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-cracks-warm.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-cracks-warm-lightmap1.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -264,7 +264,7 @@ local procedural_tile_base =
     layer = procedural_tile_offset + 4,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions(
-        "__procedural-systems__/graphics/terrain/desat/volcanic-cracks.png",
+        "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-cracks.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -298,7 +298,7 @@ local procedural_tile_base =
     layer = procedural_tile_offset + 16,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-folds-flat.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-folds-flat.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -332,7 +332,7 @@ local procedural_tile_base =
     layer = procedural_tile_offset + 14,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-ash-light.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-ash-light.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -367,7 +367,7 @@ local procedural_tile_base =
     layer = procedural_tile_offset + 13,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-ash-dark.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-ash-dark.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -403,7 +403,7 @@ local procedural_tile_base =
     layer = procedural_tile_offset + 12,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-ash-flats.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-ash-flats.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -439,7 +439,7 @@ local procedural_tile_base =
     layer = procedural_tile_offset + 15,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-pumice-stones.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-pumice-stones.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -472,7 +472,7 @@ local procedural_tile_base =
     layer = procedural_tile_offset + 1,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-smooth-stone.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-smooth-stone.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -506,8 +506,8 @@ local procedural_tile_base =
     layer = procedural_tile_offset,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions_and_light(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-smooth-stone-warm.png",
-      "__procedural-systems__/graphics/terrain/desat/volcanic-smooth-stone-warm-lightmap.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-smooth-stone-warm.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-smooth-stone-warm-lightmap.png",
 
       {
         max_size = 4,
@@ -541,7 +541,7 @@ local procedural_tile_base =
     layer = procedural_tile_offset + 6,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-ash-cracks.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-ash-cracks.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -574,7 +574,7 @@ local procedural_tile_base =
     layer = procedural_tile_offset + 18,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-folds.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-folds.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -606,8 +606,8 @@ local procedural_tile_base =
     layer = procedural_tile_offset + 17,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions_and_light(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-folds-warm.png",
-      "__procedural-systems__/graphics/terrain/desat/volcanic-folds-warm-lightmap.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-folds-warm.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-folds-warm-lightmap.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -639,7 +639,7 @@ local procedural_tile_base =
     layer = procedural_tile_offset + 7,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-soil-dark.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-soil-dark.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -671,7 +671,7 @@ local procedural_tile_base =
     layer = procedural_tile_offset + 8,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-soil-light.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-soil-light.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -703,7 +703,7 @@ local procedural_tile_base =
     layer = procedural_tile_offset + 11,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-ash-soil.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-ash-soil.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -1132,8 +1132,8 @@ data:extend
     layer = procedural_tile_offset + 2,
     sprite_usage_surface = "any",
     variants = tile_variations_template_with_transitions_and_light(
-      "__procedural-systems__/graphics/terrain/desat/volcanic-cracks-hot.png",
-      "__procedural-systems__/graphics/terrain/desat/volcanic-cracks-hot-light.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-cracks-hot.png",
+      "__procedural-systems__/graphics/terrain/desat-rocky-1/volcanic-cracks-hot-light.png",
       {
         max_size = 4,
         [1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
@@ -1178,12 +1178,12 @@ data:extend(
       textures =
       {
         {
-          filename = "__procedural-systems__/graphics/terrain/desat/lava-textures/lava-noise-texture.png",
+          filename = "__procedural-systems__/graphics/terrain/desat-rocky-1/lava-textures/lava-noise-texture.png",
           width = 512,
           height = 512
         },
         {
-          filename = "__procedural-systems__/graphics/terrain/desat/lava-textures/lava.png",
+          filename = "__procedural-systems__/graphics/terrain/desat-rocky-1/lava-textures/lava.png",
           width = 512 * 4,
           height = 512 * 2
         }
@@ -1219,12 +1219,12 @@ data:extend(
       textures =
       {
         {
-          filename = "__procedural-systems__/graphics/terrain/desat/lava-textures/lava-noise-texture.png",
+          filename = "__procedural-systems__/graphics/terrain/desat-rocky-1/lava-textures/lava-noise-texture.png",
           width = 512,
           height = 512
         },
         {
-          filename = "__procedural-systems__/graphics/terrain/desat/lava-textures/coastal-lava.png",
+          filename = "__procedural-systems__/graphics/terrain/desat-rocky-1/lava-textures/coastal-lava.png",
           width = 512 * 4,
           height = 512 * 2
         }
