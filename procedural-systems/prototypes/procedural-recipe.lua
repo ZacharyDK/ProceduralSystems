@@ -12,7 +12,7 @@ return {
     {
         {
             type = "item", 
-            name = prefix_name .. "-ore-raw",
+            name = prefix_name .. "_ore_raw",
             amount = 10
         }
     },

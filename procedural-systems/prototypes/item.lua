@@ -22,7 +22,7 @@ data:extend { explosionEffect }
 function create_procedural_raw_ore_entry(prefix_name, input_tint, in_order)
 return {
   type = "item",
-  name = prefix_name .. "-ore-raw",
+  name = prefix_name .. "_ore_raw",
   icons = 
   {
     {

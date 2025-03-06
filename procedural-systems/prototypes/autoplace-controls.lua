@@ -37,12 +37,12 @@ data:extend(
 
   create_autoplace_control("fluorite"),
 
-  create_autoplace_control("alpha-ore-raw"),
-  create_autoplace_control("beta-ore-raw"), 
-  create_autoplace_control("gamma-ore-raw"),
-  create_autoplace_control("delta-ore-raw"),
-  create_autoplace_control("epilson-ore-raw"),
-  create_autoplace_control("omega-ore-raw"),
+  create_autoplace_control("alpha_ore_raw"),
+  create_autoplace_control("beta_ore_raw"), 
+  create_autoplace_control("gamma_ore_raw"),
+  create_autoplace_control("delta_ore_raw"),
+  create_autoplace_control("epilson_ore_raw"),
+  create_autoplace_control("omega_ore_raw"),
 
   {
     type = "autoplace-control",

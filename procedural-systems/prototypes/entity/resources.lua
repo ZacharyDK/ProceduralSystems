@@ -71,7 +71,7 @@ local function create_procedural_ore(input_name, input_tint)
     {
       name = input_name,
       order = "b",
-      map_color = input_tint,
+      map_color = {r = 200, b = 200, g = 200}, --tint can look too close to tiles.
       mining_time = 1,
       walking_sound = sounds.ore,
       mining_visualisation_tint = input_tint, --rgb(211, 120, 120)  --Color for ore 
@@ -693,11 +693,11 @@ data:extend(
     ),
 
     --PROCEDURAL ORES
-    create_procedural_ore("alpha-ore-raw", {r = 200, g = 0,  b = 0, a = 1}), --rgb(200, 0, 0)
-    create_procedural_ore("beta-ore-raw", {r = 222,g = 138,  b = 20,  a = 1}), --rgb(222, 138, 20)
-    create_procedural_ore("gamma-ore-raw", {r = 232, g = 221, b = 12, a = 1}), --rgb(232, 221, 12)
-    create_procedural_ore("delta-ore-raw", {r = 0,  g = 200,b = 0, a = 1}), --rgb(0, 200, 0)
-    create_procedural_ore("epilson-ore-raw",{r = 37,  g = 18, b = 230, a = 1}), --rgb(37, 42, 230)
-    create_procedural_ore("omega-ore-raw", {r = 102,  g = 18, b = 212, a = 1}), --rgb(102, 18, 212)
+    create_procedural_ore("alpha_ore_raw", {r = 200, g = 0,  b = 0, a = 1}), --rgb(200, 0, 0)
+    create_procedural_ore("beta_ore_raw", {r = 222,g = 138,  b = 20,  a = 1}), --rgb(222, 138, 20)
+    create_procedural_ore("gamma_ore_raw", {r = 232, g = 221, b = 12, a = 1}), --rgb(232, 221, 12)
+    create_procedural_ore("delta_ore_raw", {r = 0,  g = 200,b = 0, a = 1}), --rgb(0, 200, 0)
+    create_procedural_ore("epilson_ore_raw",{r = 37,  g = 18, b = 230, a = 1}), --rgb(37, 42, 230)
+    create_procedural_ore("omega_ore_raw", {r = 102,  g = 18, b = 212, a = 1}), --rgb(102, 18, 212)
 
 })

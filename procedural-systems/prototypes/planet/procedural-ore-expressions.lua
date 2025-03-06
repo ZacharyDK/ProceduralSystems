@@ -1,6 +1,6 @@
 local ore_expression_util = {}
-
-ore_expression_util.create_ore_expression_table = function(in_name)
+--I think ores are generating ontop of each other. Need to double check.
+ore_expression_util.create_ore_expression_table = function(in_name,in_seed)
     local addendum = in_name --remove the postfix. I tried but idk.
     local out = 
     {
@@ -18,25 +18,25 @@ ore_expression_util.create_ore_expression_table = function(in_name)
         {
             type = "noise-expression",
             name = "procedural_" .. addendum .. "_size",
-            expression = "slider_rescale(control:procedural_" .. addendum .. ":size, 2)"
+            expression = "slider_rescale(control:" .. addendum .. ":size, 2)"
         },
         region = 
         {
             type = "noise-expression",
-            name = "procedural_" .. addendum .."_region",
+            name = "procedural_" .. addendum .."_region", --seed here has to change
             -- -1 to 1: needs a positive region for resources & decoratives plus a subzero baseline and skirt for surrounding decoratives.
             expression = "max(procedural_starting_" .. addendum .. ",\z
                                 min(1 - procedural_starting_circle,\z
-                                    procedural_place_non_metal_spots(782349, 12, 1,\z
+                                    procedural_place_non_metal_spots(".. in_seed .. ", 12, 22,\z 
                                                                     procedural_" .. addendum .. "_size * min(1.2, procedural_ore_dist) * 25,\z
-                                                                    control:procedural_" .. addendum .. ":frequency,\z
+                                                                    control:" .. addendum .. ":frequency,\z
                                                                     procedural_ashlands_resource_favorability)))"
         },
         probability = 
         {
             type = "noise-expression",
             name = "procedural_" .. addendum .. "_probability",
-            expression = "(control:procedural_" .. addendum .. ":size > 0) * (1000 * ((1 + procedural_".. addendum .. "_region) * random_penalty_between(0.9, 1, 1) - 1))"
+            expression = "(control:" .. addendum .. ":size > 0) * (1000 * ((1 + procedural_".. addendum .. "_region) * random_penalty_between(0.9, 1, 1) - 1))"
         },
         richness = 
         {
@@ -44,14 +44,14 @@ ore_expression_util.create_ore_expression_table = function(in_name)
             name = "procedural_" .. addendum .. "_richness",
             expression = "procedural_" .. addendum .. "_region * random_penalty_between(0.9, 1, 1)\z
                             * 18000 * procedural_starting_area_multiplier\z
-                            * control:procedural_" .. addendum .. ":richness / procedural_" .. addendum .. "_size"
+                            * control:" .. addendum .. ":richness / procedural_" .. addendum .. "_size"
         }
     }
-    return out
+    return out --I think the issue is that I need the control to match the autoplace control name.
 end
 
 
-ore_expression_util.create_geyser_expression_table = function(in_name)
+ore_expression_util.create_geyser_expression_table = function(in_name, in_seed)
     local addendum = in_name
     local out = 
     {
@@ -85,7 +85,7 @@ ore_expression_util.create_geyser_expression_table = function(in_name)
         -- -1 to 1: needs a positive region for resources & decoratives plus a subzero baseline and skirt for surrounding decoratives. 7XX-->500
         expression = "max(procedural_starting_" .. addendum .. ",\z
                             min(1 - procedural_starting_circle,\z
-                                procedural_place_" .. addendum .. "_spots(500, 9, 0,\z
+                                procedural_place_" .. addendum .. "_spots(" .. in_seed .. ", 9, 0,\z
                                                             procedural_" .. addendum .. "_size * min(1.2, procedural_ore_dist) * 25,\z
                                                             control:" .. addendum .. ":frequency,\z
                                                             procedural_" .. addendum .. "_favorability)))"
@@ -164,17 +164,20 @@ ore_expression_util.handle_expression_generation = function()
         ["siderite"] = "siderite",
         ["hematite"] = "hematite",
         ["fluorite"] = "fluorite",
-        ["alpha"] = "alpha-ore-raw",
+        ["alpha_ore_raw"] = "alpha_ore_raw",
     }
-
-
+    local prime = 314159
+    local running_seed = 314159
+    local multiplier = 17
     for k,v in pairs(ore_array) do 
-        log(serpent.block("............"))
-        log(serpent.block(v .. ":"))
-        local exp = ore_expression_util.create_ore_expression_table(v)
-
-        log(serpent.block(exp))
+        --log(serpent.block("............"))
+        --log(serpent.block(v .. ":"))
+        local exp = ore_expression_util.create_ore_expression_table(v,tostring(running_seed))
+        --data:extend{exp}
+        --log(serpent.block(exp))
         ore_expression_util.extend_expression_table(exp)
+        running_seed = prime*multiplier
+        multiplier = multiplier + 4
     end
 end
 

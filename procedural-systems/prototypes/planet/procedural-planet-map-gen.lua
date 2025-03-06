@@ -16,15 +16,10 @@ planet_map_gen.procedural = function(in_name_postfix,in_entity_table)
       cliffiness = "cliffiness_basic",
       cliff_elevation = "cliff_elevation_from_elevation",
 
-      ["entity:fluorite:probability"] = "procedural_fluorite_probability",
-      ["entity:fluorite:richness"] = "procedural_fluorite_richness",
+      --["entity:fluorite:probability"] = "procedural_fluorite_probability",
+      --["entity:fluorite:richness"] = "procedural_fluorite_richness",
 
-      --["entity:stone:probability"] = "procedural_stone_probability",
-      --["entity:stone:richness"] = "procedural_stone_richness",
-      --["entity:sulfuric-acid-geyser:probability"] = "procedural_sulfuric_acid_geyser_probability",
-      --["entity:sulfuric-acid-geyser:richness"] = "procedural_sulfuric_acid_geyser_richness",
-      --["entity:coal:probability"] = "procedural_coal_probability",
-      --["entity:coal:richness"] = "procedural_coal_richness",
+
     },
     cliff_settings =
     {
@@ -35,8 +30,6 @@ planet_map_gen.procedural = function(in_name_postfix,in_entity_table)
 
     autoplace_controls =
     {
-      --["sulfuric_acid_geyser"] = {},
-      --["procedural_stone"] = {},
 
       ["procedural_volcanism"] = {},
 
@@ -113,41 +106,32 @@ planet_map_gen.procedural = function(in_name_postfix,in_entity_table)
       {
         settings =
         {
-          --["stone"] = {},
-          --["coal"] = {},
-          --["sulfuric-acid-geyser"] = {},
-          --["huge-volcanic-rock"] = {}, --todo define my own
-          --["big-volcanic-rock"] = {},
+
           ["crater-cliff"] = {},
-          --["vulcanus-chimney"] = {}, --Might have to make my own, but I'll leave it for now.
-          --["vulcanus-chimney-faded"] = {},
-          --["vulcanus-chimney-cold"] = {},
-          --["vulcanus-chimney-short"] = {},
-          --["vulcanus-chimney-truncated"] = {},
-          --["ashland-lichen-tree"] = {},
-          --["ashland-lichen-tree-flaming"] = {},
+
         }
       }
     }
   }
-  if(in_ores == nil) then
+  if(in_entity_table == nil) then
     return out
   end
 
-  --[[ --NOT WORKING
-  if(table_size(in_ores) > 0) then
-    for k,v in pairs(in_ores) do
+  --NOT WORKING
+  if(table_size(in_entity_table) > 0) then
+    for k,v in pairs(in_entity_table) do
       local prob_key = "entity:" .. v .. ":probability"
       local prob_value = "procedural_" .. v .. "_probability"
       local richness_key = "entity:" .. v .. ":richness"
       local richness_value = "procedural_" .. v .. "_richness"
-      local autoplace_control_key = "[" .. v .. "]"
+      local autoplace_control_key = v
       out.property_expression_names[prob_key] = prob_value
       out.property_expression_names[richness_key] = richness_value
       out.autoplace_controls[autoplace_control_key] = {}
+      out.autoplace_settings.entity.settings[autoplace_control_key] = {}
     end
   end
-  --]]
+--log(serpent.block(out))
 return out
 end
 

@@ -997,7 +997,9 @@ data:extend{
     name = "demolisher_variation_expression",
     expression = "floor(clamp(distance / (18 * 32) - 0.25, 0, 4)) + (-99 * no_enemies_mode)" -- negative number means no demolisher
   }
-  --]]  
+  --]] 
+  
+  --Lava
   {
     type = "noise-expression",
     name ="procedural_lava_spawn_excluder",

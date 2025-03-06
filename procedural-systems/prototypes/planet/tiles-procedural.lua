@@ -252,7 +252,10 @@ end
 local alpha_tile_set = create_tinted_tile_set(tile_base.get_tiles(),"alpha",{r = 250,g = 100, b = 100}) --rgb(255, 128, 128)
 extend_tinted_tiles(alpha_tile_set)
 
-local alpha_shallow_water_tiles = create_shallow_water_tinted_tile_set("alpha", {r = 250,g = 100, b = 100}, {r = 100,g = 20, b = 20},"water","water_base(-2, 200000)")
-local alpha_deep_water_tiles = create_deep_water_tinted_tile_set("alpha", {r = 250,g = 100, b = 100}, {r = 100,g = 20, b = 20},"water-alpha","water","water_base(-2, 200000)")
+--local alpha_shallow_water_tiles = create_shallow_water_tinted_tile_set("alpha", {r = 250,g = 100, b = 100}, {r = 100,g = 20, b = 20},"water","max(procedural_lava_lowland_range, procedural_lava_mountains_range)") --repurpose vulcanus lava code Not clear why no water...
+--local alpha_deep_water_tiles = create_deep_water_tinted_tile_set("alpha", {r = 250,g = 100, b = 100}, {r = 100,g = 20, b = 20},"water-alpha","water","max(procedural_lava_hot_lowland_range, procedural_lava_hot_mountains_range)")
+
+local alpha_shallow_water_tiles = create_shallow_water_tinted_tile_set("alpha", {r = 250,g = 100, b = 100}, {r = 100,g = 20, b = 20},"water","water_base(-2, 17000)") --repurpose vulcanus lava code
+local alpha_deep_water_tiles = create_deep_water_tinted_tile_set("alpha", {r = 250,g = 100, b = 100}, {r = 100,g = 20, b = 20},"water-alpha","water","water_base(-2, 17000)")
 
 extend_water_tiles(alpha_shallow_water_tiles,alpha_deep_water_tiles)
