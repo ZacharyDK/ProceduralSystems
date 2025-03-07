@@ -28,12 +28,12 @@ data:extend(
   create_autoplace_control("siderite"),
   create_autoplace_control("hematite"),
 
-  create_autoplace_control("covellite-rough"),
-  create_autoplace_control("malachite-rough"),
-  create_autoplace_control("tenorite-rough"),
-  create_autoplace_control("pyrite-rough"),
-  create_autoplace_control("siderite-rough"),
-  create_autoplace_control("hematite-rough"),
+  create_autoplace_control("covellite_rough"),
+  create_autoplace_control("malachite_rough"),
+  create_autoplace_control("tenorite_rough"),
+  create_autoplace_control("pyrite_rough"),
+  create_autoplace_control("siderite_rough"),
+  create_autoplace_control("hematite_rough"),
 
   create_autoplace_control("fluorite"),
 

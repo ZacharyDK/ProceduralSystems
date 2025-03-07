@@ -1431,7 +1431,7 @@ data:extend(
     category = "froth-floatation",
     ingredients =
     {
-      {type = "item", name = "covellite-rough", amount = 14},
+      {type = "item", name = "covellite_rough", amount = 14},
       {type = "fluid", name = "glycerol", amount = 15},
       {type = "fluid", name = "fatty-acids", amount = 200},
       {type = "fluid", name = "water", amount = 1500},
@@ -1471,7 +1471,7 @@ data:extend(
     category = "froth-floatation",
     ingredients =
     {
-      {type = "item", name = "pyrite-rough", amount = 14},
+      {type = "item", name = "pyrite_rough", amount = 14},
       {type = "fluid", name = "glycerol", amount = 15},
       {type = "fluid", name = "fatty-acids", amount = 200},
       {type = "fluid", name = "water", amount = 1500},
@@ -1511,7 +1511,7 @@ data:extend(
     category = "froth-floatation",
     ingredients =
     {
-      {type = "item", name = "tenorite-rough", amount = 14},
+      {type = "item", name = "tenorite_rough", amount = 14},
       {type = "fluid", name = "glycerol", amount = 15},
       {type = "fluid", name = "fatty-acids", amount = 200},
       {type = "fluid", name = "water", amount = 1500},
@@ -1551,7 +1551,7 @@ data:extend(
     category = "froth-floatation",
     ingredients =
     {
-      {type = "item", name = "malachite-rough", amount = 14},
+      {type = "item", name = "malachite_rough", amount = 14},
       {type = "fluid", name = "glycerol", amount = 15},
       {type = "fluid", name = "fatty-acids", amount = 200},
       {type = "fluid", name = "water", amount = 1500},
@@ -1591,7 +1591,7 @@ data:extend(
     category = "froth-floatation",
     ingredients =
     {
-      {type = "item", name = "siderite-rough", amount = 14},
+      {type = "item", name = "siderite_rough", amount = 14},
       {type = "fluid", name = "glycerol", amount = 15},
       {type = "fluid", name = "fatty-acids", amount = 200},
       {type = "fluid", name = "water", amount = 1500},
@@ -1631,7 +1631,7 @@ data:extend(
     category = "froth-floatation",
     ingredients =
     {
-      {type = "item", name = "hematite-rough", amount = 14},
+      {type = "item", name = "hematite_rough", amount = 14},
       {type = "fluid", name = "glycerol", amount = 15},
       {type = "fluid", name = "fatty-acids", amount = 200},
       {type = "fluid", name = "water", amount = 1500},
@@ -1874,7 +1874,7 @@ data:extend(
   --oxide rough to sulfate
   {
     type ="recipe",
-    name ="copper-oxide-rough-to-sulfate",
+    name ="copper-oxide_rough_to_sulfate",
     category ="chemistry",
     energy_required = 18,
     icons = 
@@ -1894,7 +1894,7 @@ data:extend(
     ingredients =
     {
 
-      {type ="item", name ="tenorite-rough", amount = 15},
+      {type ="item", name ="tenorite_rough", amount = 15},
       {type ="fluid", name ="sulfuric-acid", amount = 300},
     },
 
@@ -1918,7 +1918,7 @@ data:extend(
   },
   {
     type ="recipe",
-    name ="iron-oxide-rough-to-sulfate",
+    name ="iron-oxide_rough_to_sulfate",
     category ="chemistry",
     energy_required = 18,
     icons = 
@@ -1938,7 +1938,7 @@ data:extend(
     ingredients =
     {
 
-      {type ="item", name ="hematite-rough", amount = 15},
+      {type ="item", name ="hematite_rough", amount = 15},
       {type ="fluid", name ="sulfuric-acid", amount = 300},
     },
 
@@ -1964,7 +1964,7 @@ data:extend(
   --carbonate rough to sulfate
   {
     type ="recipe",
-    name ="copper-carbonate-rough-to-sulfate",
+    name ="copper-carbonate_rough_to_sulfate",
     category ="chemistry",
     energy_required = 10,
     icons = 
@@ -1984,7 +1984,7 @@ data:extend(
     ingredients =
     {
 
-      {type ="item", name ="malachite-rough", amount = 15},
+      {type ="item", name ="malachite_rough", amount = 15},
       {type ="fluid", name ="sulfuric-acid", amount = 300},
     },
 
@@ -2008,7 +2008,7 @@ data:extend(
   },
   {
     type ="recipe",
-    name ="iron-carbonate-rough-to-sulfate",
+    name ="iron-carbonate_rough_to_sulfate",
     category ="chemistry",
     energy_required = 10,
     icons = 
@@ -2028,7 +2028,7 @@ data:extend(
     ingredients =
     {
 
-      {type ="item", name ="siderite-rough", amount = 15},
+      {type ="item", name ="siderite_rough", amount = 15},
       {type ="fluid", name ="sulfuric-acid", amount = 300},
     },
 
@@ -2054,7 +2054,7 @@ data:extend(
   --sulfide rough to sulfate
   {
     type ="recipe",
-    name ="copper-sulfide-rough-to-sulfate",
+    name ="copper-sulfide_rough_to_sulfate",
     category ="chemistry",
     energy_required = 30,
     icons = 
@@ -2074,7 +2074,7 @@ data:extend(
     ingredients =
     {
 
-      {type ="item", name ="covellite-rough", amount = 15},
+      {type ="item", name ="covellite_rough", amount = 15},
       {type ="fluid", name ="sulfuric-acid", amount = 300},
     },
 
@@ -2098,7 +2098,7 @@ data:extend(
   },
   {
     type ="recipe",
-    name ="iron-sulfide-rough-to-sulfate",
+    name ="iron-sulfide_rough_to_sulfate",
     category ="chemistry",
     energy_required = 30,
     icons = 
@@ -2118,7 +2118,7 @@ data:extend(
     ingredients =
     {
 
-      {type ="item", name ="pyrite-rough", amount = 15},
+      {type ="item", name ="pyrite_rough", amount = 15},
       {type ="fluid", name ="sulfuric-acid", amount = 300},
     },
 
@@ -2169,7 +2169,7 @@ data:extend(
     emissions_multiplier = 8,
     ingredients =
     {
-      {type = "item", name = "covellite-rough", amount = 28},
+      {type = "item", name = "covellite_rough", amount = 28},
       {type = "fluid", name = "water", amount = 400},
     },
     results = 
@@ -2216,7 +2216,7 @@ data:extend(
     emissions_multiplier = 8,
     ingredients =
     {
-      {type = "item", name = "hematite-rough", amount = 28},
+      {type = "item", name = "hematite_rough", amount = 28},
       {type = "fluid", name = "water", amount = 400},
     },
     results = 
@@ -2263,7 +2263,7 @@ data:extend(
     emissions_multiplier = 8,
     ingredients =
     {
-      {type = "item", name = "malachite-rough", amount = 28},
+      {type = "item", name = "malachite_rough", amount = 28},
       {type = "fluid", name = "water", amount = 400},
     },
     results = 
@@ -2310,7 +2310,7 @@ data:extend(
     emissions_multiplier = 8,
     ingredients =
     {
-      {type = "item", name = "pyrite-rough", amount = 28},
+      {type = "item", name = "pyrite_rough", amount = 28},
       {type = "fluid", name = "water", amount = 400},
     },
     results = 
@@ -2357,7 +2357,7 @@ data:extend(
     emissions_multiplier = 8,
     ingredients =
     {
-      {type = "item", name = "siderite-rough", amount = 28},
+      {type = "item", name = "siderite_rough", amount = 28},
       {type = "fluid", name = "water", amount = 400},
     },
     results = 
@@ -2404,7 +2404,7 @@ data:extend(
     emissions_multiplier = 8,
     ingredients =
     {
-      {type = "item", name = "tenorite-rough", amount = 28},
+      {type = "item", name = "tenorite_rough", amount = 28},
       {type = "fluid", name = "water", amount = 400},
     },
     results = 

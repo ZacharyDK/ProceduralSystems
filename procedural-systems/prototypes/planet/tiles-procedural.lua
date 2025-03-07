@@ -249,13 +249,28 @@ local function extend_water_tiles(in_shallow_water_tinted,in_deep_water_tinted)
 
 end
 
-local alpha_tile_set = create_tinted_tile_set(tile_base.get_tiles(),"alpha",{r = 250,g = 100, b = 100}) --rgb(255, 128, 128)
-extend_tinted_tiles(alpha_tile_set)
+local val = {}
+
+val.generate_planet_tile_set = function(in_name,in_tint,in_liquid_map_color, in_liquid, in_liquid_expression) --"water","water_base(-2, 17000)"
+  local land_tile_set = create_tinted_tile_set(tile_base.get_tiles(),in_name,in_tint) 
+  extend_tinted_tiles(land_tile_set)
+  local shallow_water_tiles = create_shallow_water_tinted_tile_set(in_name, in_tint, in_liquid_map_color,in_liquid,in_liquid_expression) 
+  local deep_water_tiles = create_deep_water_tinted_tile_set(in_name, in_tint, in_liquid_map_color,("water-"..in_name),in_liquid,in_liquid_expression)
+  extend_water_tiles(shallow_water_tiles,deep_water_tiles)
+end
+
+return val
+
+--TODO - consolidate all into a function
+--local alpha_tile_set = create_tinted_tile_set(tile_base.get_tiles(),"alpha",{r = 250,g = 100, b = 100}) --rgb(255, 128, 128)
+--extend_tinted_tiles(alpha_tile_set)
 
 --local alpha_shallow_water_tiles = create_shallow_water_tinted_tile_set("alpha", {r = 250,g = 100, b = 100}, {r = 100,g = 20, b = 20},"water","max(procedural_lava_lowland_range, procedural_lava_mountains_range)") --repurpose vulcanus lava code Not clear why no water...
 --local alpha_deep_water_tiles = create_deep_water_tinted_tile_set("alpha", {r = 250,g = 100, b = 100}, {r = 100,g = 20, b = 20},"water-alpha","water","max(procedural_lava_hot_lowland_range, procedural_lava_hot_mountains_range)")
 
-local alpha_shallow_water_tiles = create_shallow_water_tinted_tile_set("alpha", {r = 250,g = 100, b = 100}, {r = 100,g = 20, b = 20},"water","water_base(-2, 17000)") --repurpose vulcanus lava code
-local alpha_deep_water_tiles = create_deep_water_tinted_tile_set("alpha", {r = 250,g = 100, b = 100}, {r = 100,g = 20, b = 20},"water-alpha","water","water_base(-2, 17000)")
+--local alpha_shallow_water_tiles = create_shallow_water_tinted_tile_set("alpha", {r = 250,g = 100, b = 100}, {r = 100,g = 20, b = 20},"water","water_base(-2, 17000)") --repurpose vulcanus lava code
+--local alpha_deep_water_tiles = create_deep_water_tinted_tile_set("alpha", {r = 250,g = 100, b = 100}, {r = 100,g = 20, b = 20},"water-alpha","water","water_base(-2, 17000)")
 
-extend_water_tiles(alpha_shallow_water_tiles,alpha_deep_water_tiles)
+--extend_water_tiles(alpha_shallow_water_tiles,alpha_deep_water_tiles)
+
+

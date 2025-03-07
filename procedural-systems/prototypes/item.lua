@@ -318,12 +318,12 @@ data:extend(
     
     create_item_picture_table_assit("fluorite","ores_malcom","",3,"z"),
 
-    create_item_picture_table_assit("covellite","ores_malcom/low-quality","-rough",3,"h"),
-    create_item_picture_table_assit("hematite","ores_malcom/low-quality","-rough", 3,"i"),
-    create_item_picture_table_assit("malachite","ores_malcom/low-quality","-rough", 4,"l"),
-    create_item_picture_table_assit("pyrite","ores_malcom/low-quality","-rough", 3,"g"),
-    create_item_picture_table_assit("siderite","ores_malcom/low-quality","-rough",3,"k"),
-    create_item_picture_table_assit("tenorite","ores_malcom/low-quality","-rough",4,"j"),
+    create_item_picture_table_assit("covellite","ores_malcom/low-quality","_rough",3,"h"),
+    create_item_picture_table_assit("hematite","ores_malcom/low-quality","_rough", 3,"i"),
+    create_item_picture_table_assit("malachite","ores_malcom/low-quality","_rough", 4,"l"),
+    create_item_picture_table_assit("pyrite","ores_malcom/low-quality","_rough", 3,"g"),
+    create_item_picture_table_assit("siderite","ores_malcom/low-quality","_rough",3,"k"),
+    create_item_picture_table_assit("tenorite","ores_malcom/low-quality","_rough",4,"j"),
 
     create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-alpha",4,"a",{r = 200, g = 0,  b = 0, a = 1}),
     create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-beta",4,"b",{r = 222,  g = 138, b = 20, a = 1}),

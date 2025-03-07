@@ -1,5 +1,5 @@
 local ore_expression_util = {}
---I think ores are generating ontop of each other. Need to double check.
+--This is why we swapped - for _
 ore_expression_util.create_ore_expression_table = function(in_name,in_seed)
     local addendum = in_name --remove the postfix. I tried but idk.
     local out = 
@@ -157,7 +157,7 @@ end
 ore_expression_util.handle_expression_generation = function()
     local ore_array = 
     {
-        ["A"] = "covellite",
+        ["A"] = "covellite", --Was adding an extra _ if keys matched for first entry for some reason
         ["malachite"] = "malachite",
         ["tenorite"] = "tenorite",
         ["pyrite"] = "pyrite",
@@ -165,6 +165,18 @@ ore_expression_util.handle_expression_generation = function()
         ["hematite"] = "hematite",
         ["fluorite"] = "fluorite",
         ["alpha_ore_raw"] = "alpha_ore_raw",
+        ["beta_ore_raw"] = "beta_ore_raw",
+        ["gamma_ore_raw"] = "gamma_ore_raw",
+        ["delta_ore_raw"] = "delta_ore_raw",
+        ["epilson_ore_raw"] = "epilson_ore_raw",
+        ["omega_ore_raw"] = "omega_ore_raw",
+        ["B"] = "covellite_rough",
+        ["malachite_rough"] = "malachite_rough",
+        ["tenorite_rough"] = "tenorite_rough",
+        ["pyrite_rough"] = "pyrite_rough",
+        ["siderite_rough"] = "siderite_rough",
+        ["hematite_rough"] = "hematite_rough",
+
     }
     local prime = 314159
     local running_seed = 314159

@@ -317,27 +317,27 @@ data:extend({
           --Rough POX
           { 
             type = "unlock-recipe",
-            recipe = "copper-oxide-rough-to-sulfate",
+            recipe = "copper-oxide_rough_to_sulfate",
           },
           {
               type = "unlock-recipe",
-              recipe = "iron-oxide-rough-to-sulfate",
+              recipe = "iron-oxide_rough_to_sulfate",
           },
           {
             type = "unlock-recipe",
-            recipe = "copper-carbonate-rough-to-sulfate",
+            recipe = "copper-carbonate_rough_to_sulfate",
           },
           {
             type = "unlock-recipe",
-            recipe = "iron-carbonate-rough-to-sulfate",
+            recipe = "iron-carbonate_rough_to_sulfate",
           },
           {
             type = "unlock-recipe",
-            recipe = "copper-sulfide-rough-to-sulfate",
+            recipe = "copper-sulfide_rough_to_sulfate",
           },
           {
             type = "unlock-recipe",
-            recipe = "iron-sulfide-rough-to-sulfate",
+            recipe = "iron-sulfide_rough_to_sulfate",
           },
 
 

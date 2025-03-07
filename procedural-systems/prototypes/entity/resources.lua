@@ -543,10 +543,10 @@ data:extend(
 
     --ROUGH ORES
 
-    --covellite-rough
+    --covellite_rough
     resource(
         {
-          name = "covellite-rough",
+          name = "covellite_rough",
           order = "b",
           map_color = {60,60,90},
           mining_time = 1,
@@ -564,10 +564,10 @@ data:extend(
           entity_image_sheet = "copper-ore-desat.png",
         }
     ),
-    --malachite-rough
+    --malachite_rough
     resource(
         {
-          name = "malachite-rough",
+          name = "malachite_rough",
           order = "b",
           map_color = {17,100,45},
           mining_time = 1,
@@ -585,10 +585,10 @@ data:extend(
           entity_image_sheet = "copper-ore-desat.png",
         }
     ),
-    --tenorite-rough
+    --tenorite_rough
     resource(
         {
-          name = "tenorite-rough",
+          name = "tenorite_rough",
           order = "b",
           map_color = {80,80,80},
           mining_time = 1,
@@ -606,10 +606,10 @@ data:extend(
           entity_image_sheet = "copper-ore-desat.png",
         }
     ),
-    --pyrite-rough
+    --pyrite_rough
     resource(
       {
-        name = "pyrite-rough",
+        name = "pyrite_rough",
         order = "b",
         map_color = {100,105,60},
         mining_time = 1,
@@ -627,10 +627,10 @@ data:extend(
         entity_image_sheet = "iron-ore-desat.png",
       }
     ),
-    --siderite-rough
+    --siderite_rough
     resource(
       {
-        name = "siderite-rough",
+        name = "siderite_rough",
         order = "b",
         map_color = {105,35,35},
         mining_time = 1,
@@ -648,10 +648,10 @@ data:extend(
         entity_image_sheet = "iron-ore-desat.png",
       }
     ),
-    --hematite-rough
+    --hematite_rough
     resource(
       {
-        name = "hematite-rough",
+        name = "hematite_rough",
         order = "b",
         map_color = {100,60,60},
         mining_time = 1,
