@@ -16,26 +16,20 @@ data:extend({
         essential = true,
         effects =
         {   
-            --[[
-            {
-                type = "unlock-space-location",
-                space_location = "main-system-alpha-edge",
-                use_icon_overlay_constant = true
-            },
+
             {
               type = "unlock-space-location",
-              space_location = "alpha-main-lagrange",
+              space_location = "alpha_p",
               use_icon_overlay_constant = true
             },
             {
               type = "unlock-space-location",
-              space_location = "alpha-star-p",
+              space_location = "main-system-alpha-edge",
               use_icon_overlay_constant = true
             },
-            --]]
             {
               type = "unlock-space-location",
-              space_location = "alpha-test",
+              space_location = "alpha_p_system_edge",
               use_icon_overlay_constant = true
             },
           
