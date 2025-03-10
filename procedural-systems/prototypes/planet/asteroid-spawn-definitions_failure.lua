@@ -6,15 +6,16 @@ asteroid_functions.weighted_average = function(A, B, weight)
   local result = A + ((B-A)*weight)
   return result
 end
+--4 prometheum? 1,,3,5 terra 2 carbonic. I'll leave it at 5 options for now incase I want to add stuff later.
 
-asteroid_functions.nauvis_ratio      = {3, 2, 1 , 0, 0} --4 prometheum? 5 terra?
+--leaving these for reference. 1,3 originally metallic and oxide respectively. 
+asteroid_functions.nauvis_ratio      = {3, 2, 1 , 0, 0} 
 asteroid_functions.vulcanus_ratio    = {5, 2, 1 , 0, 0}
 asteroid_functions.gleba_ratio       = {2, 5, 1 , 0, 0}
 asteroid_functions.fulgora_ratio     = {4, 3, 1 , 0, 0}
 asteroid_functions.aquilo_ratio      = {1, 2, 20, 0, 0}
 asteroid_functions.system_edge_ratio = {3, 5, 2 , 0, 0}
-asteroid_functions.secretas_ratio =    {2, 4 ,10 ,0, 6}
-asteroid_functions.proc_ratio =    {0.1, 0.1 ,0.1 ,0, 6}
+--asteroid_functions.secretas_ratio =    {2, 4 ,10 ,0, 6}
 
 asteroid_functions.nauvis_chunks      = 0.0125
 asteroid_functions.vulcanus_chunks    = 0.0020
@@ -28,9 +29,28 @@ asteroid_functions.aquilo_big         = 0.0025
 asteroid_functions.system_edge_chunks = 0.0005
 asteroid_functions.system_edge_huge   = 0.00125
 
-asteroid_functions.secretas_chunks = 0.00020
-asteroid_functions.secretas_big    = 0.004
-asteroid_functions.secretas_huge   = 0.00125
+
+--Edge of main system
+asteroid_functions.main_system_alpha_edge_ratio = {7.5, 0.5, 2.5 , 0, 0}
+asteroid_functions.inter_system_lagrange_ratio = {3, 0.1, 1 , 0, 0}
+asteroid_functions.procedural_system_edge_ratio = {8, 0.3, 3 , 0, 0}
+asteroid_functions.procedural_system_inter_planets_ratio = {9, 0.2, 3 , 0, 0}
+
+asteroid_functions.main_system_alpha_edge_chunks = 0.0011
+--asteroid_functions.main_system_alpha_edge_medium = 0.0025 --might have to half between big and medium
+asteroid_functions.main_system_alpha_edge_big = 0.0025
+
+asteroid_functions.inter_system_lagrange_point_chunks = 0.0003
+--asteroid_functions.inter_system_lagrange_point_medium = 0.0006
+asteroid_functions.inter_system_lagrange_point_big = 0.0006
+
+asteroid_functions.procedural_system_edge_chunks = 0.0012
+--asteroid_functions.procedural_system_edge_medium = 0.0032
+asteroid_functions.procedural_system_edge_big = 0.0032
+
+asteroid_functions.procedural_system_inter_planets_chunks = 0.0012
+asteroid_functions.procedural_system_inter_planets_medium = 0.0032
+asteroid_functions.procedural_system_inter_planets_big = 0.0033
 
 asteroid_functions.chunk_angle = 1
 asteroid_functions.small_angle = 0.7
@@ -38,6 +58,162 @@ asteroid_functions.medium_angle = 0.6
 asteroid_functions.big_angle = 0.5
 asteroid_functions.huge_angle = 0.4
 
+--Fulgora to edge on other side of the main system
+asteroid_functions.fulgora_edge =
+{
+  probability_on_range_chunk =
+  {
+    {position = 0.1, probability = asteroid_functions.fulgora_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
+    {position = 0.9, probability = asteroid_functions.main_system_alpha_edge_chunks, angle_when_stopped = asteroid_functions.chunk_angle}
+  },
+  probability_on_range_medium =
+  {
+    {position = 0.1, probability = asteroid_functions.fulgora_medium, angle_when_stopped = asteroid_functions.medium_angle},
+    {position = 0.9, probability = 0, angle_when_stopped = asteroid_functions.medium_angle}
+  },
+  probability_on_range_big =
+  {
+    {position = 0.1, probability = 0, angle_when_stopped = asteroid_functions.big_angle},
+    {position = 0.9, probability = asteroid_functions.main_system_alpha_edge_big, angle_when_stopped = asteroid_functions.big_angle}
+  },
+  type_ratios =
+  {
+    {position = 0.1, ratios = asteroid_functions.fulgora_ratio},
+    {position = 0.4, ratios = asteroid_functions.main_system_alpha_edge_ratio},
+    {position = 0.9, ratios = asteroid_functions.main_system_alpha_edge_ratio}
+  }
+}
+
+--Gleba to edge on other side of the main system
+asteroid_functions.gleba_edge =
+{
+  probability_on_range_chunk =
+  {
+    {position = 0.1, probability = asteroid_functions.gleba_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
+    {position = 0.9, probability = asteroid_functions.main_system_alpha_edge_chunks, angle_when_stopped = asteroid_functions.chunk_angle}
+  },
+  probability_on_range_medium =
+  {
+    {position = 0.1, probability = asteroid_functions.gleba_medium, angle_when_stopped = asteroid_functions.medium_angle},
+    {position = 0.9, probability = 0, angle_when_stopped = asteroid_functions.medium_angle}
+  },
+  probability_on_range_big =
+  {
+    {position = 0.1, probability = 0, angle_when_stopped = asteroid_functions.big_angle},
+    {position = 0.9, probability = asteroid_functions.main_system_alpha_edge_big, angle_when_stopped = asteroid_functions.big_angle}
+  },
+  type_ratios =
+  {
+    {position = 0.1, ratios = asteroid_functions.gleba_ratio},
+    {position = 0.4, ratios = asteroid_functions.main_system_alpha_edge_ratio},
+    {position = 0.9, ratios = asteroid_functions.main_system_alpha_edge_ratio}
+  }
+}
+
+--New Edge, opposite to shattered planet to interstellar space
+asteroid_functions.main_alpha_edge_langrange =
+{
+  probability_on_range_chunk =
+  {
+    {position = 0.1, probability = asteroid_functions.main_system_alpha_edge_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
+    {position = 0.9, probability = asteroid_functions.inter_system_lagrange_point_chunks, angle_when_stopped = asteroid_functions.chunk_angle}
+  },
+  probability_on_range_medium =
+  {
+    {position = 0.1, probability = 0, angle_when_stopped = asteroid_functions.medium_angle},
+    {position = 0.9, probability = 0, angle_when_stopped = asteroid_functions.medium_angle}
+  },
+  probability_on_range_big =
+  {
+    {position = 0.1, probability = asteroid_functions.main_system_alpha_edge_big, angle_when_stopped = asteroid_functions.big_angle},
+    {position = 0.9, probability = asteroid_functions.inter_system_lagrange_point_big, angle_when_stopped = asteroid_functions.big_angle}
+  },
+  type_ratios =
+  {
+    {position = 0.1, ratios = asteroid_functions.main_system_alpha_edge_ratio},
+    {position = 0.4, ratios = asteroid_functions.inter_system_lagrange_ratio},
+    {position = 0.9, ratios = asteroid_functions.inter_system_lagrange_ratio}
+  }
+}
+
+--Edge of a procedural system, to some interstellar langrange point
+asteroid_functions.procedural_system_edge_langrange =
+{
+  probability_on_range_chunk =
+  {
+    {position = 0.1, probability = asteroid_functions.procedural_system_edge_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
+    {position = 0.9, probability = asteroid_functions.inter_system_lagrange_point_chunks, angle_when_stopped = asteroid_functions.chunk_angle}
+  },
+  probability_on_range_medium =
+  {
+    {position = 0.1, probability = 0, angle_when_stopped = asteroid_functions.medium_angle},
+    {position = 0.9, probability = 0, angle_when_stopped = asteroid_functions.medium_angle}
+  },
+  probability_on_range_big =
+  {
+    {position = 0.1, probability = asteroid_functions.procedural_system_edge_big, angle_when_stopped = asteroid_functions.big_angle},
+    {position = 0.9, probability = asteroid_functions.inter_system_lagrange_point_big, angle_when_stopped = asteroid_functions.big_angle}
+  },
+  type_ratios =
+  {
+    {position = 0.1, ratios = asteroid_functions.procedural_system_edge_ratio},
+    {position = 0.4, ratios = asteroid_functions.inter_system_lagrange_ratio},
+    {position = 0.9, ratios = asteroid_functions.inter_system_lagrange_ratio}
+  }
+}
+
+asteroid_functions.procedural_system_edge_planet =
+{
+  probability_on_range_chunk =
+  {
+    {position = 0.1, probability = asteroid_functions.procedural_system_edge_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
+    {position = 0.9, probability = asteroid_functions.procedural_system_inter_planets_chunks, angle_when_stopped = asteroid_functions.chunk_angle}
+  },
+  probability_on_range_medium =
+  {
+    {position = 0.1, probability = 0, angle_when_stopped = asteroid_functions.medium_angle},
+    {position = 0.9, probability = asteroid_functions.procedural_system_inter_planets_medium, angle_when_stopped = asteroid_functions.medium_angle}
+  },
+  probability_on_range_big =
+  {
+    {position = 0.1, probability = asteroid_functions.procedural_system_edge_big, angle_when_stopped = asteroid_functions.big_angle},
+    {position = 0.9, probability = asteroid_functions.procedural_system_inter_planets_big, angle_when_stopped = asteroid_functions.big_angle}
+  },
+  type_ratios =
+  {
+    {position = 0.1, ratios = asteroid_functions.procedural_system_edge_ratio},
+    {position = 0.4, ratios = asteroid_functions.procedural_system_inter_planets_ratio},
+    {position = 0.9, ratios = asteroid_functions.procedural_system_inter_planets_ratio}
+  }
+}
+
+asteroid_functions.procedural_system_inter_planets =
+{
+  probability_on_range_chunk =
+  {
+    {position = 0.1, probability = asteroid_functions.procedural_system_inter_planets_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
+    {position = 0.9, probability = asteroid_functions.procedural_system_inter_planets_chunks, angle_when_stopped = asteroid_functions.chunk_angle}
+  },
+  probability_on_range_medium =
+  {
+    {position = 0.1, probability = asteroid_functions.procedural_system_inter_planets_medium, angle_when_stopped = asteroid_functions.medium_angle},
+    {position = 0.9, probability = asteroid_functions.procedural_system_inter_planets_medium, angle_when_stopped = asteroid_functions.medium_angle}
+  },
+  probability_on_range_big =
+  {
+    {position = 0.1, probability = asteroid_functions.procedural_system_inter_planets_big, angle_when_stopped = asteroid_functions.big_angle},
+    {position = 0.9, probability = asteroid_functions.procedural_system_inter_planets_big, angle_when_stopped = asteroid_functions.big_angle}
+  },
+  type_ratios =
+  {
+    {position = 0.1, ratios = asteroid_functions.procedural_system_inter_planets_ratio},
+    {position = 0.4, ratios = asteroid_functions.procedural_system_inter_planets_ratio},
+    {position = 0.9, ratios = asteroid_functions.procedural_system_inter_planets_ratio}
+  }
+}
+
+
+--[[
 asteroid_functions.nauvis_vulcanus =
 {
   probability_on_range_chunk =
@@ -57,200 +233,12 @@ asteroid_functions.nauvis_vulcanus =
     {position = 0.9, ratios = asteroid_functions.vulcanus_ratio},
   }
 }
-
-asteroid_functions.nauvis_gleba =
-{
-  probability_on_range_chunk =
-  {
-    {position = 0.1, probability = asteroid_functions.nauvis_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
-    {position = 0.9, probability = asteroid_functions.gleba_chunks, angle_when_stopped = asteroid_functions.chunk_angle}
-  },
-  probability_on_range_medium =
-  {
-    {position = 0.1, probability = 0, angle_when_stopped = asteroid_functions.medium_angle},
-    {position = 0.5, probability = asteroid_functions.gleba_medium * 3, angle_when_stopped = asteroid_functions.medium_angle},
-    {position = 0.9, probability = asteroid_functions.gleba_medium, angle_when_stopped = asteroid_functions.medium_angle}
-  },
-  type_ratios =
-  {
-    {position = 0.1, ratios = asteroid_functions.nauvis_ratio},
-    {position = 0.9, ratios = asteroid_functions.gleba_ratio},
-  }
-}
-
-asteroid_functions.nauvis_fulgora =
-{
-  probability_on_range_chunk =
-  {
-    {position = 0.1, probability = asteroid_functions.nauvis_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
-    {position = 0.9, probability = asteroid_functions.fulgora_chunks, angle_when_stopped = asteroid_functions.chunk_angle}
-  },
-  probability_on_range_medium =
-  {
-    {position = 0.1, probability = 0, angle_when_stopped = asteroid_functions.medium_angle},
-    {position = 0.5, probability = asteroid_functions.fulgora_medium * 3, angle_when_stopped = asteroid_functions.medium_angle},
-    {position = 0.9, probability = asteroid_functions.fulgora_medium, angle_when_stopped = asteroid_functions.medium_angle}
-  },
-  type_ratios =
-  {
-    {position = 0.1, ratios = asteroid_functions.nauvis_ratio},
-    {position = 0.9, ratios = asteroid_functions.fulgora_ratio},
-  }
-}
-
-asteroid_functions.vulcanus_gleba =
-{
-  probability_on_range_chunk =
-  {
-    {position = 0.1, probability = asteroid_functions.vulcanus_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
-    {position = 0.9, probability = asteroid_functions.gleba_chunks, angle_when_stopped = asteroid_functions.chunk_angle}
-  },
-  probability_on_range_medium =
-  {
-    {position = 0.1, probability = asteroid_functions.vulcanus_medium, angle_when_stopped = asteroid_functions.medium_angle},
-    {position = 0.5, probability = asteroid_functions.weighted_average(asteroid_functions.vulcanus_medium, asteroid_functions.gleba_medium, 0.5) * 3, angle_when_stopped = asteroid_functions.medium_angle},
-    {position = 0.9, probability = asteroid_functions.gleba_medium, angle_when_stopped = asteroid_functions.medium_angle}
-  },
-  type_ratios =
-  {
-    {position = 0.1, ratios = asteroid_functions.vulcanus_ratio},
-    {position = 0.9, ratios = asteroid_functions.gleba_ratio},
-  }
-}
-
-asteroid_functions.gleba_fulgora =
-{
-  probability_on_range_chunk =
-  {
-    {position = 0.1, probability = asteroid_functions.gleba_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
-    {position = 0.9, probability = asteroid_functions.fulgora_chunks, angle_when_stopped = asteroid_functions.chunk_angle}
-  },
-  probability_on_range_medium =
-  {
-    {position = 0.1, probability = asteroid_functions.gleba_medium, angle_when_stopped = asteroid_functions.medium_angle},
-    {position = 0.5, probability = asteroid_functions.weighted_average(asteroid_functions.gleba_medium, asteroid_functions.fulgora_medium, 0.5) * 3, angle_when_stopped = asteroid_functions.medium_angle},
-    {position = 0.9, probability = asteroid_functions.fulgora_medium, angle_when_stopped = asteroid_functions.medium_angle}
-  },
-  type_ratios =
-  {
-    {position = 0.1, ratios = asteroid_functions.gleba_ratio},
-    {position = 0.9, ratios = asteroid_functions.fulgora_ratio},
-  }
-}
-
-asteroid_functions.gleba_aquilo =
-{
-  probability_on_range_chunk =
-  {
-    {position = 0.1, probability = asteroid_functions.gleba_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
-    {position = 0.9, probability = asteroid_functions.aquilo_chunks, angle_when_stopped = asteroid_functions.chunk_angle}
-  },
-  probability_on_range_medium =
-  {
-    {position = 0.1, probability = asteroid_functions.gleba_medium, angle_when_stopped = asteroid_functions.medium_angle},
-    {position = 0.9, probability = 0, angle_when_stopped = asteroid_functions.medium_angle}
-  },
-  probability_on_range_big =
-  {
-    {position = 0.1, probability = 0, angle_when_stopped = asteroid_functions.big_angle},
-    {position = 0.9, probability = asteroid_functions.aquilo_big, angle_when_stopped = asteroid_functions.big_angle}
-  },
-  type_ratios =
-  {
-    {position = 0.1, ratios = asteroid_functions.gleba_ratio},
-    {position = 0.4, ratios = asteroid_functions.aquilo_ratio},
-    {position = 0.9, ratios = asteroid_functions.aquilo_ratio}
-  }
-}
-
-asteroid_functions.fulgora_aquilo =
-{
-  probability_on_range_chunk =
-  {
-    {position = 0.1, probability = asteroid_functions.fulgora_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
-    {position = 0.9, probability = asteroid_functions.aquilo_chunks, angle_when_stopped = asteroid_functions.chunk_angle}
-  },
-  probability_on_range_medium =
-  {
-    {position = 0.1, probability = asteroid_functions.fulgora_medium, angle_when_stopped = asteroid_functions.medium_angle},
-    {position = 0.9, probability = 0, angle_when_stopped = asteroid_functions.medium_angle}
-  },
-  probability_on_range_big =
-  {
-    {position = 0.1, probability = 0, angle_when_stopped = asteroid_functions.big_angle},
-    {position = 0.9, probability = asteroid_functions.aquilo_big, angle_when_stopped = asteroid_functions.big_angle}
-  },
-  type_ratios =
-  {
-    {position = 0.1, ratios = asteroid_functions.fulgora_ratio},
-    {position = 0.4, ratios = asteroid_functions.aquilo_ratio},
-    {position = 0.9, ratios = asteroid_functions.aquilo_ratio}
-  }
-}
-
-asteroid_functions.aquilo_solar_system_edge =
-{
-  probability_on_range_chunk =
-  {
-    {position = 0.1, probability = asteroid_functions.aquilo_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
-    {position = 0.9, probability = asteroid_functions.system_edge_chunks, angle_when_stopped = asteroid_functions.chunk_angle}
-  },
-  probability_on_range_big =
-  {
-    {position = 0.1, probability = asteroid_functions.aquilo_big, angle_when_stopped = asteroid_functions.big_angle},
-    {position = 0.9, probability = 0, angle_when_stopped = asteroid_functions.big_angle}
-  },
-  probability_on_range_huge =
-  {
-    {position = 0.1, probability = 0, angle_when_stopped = asteroid_functions.huge_angle},
-    {position = 0.9, probability = asteroid_functions.system_edge_huge, angle_when_stopped = asteroid_functions.huge_angle}
-  },
-  type_ratios =
-  {
-    {position = 0.1, ratios = asteroid_functions.aquilo_ratio},
-    {position = 0.2, ratios = {2,3,10, 0}},
-    {position = 0.3, ratios = {4,2,8, 0}},
-    {position = 0.4, ratios = {6,1,4, 0}},
-    {position = 0.5, ratios = {9,4,3, 0}},
-    {position = 0.6, ratios = {9,5,2, 0}},
-    {position = 0.7, ratios = {9,2,7, 0}},
-    {position = 0.8, ratios = {3,5,1, 0}},
-    {position = 0.9, ratios = asteroid_functions.system_edge_ratio},
-  }
-}
-
-asteroid_functions.aquilo_secretas =
-{
-  probability_on_range_chunk =
-  {
-    {position = 0.1, probability = asteroid_functions.aquilo_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
-    {position = 0.9, probability = asteroid_functions.secretas_chunks, angle_when_stopped = asteroid_functions.chunk_angle}
-  },
-  probability_on_range_big =
-  {
-    {position = 0.1, probability = asteroid_functions.aquilo_big, angle_when_stopped = asteroid_functions.big_angle},
-    {position = 0.9, probability = 0, angle_when_stopped = asteroid_functions.big_angle}
-  },
-  probability_on_range_huge =
-  {
-    {position = 0.1, probability = 0, angle_when_stopped = asteroid_functions.huge_angle},
-    {position = 0.9, probability = asteroid_functions.system_edge_huge, angle_when_stopped = asteroid_functions.huge_angle}
-  },
-  type_ratios =
-  {
-    {position = 0.1, ratios = asteroid_functions.aquilo_ratio},
-    {position = 0.2, ratios = {2,3,10, 0,0}},
-    {position = 0.3, ratios = {4,2,8, 0,0}},
-    {position = 0.4, ratios = {6,1,4, 0,0}},
-    {position = 0.5, ratios = {9,4,3, 0, 0}},
-    {position = 0.6, ratios = {9,5,2, 0, 1}},
-    {position = 0.7, ratios = {9,2,7, 0, 2}},
-    {position = 0.8, ratios = {3,5,1, 0, 4}},
-    {position = 0.9, ratios = asteroid_functions.secretas_ratio},
-  }
-}
+--]]
 
 
+
+
+--[[
 asteroid_functions.shattered_planet_trip =
 {
   has_promethium_asteroids = true,
@@ -273,33 +261,7 @@ asteroid_functions.shattered_planet_trip =
     {position = 0.999, ratios = { 10,2,4, 164.03 }},
   }
 }
-
-
-asteroid_functions.proc_trip =
-{
-  probability_on_range_chunk =
-  {
-    {position = 0.1, probability = asteroid_functions.fulgora_chunks, angle_when_stopped = asteroid_functions.chunk_angle},
-    {position = 0.9, probability = asteroid_functions.aquilo_chunks, angle_when_stopped = asteroid_functions.chunk_angle}
-  },
-  probability_on_range_medium =
-  {
-    {position = 0.1, probability = asteroid_functions.fulgora_medium, angle_when_stopped = asteroid_functions.medium_angle},
-    {position = 0.9, probability = asteroid_functions.fulgora_medium/2, angle_when_stopped = asteroid_functions.medium_angle}
-  },
-  probability_on_range_big =
-  {
-    {position = 0.1, probability = asteroid_functions.aquilo_big/2, angle_when_stopped = asteroid_functions.big_angle},
-    {position = 0.9, probability = asteroid_functions.aquilo_big, angle_when_stopped = asteroid_functions.big_angle}
-  },
-  type_ratios =
-  {
-    {position = 0.1, ratios = asteroid_functions.proc_ratio},
-    {position = 0.4, ratios = asteroid_functions.proc_ratio},
-    {position = 0.9, ratios = asteroid_functions.proc_ratio}
-  }
-}
-
+--]]
 
 asteroid_functions.search_in_table = function(table, key)
   local found = false
@@ -364,7 +326,7 @@ asteroid_functions.normalize_ratio = function(ratio)
 end
 
 asteroid_functions.interpolate_point_ratio = function(pointA, pointB, position)
-  local interpolated_data = {position = position, ratios = {1,1,1,1,1,1}}
+  local interpolated_data = {position = position, ratios = {1,1,1,1}}
   for k, r in pairs(pointA.ratios) do
     local interpolated_probability, interpolated_angle = asteroid_functions.interpolate_points(
       {position = pointA.position, probability = asteroid_functions.normalize_ratio(pointA.ratios)[k]},
@@ -433,9 +395,11 @@ end
 asteroid_functions.spawn_definitions = function(data, planet)
   local asteroid_spawn_definitions = {}
   local asteroid_sizes = {"chunk", "small", "medium", "big", "huge"}
-  local asteroid_types = {"metallic", "carbonic", "oxide","terra"}
+  --local asteroid_types = {"metallic", "carbonic", "oxide","auric"}
+  local asteroid_types = {"terra", "carbonic", "terra","terra"}
   if data.has_promethium_asteroids == true then
-    asteroid_types = {"metallic", "carbonic", "oxide", "promethium","terra"}
+    --asteroid_types = {"metallic", "carbonic", "oxide", "promethium","auric"}
+    asteroid_types = {"terra", "carbonic", "terra", "promethium","terra"}
   end
   for k, asteroid_size in pairs(asteroid_sizes) do
     for k, asteroid_type in pairs(asteroid_types) do
@@ -447,11 +411,11 @@ asteroid_functions.spawn_definitions = function(data, planet)
       end
 
       local asteroid_id = 0
-      if asteroid_type == "metallic" then
+      if asteroid_type == "terra" then
         asteroid_id = 1
       elseif asteroid_type == "carbonic" then
         asteroid_id = 2
-      elseif asteroid_type == "oxide" then
+      elseif asteroid_type == "terra" then
         asteroid_id = 3
       elseif asteroid_type == "terra" then
         asteroid_id = 5

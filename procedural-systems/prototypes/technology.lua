@@ -41,6 +41,14 @@ data:extend({
               type = "unlock-recipe",
               recipe = "terra-asteroid-reprocessing",
             },
+            {
+              type = "unlock-recipe",
+              recipe = "scrap-delta-recycling",
+            },
+            {
+              type = "unlock-recipe",
+              recipe = "scrap-epilson-recycling",
+            },
 
 
         },

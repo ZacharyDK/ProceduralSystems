@@ -62,12 +62,12 @@ ore_expression_util.create_geyser_expression_table = function(in_name, in_seed)
         type = "noise-expression",
         name = "procedural_starting_" .. addendum,
         expression = "max(starting_spot_at_angle{ angle = procedural_mountains_angle + 10 * procedural_starting_direction,\z
-                                                  distance = 220 * procedural_starting_area_radius,\z
+                                                  distance = 250 * procedural_starting_area_radius,\z
                                                   radius = 30,\z
                                                   x_distortion = 0.75 * procedural_resource_wobble_x,\z
                                                   y_distortion = 0.75 * procedural_resource_wobble_y},\z
                           starting_spot_at_angle{ angle = procedural_mountains_angle + 30 * procedural_starting_direction,\z
-                                                  distance = 200 * procedural_starting_area_radius,\z
+                                                  distance = 320 * procedural_starting_area_radius,\z
                                                   radius = 25 * procedural_" .. addendum .. "_size,\z
                                                   x_distortion = 0.75 * procedural_resource_wobble_x,\z
                                                   y_distortion = 0.75 * procedural_resource_wobble_y})"
@@ -88,7 +88,7 @@ ore_expression_util.create_geyser_expression_table = function(in_name, in_seed)
                                 procedural_place_" .. addendum .. "_spots(" .. in_seed .. ", 9, 0,\z
                                                             procedural_" .. addendum .. "_size * min(1.2, procedural_ore_dist) * 25,\z
                                                             control:" .. addendum .. ":frequency,\z
-                                                            procedural_" .. addendum .. "_favorability)))"
+                                                            procedural_mountains_" .. addendum .. "_favorability)))"
     },
     patches = 
     {
@@ -113,7 +113,7 @@ ore_expression_util.create_geyser_expression_table = function(in_name, in_seed)
     {
         type = "noise-expression",
         name = "procedural_" .. addendum .. "_richness",
-        expression = "(procedural_" .. addendum .. "region > 0) * random_penalty_between(0.5, 1, 1)\z
+        expression = "(procedural_" .. addendum .. "_region > 0) * random_penalty_between(0.5, 1, 1)\z
                         * 25000 * 40 * procedural_richness_multiplier * procedural_starting_area_multiplier\z
                         * control:" .. addendum .. ":richness / procedural_" .. addendum .. "_size"
     },

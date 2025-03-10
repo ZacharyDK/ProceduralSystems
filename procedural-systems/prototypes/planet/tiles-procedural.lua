@@ -41,6 +41,14 @@ local water_to_out_of_map_transition =
 }
 
 --Does not include water or lava
+
+local function clamp_at_255(in_value)
+  if(in_value > 255) then
+    return 255
+  end
+  return in_value
+end
+
 local function create_tinted_tile_set(in_tile_table,in_name_postfix,in_tint)
     local out = table.deepcopy(in_tile_table)
     --out = in_tile_table --I don't think deepcopy is working.
@@ -48,6 +56,7 @@ local function create_tinted_tile_set(in_tile_table,in_name_postfix,in_tint)
     for k,v in pairs(out) do
         v.tint = in_tint
         v.name = v.name .. "-" .. in_name_postfix
+        v.map_color = {r = clamp_at_255( (in_tint.r * 0.3 + v.map_color.r) * 0.5 ) , b = clamp_at_255( (in_tint.b * 0.3 + v.map_color.b) * 0.5), g = clamp_at_255( (in_tint.g * 0.3 + v.map_color.g )* 0.5) }
     end
 
     return out

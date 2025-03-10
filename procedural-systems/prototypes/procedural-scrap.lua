@@ -24,7 +24,7 @@ local scrap_table =
     },
     battery = 
     {
-        item = {"battery","capacitor","laser-turret"},
+        item = {"battery","accumulator","laser-turret"},
         percent = 0.04,
     },
     copper = 
@@ -70,7 +70,7 @@ function create_scrap_recipe_base(in_name_post_fix,in_scrap_item,in_tint,in_resu
         },
         category = "recycling-or-hand-crafting",
         subgroup = "fulgora-processes", --TODO add my own subprocess.
-        order = "b[trash]-c[trash-recycling]",
+        order = "e[trash]-f[trash-recycling]",
         enabled = false,
         auto_recycle = false,
         energy_required = 0.2,
@@ -92,10 +92,16 @@ results_b = {}
 for k,v in pairs(scrap_table) do 
     percent = v.percent
     item = random_stream.pick_random_and_remove_from_table(v.item)
+
     table.insert(results_b, {type = "item", amount = 1, name = item, probability = percent}  )
 end
 
 table.insert(results_b, {type = "item", amount = 1, name = "iron-gear-wheel", probability = 0.16}) --have seperate ore.
+
+--log(serpent.block("a="))
+--log(serpent.block(results_a))
+--log(serpent.block("b="))
+--log(serpent.block(results_b))
 
 data:extend(
 {

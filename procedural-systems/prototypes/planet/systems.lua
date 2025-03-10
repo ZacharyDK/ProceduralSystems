@@ -22,11 +22,12 @@ PlanetsLib:extend({
                 name = "star",
             },
             distance = 50, --default edge.
-            orientation = 0.75,
+            orientation = 0.5,
         },
-        --sprite_only = true,
-        asteroid_spawn_influence = 1,
-        asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.fulgora_edge,0.9),
+        sprite_only = false,
+        --Doesn't work with planets lib this way?
+        --asteroid_spawn_influence = 1,
+        --asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.proc_trip)
     },
 
 })
@@ -40,9 +41,9 @@ data:extend({
 		from = "fulgora",
 		to = "main-system-alpha-edge",
 		order = "c",
-		length = 40000,
-
-		asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.fulgora_edge,0.9),
+		length = 50000,
+        asteroid_spawn_influence = 1,
+        asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.proc_trip),
 	},
 })
 
@@ -56,6 +57,7 @@ local function create_star_system_framework(in_system_parameters,in_connection_p
             starmap_icon = in_system_parameters.starmap_icon or "__procedural-systems__/graphics/star/starmap-star-red.png",
             starmap_icon_size = in_system_parameters.starmap_icon_size or 512,
             magnitude = in_system_parameters.magnitude or 10.0,
+            icon = "__space-age__/graphics/icons/solar-system-edge.png", -- temp
             orbit = 
             {
                 parent = 
@@ -64,9 +66,9 @@ local function create_star_system_framework(in_system_parameters,in_connection_p
                     name = in_system_parameters.parant_star or "star",
                 },
                 distance = in_system_parameters.distance or 250,
-                orientation = in_system_parameters.orientation or 0.75,
+                orientation = in_system_parameters.orientation or 0.5,
             },
-            sprite_only = true,
+            sprite_only = false,
         },
         {
             type = "space-location",
@@ -82,7 +84,7 @@ local function create_star_system_framework(in_system_parameters,in_connection_p
                     name = in_system_parameters.star_name,
                 },
                 distance = in_system_parameters.radius or 50,
-                orientation = ((in_system_parameters.orientation or 0.75) - 0.5),
+                orientation = ((in_system_parameters.orientation or 0.5) - 0.5),
             },
             --sprite_only = true,
         },
@@ -97,7 +99,8 @@ local function create_star_system_framework(in_system_parameters,in_connection_p
             to = in_connection_parameters.destination,
             order = "c",
             length = in_connection_parameters.connection_length or 250000,
-            asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.fulgora_edge,0.9),
+            asteroid_spawn_influence = 1,
+            asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.proc_trip),
         },
     })
 end
@@ -124,6 +127,7 @@ local function extend_planet(in_planet_parameters)
             icons = in_planet_parameters.icons or { {icon = (in_planet_parameters.icon or "__procedural-systems__/graphics/icons/planet-icon-desat.png"), tint = (in_planet_parameters.tint or {255,255,255})} },
             icon_size = in_planet_parameters.icon_size or 64,
             starmap_icon = "__procedural-systems__/graphics/planet/starmap-planet-desat.png",
+            starmap_icons = in_planet_parameters.starmap_icons or { {icon = (in_planet_parameters.starmap_icon or "__procedural-systems__/graphics/planet/starmap-planet-desat.png"), tint = (in_planet_parameters.tint or {255,255,255})} },
             starmap_icon_size = in_planet_parameters.starmap_icon or 512,
             map_gen_settings = planet_map_gen.procedural(in_planet_parameters.name,in_planet_parameters.resources),
             gravity_pull = in_planet_parameters.gravity_pull or 10,
@@ -150,7 +154,7 @@ local function extend_planet(in_planet_parameters)
                 --temperature = 251,
             },
             asteroid_spawn_influence = 1,
-            asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.procedural_system_inter_planets, 0.9),
+            asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.proc_trip, 0.9),
             persistent_ambient_sounds = {},
             surface_render_parameters = {
                 shadow_opacity = 0.1, 
@@ -170,9 +174,9 @@ local function create_planet_parameters(in_name,in_preset,in_secondary)
     {
         name = in_name,
         parent = planet_parent,
-        orientation = random_stream.random_bound(orient_min,orient_max),
+        orientation = random_stream.random_bound(orient_min*100,orient_max*100)/100, --bound needs integers
         resources = resource_table,
-        distance = random_stream.random_bound(in_preset.distance_min,in_preset.distance_max),
+        distance = random_stream.random_bound(in_preset.distance_min*100,in_preset.distance_max*100)/100, --fine tune distance?
     }
 end
 
@@ -184,7 +188,7 @@ local function create_liquid_expression(in_text)
     elseif in_text == "moderate" then
         out_expression = "water_base(-2, 17000)"
     elseif in_text == "very-high" then
-        out_expression = "water_base(-2, 24000)"
+        out_expression = "water_base(-2, 28000)"
     elseif in_text == "oceanic" then
         out_expression = "water_base(-2, 35000)"
     else
@@ -212,7 +216,7 @@ local water_a_preset =
     surface_liquid_amount = "moderate",
     major_feature = {"crude_oil_p"},
     minor_feature = {"calcite_p","sulfur_ore_p","petroleum_geyser_p","coal_p"},
-    distance_min = 20,
+    distance_min = 17,
     distance_max = 25,
 }
 
@@ -239,10 +243,10 @@ local ocean_a_preset =
 }
 --]]
 
-local ocean_b_preset = 
+local lake_b_preset = 
 {
     surface_liquid = "sulfuric-acid-dilute",
-    surface_liquid_amount = "oceanic",
+    surface_liquid_amount = "very-high",
     major_feature = {"calcite_p"},
     minor_feature = {"petroleum_geyser_p"},
     distance_min = 25,
@@ -273,4 +277,7 @@ local alpha_system_connections =
 
  
 create_star_system_framework(alpha_system,alpha_system_connections)
-generate_planet("alpha",{r = 250,g = 100, b = 100},water_a_preset,{ additional_resources = {"fluorite","alpha_ore_raw","covellite","malachite"},parent ="alpha_p"})
+generate_planet("alpha",{r = 250,g = 100, b = 100},water_a_preset,{ additional_resources = {"fluorite","alpha_ore_raw","siderite","malachite","hematite"},parent ="alpha_p"})
+generate_planet("beta",{r = 250,  g = 155, b = 20, a = 1},desert_a_preset,{ additional_resources = {"fluorite","beta_ore_raw","pyrite","covellite","tenorite"},parent ="alpha_p"})
+generate_planet("gamma",{r = 232, g = 221, b = 12, a = 1},lake_a_preset,{ additional_resources = {"fluorite","gamma_ore_raw","hematite_rough","tenorite_rough","pyrite_rough","covellite_rough"},parent ="alpha_p"})
+generate_planet("delta",{r = 0, g = 180, b = 0, a = 1},lake_b_preset,{ additional_resources = {"fluorite","delta_ore_raw", "siderite_rough","malachite_rough","pyrite_rough","covellite_rough"},parent ="alpha_p"})

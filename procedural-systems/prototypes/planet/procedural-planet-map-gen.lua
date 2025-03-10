@@ -4,7 +4,7 @@ local ore_expression = require("__procedural-systems__/prototypes/planet/procedu
 
 ore_expression.handle_expression_generation()
 
-planet_map_gen.procedural = function(in_name_postfix,in_entity_table)
+planet_map_gen.procedural = function(in_name_postfix,in_entity_table) --Maybe a table that can hadnle stuff
   out = 
   {
     property_expression_names =

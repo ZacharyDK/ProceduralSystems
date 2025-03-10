@@ -63,9 +63,8 @@ end
 
 stream.pick_random_and_remove_from_table = function(in_table)
     local number = math.random(1, #in_table)
-    val = table.deepcopy({in_table[number]}) --ensure we have a table to copy. Val should be its own table with one entry
-    in_table[number] = nil -- clear the entry we picked
-    return val[#val] --return the only entry in the val table
+    local removed = table.remove(in_table,number)
+    return removed
 end
 
 return stream
