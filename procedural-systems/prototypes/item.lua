@@ -332,6 +332,9 @@ data:extend(
     create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-epilson",4,"e",{r = 37,  g = 18, b = 230, a = 1}),
     create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-omega",4,"f",{r = 102,  g = 18, b = 212, a = 1}),
 
+    create_item_picture_table_assit_tinted("scrap","scrap","-epilson",6,"z",{r = 37,  g = 18, b = 230, a = 1}),
+    create_item_picture_table_assit_tinted("scrap","scrap","-delta",6,"y",{r = 0, g = 200, b = 0, a = 1}),
+
     {
       type = "item",
       name = "blast-furnace",

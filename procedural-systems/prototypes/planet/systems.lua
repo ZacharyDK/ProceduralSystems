@@ -2,6 +2,7 @@ local planet_map_gen = require("__procedural-systems__/prototypes/planet/procedu
 local planet_catalogue_vulcanus = require("__space-age__.prototypes.planet.procession-catalogue-vulcanus")
 local asteroid_util = require("__procedural-systems__.prototypes.planet.asteroid-spawn-definitions")
 local tile_maker = require("__procedural-systems__.prototypes.planet.tiles-procedural")
+random_stream = require("__procedural-systems__/utility/random-stream")
 
 PlanetsLib:extend({
     {
@@ -161,8 +162,9 @@ local function create_star_system_framework(in_system_parameters,in_connection_p
         },
     })
 end
-
-local function create_planet(in_planet_parameters)
+--TODO connect planets
+--TODO figure out how to borrow music
+local function extend_planet(in_planet_parameters)
     PlanetsLib:extend({
         {
             type = "planet",
@@ -190,7 +192,7 @@ local function create_planet(in_planet_parameters)
             magnitude = 1,
             order = "q[procedural]-a[" .. in_planet_parameters.name .. "]",
             pollutant_type = nil,
-            solar_power_in_space = 200,
+            solar_power_in_space = 200, --TODO calculate
             platform_procession_set = {
                 arrival = { "planet-to-platform-b" },
                 departure = { "platform-to-planet-a" },
@@ -203,8 +205,8 @@ local function create_planet(in_planet_parameters)
             surface_properties = {
                 ["day-night-cycle"] = in_planet_parameters.day_night_cycle or 10 * 60 * 60,
                 ["magnetic-field"] = in_planet_parameters.magnetic_field or 30, -- Fulgora is 99
-                ["solar-power"] = in_planet_parameters.solar_power or 50, -- No atmosphere
-                pressure = in_planet_parameters.pressure or 5,
+                ["solar-power"] = in_planet_parameters.solar_power or 50, 
+                pressure = in_planet_parameters.pressure or 1000,
                 gravity = in_planet_parameters.gravity or 20, 
                 --temperature = 251,
             },
@@ -217,3 +219,117 @@ local function create_planet(in_planet_parameters)
         }
     })
 end
+
+local function create_planet_parameters(in_name,in_preset,in_secondary)
+    local resource_table = in_secondary.additional_resources or {}
+    table.insert(resource_table,random_stream.random_from_table_shallow(in_preset.major_feature))
+    table.insert(resource_table,random_stream.random_from_table_shallow(in_preset.minor_feature))
+    orient_min = in_secondary.orientation_min or 0.0
+    orient_max = in_secondary.orientation_max or 0.8
+    return 
+    {
+        name = in_name,
+        parent = "star-2",
+        orientation = random_stream.random_bound(orient_min,orient_max),
+        resources = resource_table,
+        distance = random_stream.random_bound(in_preset.distance_min,in_preset.distance_max),
+    }
+end
+
+local function create_liquid_expression(in_text)
+    out_expression = "water_base(-2, 17000)"
+
+    if in_text == "barren" then
+        out_expression = "water_base(-2, 10)"
+    elseif in_text == "moderate" then
+        out_expression = "water_base(-2, 17000)"
+    elseif in_text == "very-high" then
+        out_expression = "water_base(-2, 24000)"
+    elseif in_text == "oceanic" then
+        out_expression = "water_base(-2, 35000)"
+    else
+        out_expression = "water_base(-2, 17000)"
+    end
+
+    return out_expression
+end
+
+--create_tiles
+--create planet parameters
+--extend planet
+local function generate_planet(in_name,in_tint,in_preset,in_secondary)
+    local liquid_expression = create_liquid_expression(in_preset.surface_liquid_amount)
+    tile_maker.generate_planet_tile_set(in_name,in_tint,{r = in_tint.r * 0.7, b = in_tint.b * 0.7, g = in_tint.g * 0.7},in_preset.surface_liquid,liquid_expression)
+    planet_parameters = create_planet_parameters(in_name,in_preset,in_secondary)
+    extend_planet(planet_parameters)
+end
+
+
+local water_a_preset = 
+{
+    surface_liquid = "water",
+    surface_liquid_amount = "moderate",
+    major_feature = {"crude_oil_p"},
+    minor_feature = {"calcite_p","sulfur_ore_p","petroleum_geyser_p","coal_p"},
+    distance_min = 20,
+    distance_max = 25,
+}
+
+local desert_a_preset = 
+{
+    surface_liquid = "water",
+    surface_liquid_amount = "barren",
+    major_feature = {"steam_geyser_p"},
+    minor_feature = {"crude_oil_p","petroleum_geyser_p"},
+    distance_min = 15,
+    distance_max = 20,
+}
+
+--[[
+local ocean_a_preset = 
+{
+    surface_liquid = "ammoniacal-solution",
+    surface_liquid_amount = "oceanic",
+    major_feature = {"petroleum_geyser_p"},
+    minor_feature = {"tungsten-uranium-platinum"}, 
+    distance_min = 35,
+    distance_max = 40,
+    require_heating = true,
+}
+--]]
+
+local ocean_b_preset = 
+{
+    surface_liquid = "sulfuric-acid-dilute",
+    surface_liquid_amount = "oceanic",
+    major_feature = {"calcite_p"},
+    minor_feature = {"petroleum_geyser_p"},
+    distance_min = 25,
+    distance_max = 30,
+}
+
+local lake_a_preset = 
+{
+    surface_liquid = "light-oil",
+    surface_liquid_amount = "very-high",
+    major_feature = {"steam_geyser_p"},
+    minor_feature = {"petroleum_geyser_p"},
+    distance_min = 20,
+    distance_max = 30,
+}
+
+--TODO, scrap system presets
+
+local alpha_system
+{
+    star_name = "alpha_p",
+}
+
+local alpha_system_connections
+{
+    destination = "main-system-alpha-edge",
+}
+
+ 
+create_star_system_framework(alpha_system,alpha_system_connections)
+generate_planet("alpha",water_a_preset,{ additional_resources = {"fluorite","alpha_ore_raw","covellite","malachite"} })

@@ -62,7 +62,7 @@ ore_expression_util.create_geyser_expression_table = function(in_name, in_seed)
         type = "noise-expression",
         name = "procedural_starting_" .. addendum,
         expression = "max(starting_spot_at_angle{ angle = procedural_mountains_angle + 10 * procedural_starting_direction,\z
-                                                  distance = 590 * procedural_starting_area_radius,\z
+                                                  distance = 220 * procedural_starting_area_radius,\z
                                                   radius = 30,\z
                                                   x_distortion = 0.75 * procedural_resource_wobble_x,\z
                                                   y_distortion = 0.75 * procedural_resource_wobble_y},\z
@@ -101,7 +101,7 @@ ore_expression_util.create_geyser_expression_table = function(in_name, in_seed)
     {
         type = "noise-expression",
         name = "procedural_" .. addendum .. "_region_patchy",
-        expression = "(1 + procedural_sulfuric_acid_region) * (0.5 + 0.5 * procedural_sulfuric_acid_patches) - 1"
+        expression = "(1 + procedural_" .. addendum .. "_region) * (0.5 + 0.5 * procedural_" .. addendum .. "_patches) - 1"
     },
     probability = 
     {
@@ -113,7 +113,7 @@ ore_expression_util.create_geyser_expression_table = function(in_name, in_seed)
     {
         type = "noise-expression",
         name = "procedural_" .. addendum .. "_richness",
-        expression = "(procedural_sulfuric_acid_region > 0) * random_penalty_between(0.5, 1, 1)\z
+        expression = "(procedural_" .. addendum .. "region > 0) * random_penalty_between(0.5, 1, 1)\z
                         * 25000 * 40 * procedural_richness_multiplier * procedural_starting_area_multiplier\z
                         * control:" .. addendum .. ":richness / procedural_" .. addendum .. "_size"
     },
@@ -176,8 +176,19 @@ ore_expression_util.handle_expression_generation = function()
         ["pyrite_rough"] = "pyrite_rough",
         ["siderite_rough"] = "siderite_rough",
         ["hematite_rough"] = "hematite_rough",
+        ["coal_p"] = "coal_p",
+        ["calcite_p"] = "calcite_p",
+        ["sulfur_ore_p"] = "sulfur_ore_p",
 
     }
+    local geyser_array = 
+    {
+        ["B"] = "petroleum_geyser_p",
+        ["steam_geyser_p"] = "steam_geyser_p",
+        ["water_geyser_p"] = "water_geyser_p",
+        ["crude_oil_p"] = "crude_oil_p",
+    }
+
     local prime = 314159
     local running_seed = 314159
     local multiplier = 17
@@ -185,6 +196,16 @@ ore_expression_util.handle_expression_generation = function()
         --log(serpent.block("............"))
         --log(serpent.block(v .. ":"))
         local exp = ore_expression_util.create_ore_expression_table(v,tostring(running_seed))
+        --data:extend{exp}
+        --log(serpent.block(exp))
+        ore_expression_util.extend_expression_table(exp)
+        running_seed = prime*multiplier
+        multiplier = multiplier + 4
+    end
+    for k,v in pairs(geyser_array) do 
+        --log(serpent.block("............"))
+        --log(serpent.block(v .. ":"))
+        local exp = ore_expression_util.create_geyser_expression_table(v,tostring(running_seed))
         --data:extend{exp}
         --log(serpent.block(exp))
         ore_expression_util.extend_expression_table(exp)

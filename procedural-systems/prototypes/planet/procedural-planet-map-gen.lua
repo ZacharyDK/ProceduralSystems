@@ -117,7 +117,6 @@ planet_map_gen.procedural = function(in_name_postfix,in_entity_table)
     return out
   end
 
-  --NOT WORKING
   if(table_size(in_entity_table) > 0) then
     for k,v in pairs(in_entity_table) do
       local prob_key = "entity:" .. v .. ":probability"

@@ -89,12 +89,83 @@ local function create_procedural_ore(input_name, input_tint)
   )
 end
 
+
+local proc_coal = 
+resource(
+  {
+    name = "coal",
+    order = "b",
+    map_color = {20,20,20},
+    mining_time = 1,
+    walking_sound = sounds.ore,
+    mining_visualisation_tint = {r = 20, g = 20, b = 20, a = 1.000}, --rgb(20, 20, 20)  --Color for ore 
+    --factoriopedia_simulation = simulations.factoriopedia_calcite,
+  },
+  {
+    probability_expression = 0
+  },
+  {
+    icon_subfolder = "base",
+    icon_image = "coal.png",
+    entity_subfolder = "procedural-ore",
+    entity_image_sheet = "coal.png",
+  }
+)
+proc_coal.name = "coal_p" --have to change the name as to not conflict with base game while still having coal as the mining result
+
+local proc_calcite = 
+resource(
+  {
+    name = "calcite",
+    order = "b",
+    map_color = {200,200,200},
+    mining_time = 1,
+    walking_sound = sounds.ore,
+    mining_visualisation_tint = {r = 200, g = 200, b = 200, a = 1.000}, --rgb(200, 200, 200)  --Color for ore 
+    --factoriopedia_simulation = simulations.factoriopedia_calcite,
+  },
+  {
+    probability_expression = 0
+  },
+  {
+    icon_subfolder = "base",
+    icon_image = "calcite.png",
+    entity_subfolder = "procedural-ore",
+    entity_image_sheet = "calcite-desat.png",
+  }
+)
+
+proc_calcite.name = "calcite_p"
+
+local proc_sulfur = 
+resource(
+  {
+    name = "sulfur",
+    order = "b",
+    map_color = {212,234,17},
+    mining_time = 1,
+    walking_sound = sounds.ore,
+    mining_visualisation_tint = {r = 212, g = 234, b = 17, a = 1.000}, --rgb(212, 234, 17)  --Color for ore 
+    --factoriopedia_simulation = simulations.factoriopedia_calcite,
+  },
+  {
+    probability_expression = 0
+  },
+  {
+    icon_subfolder = "base",
+    icon_image = "sulfur.png",
+    entity_subfolder = "procedural-ore",
+    entity_image_sheet = "calcite-desat.png",
+  }
+)
+proc_sulfur.name = "sulfur_ore_p"
+
 data:extend(
 {
     --petroleum geyser-p
     {
         type = "resource",
-        name = "petroleum-geyser-p",
+        name = "petroleum_geyser_p",
         icon = "__procedural-systems__/graphics/icons/gray-geyser.png",
         flags = {"placeable-neutral"},
         category = "basic-fluid",
@@ -198,10 +269,10 @@ data:extend(
         map_color = {r = 228, g = 208, b = 32}, --rgb(228, 208, 32)
         map_grid = false
     },
-    --steam-geyser-p
+    --steam_geyser_p
     {
         type = "resource",
-        name = "steam-geyser-p",
+        name = "steam_geyser_p",
         icon = "__procedural-systems__/graphics/icons/gray-geyser.png",
         flags = {"placeable-neutral"},
         category = "basic-fluid",
@@ -306,10 +377,10 @@ data:extend(
         map_color = {r = 180, g = 180, b = 180}, --rgb(180, 180, 180)
         map_grid = false
     },
-    --water-geyser-p
+    --water_geyser_p
     {
         type = "resource",
-        name = "water-geyser-p",
+        name = "water_geyser_p",
         icon = "__procedural-systems__/graphics/icons/gray-geyser.png",
         flags = {"placeable-neutral"},
         category = "basic-fluid",
@@ -413,6 +484,118 @@ data:extend(
         map_color = {r = 200, g = 200, b = 200}, --rgb(200, 200, 200)
         map_grid = false
     },
+
+    --crude_oil_p
+    {
+      type = "resource",
+      name = "crude_oil_p",
+      icon = "__procedural-systems__/graphics/icons/gray-geyser.png",
+      flags = {"placeable-neutral"},
+      category = "basic-fluid",
+      subgroup = "mineable-fluids",
+      order="a-b-a",
+      infinite = true,
+      highlight = true,
+      minimum = 60000,
+      normal = 300000,
+      infinite_depletion_amount = 10,
+      resource_patch_search_radius = 12,
+      tree_removal_probability = 0.7,
+      tree_removal_max_distance = 32 * 32,
+      draw_stateless_visualisation_under_building = false,
+      minable =
+      {
+        mining_time = 1,
+        results =
+        {
+          {
+            type = "fluid",
+            name = "crude-oil",
+            amount_min = 10,
+            amount_max = 10,
+            probability = 1
+          }
+        }
+      },
+      walking_sound = sounds.oil,
+      working_sound =
+      {
+        sound =
+        {
+          category = "world-ambient", variations = sound_variations("__space-age__/sound/world/resources/sulfuric-acid-geyser", 1, 0.3),
+          advanced_volume_control =
+          {
+            fades = {fade_in = {curve_type = "S-curve", from = {control = 0.3, volume_percentage = 0.0}, to = {2.0, 100.0}}}
+          }
+        },
+        max_sounds_per_type = 3,
+        audible_distance_modifier = 0.3,
+      },
+      collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
+      selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+      autoplace =
+      {
+        --control = "sulfuric-acid-geyser",
+        order = "c", -- Other resources are "b"; oil won't get placed if something else is already there.
+        probability_expression = 0
+      },
+      stage_counts = {0},
+      stages =
+      {
+        layers =
+        {
+          util.sprite_load("__procedural-systems__/graphics/entity/gray-geyser/gray-geyser",
+          {
+            priority = "high",
+            frame_count = 4,
+            scale = 0.5,
+            tint = util.multiply_color({r=5, g=5, b=5}, 0.3) --rgb(5, 5, 5)
+          })
+        }
+      },
+      stateless_visualisation =
+      {
+        -- expanded 2 animation layers into 2 visualisations to demo multiple visualisations
+        {
+          count = 1,
+          render_layer = "smoke",
+          animation =
+          {
+            filename = "__procedural-systems__/graphics/entity/gray-geyser/gray-geyser-gas-outer.png",
+            frame_count = 47,
+            line_length = 16,
+            width = 90,
+            height = 188,
+            animation_speed = 0.3,
+            shift = util.by_pixel(-6, -89),
+            scale = 1,
+            tint = util.multiply_color({r=5, g=5, b=5}, 0.3) --rgb(170, 170, 170)
+          }
+        },
+        {
+          count = 1,
+          render_layer = "smoke",
+          animation =
+          {
+             filename = "__procedural-systems__/graphics/entity/gray-geyser/gray-geyser-gas-inner.png",
+             frame_count = 47,
+             line_length = 16,
+             width = 40,
+             height = 84,
+             animation_speed = 0.4,
+             shift = util.by_pixel(-4, -30),
+             scale = 1,
+             tint = util.multiply_color({r=200, g=200, b=200}, 0.5) --rgb(200, 200, 200)
+          }
+        }
+      },
+      map_color = {r = 220, g = 37, b = 211}, --rgb(220, 37, 211)
+      map_grid = false
+    },
+
+    proc_coal,
+    proc_calcite,
+    proc_sulfur,
 
     --covellite
     resource(
@@ -689,6 +872,47 @@ data:extend(
         icon_image = "fluorite-1.png",
         entity_subfolder = "procedural-ore",
         entity_image_sheet = "calcite-desat.png",
+      }
+    ),
+
+    resource(
+      {
+        name = "scrap-delta",
+        order = "b",
+        map_color = {0,211,0},
+        mining_time = 1,
+        walking_sound = sounds.ore,
+        mining_visualisation_tint = {r = 0, g = 211, b = 0, a = 1.000}, --rgb(120, 211, 144)  --Color for ore 
+        --factoriopedia_simulation = simulations.factoriopedia_calcite,
+      },
+      {
+        probability_expression = 0
+      },
+      {
+        icon_subfolder = "scrap",
+        icon_image = "scrap-1.png",
+        entity_subfolder = "scrap",
+        entity_image_sheet = "scrap.png",
+      }
+    ),
+    resource(
+      {
+        name = "scrap-epilson",
+        order = "b",
+        map_color = {0,0,230},
+        mining_time = 1,
+        walking_sound = sounds.ore,
+        mining_visualisation_tint = {r = 0, g = 0, b = 230, a = 1.000}, --rgb(120, 211, 144)  --Color for ore 
+        --factoriopedia_simulation = simulations.factoriopedia_calcite,
+      },
+      {
+        probability_expression = 0
+      },
+      {
+        icon_subfolder = "scrap",
+        icon_image = "scrap-1.png",
+        entity_subfolder = "scrap",
+        entity_image_sheet = "scrap.png",
       }
     ),
 

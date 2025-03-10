@@ -17,9 +17,13 @@ end
 
 data:extend(
 {
-  create_autoplace_control("petroleum-geyser-p"),
-  create_autoplace_control("steam-geyser-p"),
-  create_autoplace_control("water-geyser-p"),
+  create_autoplace_control("petroleum_geyser_p"),
+  create_autoplace_control("steam_geyser_p"),
+  create_autoplace_control("water_geyser_p"),
+  create_autoplace_control("crude_oil_p"),
+  create_autoplace_control("coal_p"),
+  create_autoplace_control("calcite_p"),
+  create_autoplace_control("sulfur_ore_p"),
 
   create_autoplace_control("covellite"),
   create_autoplace_control("malachite"),
@@ -44,6 +48,8 @@ data:extend(
   create_autoplace_control("epilson_ore_raw"),
   create_autoplace_control("omega_ore_raw"),
 
+  create_autoplace_control("scrap-epilson"),
+  create_autoplace_control("scrap-delta"),
   {
     type = "autoplace-control",
     name = "procedural_volcanism",
