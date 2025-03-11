@@ -49,14 +49,14 @@ data:extend({
 
 local solar_distance_table = --key distance, value solar power in space. Used from space ages values
 {
-    ["10"] = [600],
-    ["15"] = [300],
-    ["20"] = [200],
-    ["25"] = [120],
-    ["35"] = [60],
-    ["50"] = [1],
-    ["80"] = [0.1],
-    ["10000"] = [0],
+    ["10"] = 600,
+    ["15"] = 300,
+    ["20"] = 200,
+    ["25"] = 120,
+    ["35"] = 60,
+    ["50"] = 1,
+    ["80"] = 0.1,
+    ["10000"] = 0,
 }
 
 local function calculate_solar_power_in_space(in_distance,in_star_multiplier)

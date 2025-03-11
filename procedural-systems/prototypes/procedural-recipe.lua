@@ -20,7 +20,7 @@ local procedural_science_table =
         name ={"pumpjack","electric-furnace","locomotive","chemical-plant","lab","assembling-machine-2","lightning-rod","explosive-rocket"},
         amount_min = 1,
         amount_max = 1,
-    }
+    },
     input_d = 
     {
         name = {"speed-module","quality-module", "productivity-module","efficiency-module","solar-panel","cluster-grenade","destroyer-capsule","piercing-shotgun-shell","laser-turret","heating-tower"},
@@ -32,87 +32,86 @@ local procedural_science_table =
 ingredients_a = {}
 for k,v in pairs(procedural_science_table) do 
     item = random_stream.pick_random_and_remove_from_table(v.name)
-    cost = random_stream.random_bound(amount_min,amount_max)
+    cost = random_stream.random_bound(v.amount_min,v.amount_max)
     table.insert(ingredients_a, {type = "item", amount = cost, name = item}  )
 end
 
 ingredients_b = {}
 for k,v in pairs(procedural_science_table) do 
     item = random_stream.pick_random_and_remove_from_table(v.name)
-    cost = random_stream.random_bound(amount_min,amount_max)
+    cost = random_stream.random_bound(v.amount_min,v.amount_max)
     table.insert(ingredients_b, {type = "item", amount = cost, name = item}  )
 end
 
 ingredients_c = {}
 for k,v in pairs(procedural_science_table) do 
     item = random_stream.pick_random_and_remove_from_table(v.name)
-    cost = random_stream.random_bound(amount_min,amount_max)
+    cost = random_stream.random_bound(v.amount_min,v.amount_max)
     table.insert(ingredients_c, {type = "item", amount = cost, name = item}  )
 end
 
 ingredients_d = {}
 for k,v in pairs(procedural_science_table) do 
     item = random_stream.pick_random_and_remove_from_table(v.name)
-    cost = random_stream.random_bound(amount_min,amount_max)
+    cost = random_stream.random_bound(v.amount_min,v.amount_max)
     table.insert(ingredients_d, {type = "item", amount = cost, name = item}  )
 end
 
 ingredients_e = {}
 for k,v in pairs(procedural_science_table) do 
     item = random_stream.pick_random_and_remove_from_table(v.name)
-    cost = random_stream.random_bound(amount_min,amount_max)
+    cost = random_stream.random_bound(v.amount_min,v.amount_max)
     table.insert(ingredients_e, {type = "item", amount = cost, name = item}  )
 end
 
 ingredients_f = {}
 for k,v in pairs(procedural_science_table) do 
     item = random_stream.pick_random_and_remove_from_table(v.name)
-    cost = random_stream.random_bound(amount_min,amount_max)
+    cost = random_stream.random_bound(v.amount_min,v.amount_max)
     table.insert(ingredients_f, {type = "item", amount = cost, name = item}  )
 end
 
-function create_procedural_science_recipe(prefix-name,in_tint,in_order,in_ingredients)
-local out = {
-
-    type = "recipe",
-    name = prefix_name .. "-science-pack",
-    energy_required = 20,
-    enabled = false,
-    category = "crafting-with-fluid-or-metallurgy",
-    ingredients = in_ingredients,
-
-    icons = 
+function create_procedural_science_recipe(prefix_name,in_tint,in_order,in_ingredients)
+    local out = 
     {
-        {
-        icon = "__procedural-systems__/graphics/icons/" .. prefix-name .. "-64.png",
-        --tint = input_tint, --Maybe revert?
-        }
-    },
+        type = "recipe",
+        name = prefix_name .. "-science-pack",
+        energy_required = 20,
+        enabled = false,
+        category = "crafting-with-fluid-or-metallurgy",
+        ingredients = in_ingredients,
 
-    subgroup = "procedural-science-pack",
-    order = in_order,
-    results =
-    {
+        icons = 
         {
-            type = "item",
-            name = prefix_name .. "-science-pack",
-            amount = 5
+            {
+            icon = "__procedural-systems__/graphics/icons/" .. prefix_name .. "-64.png",
+            --tint = input_tint, --Maybe revert?
+            }
         },
-    },
-    allow_productivity = true,
 
-}
+        subgroup = "procedural-science-pack",
+        order = in_order,
+        results =
+        {
+            {
+                type = "item",
+                name = prefix_name .. "-science-pack",
+                amount = 5
+            },
+        },
+        allow_productivity = true,
 
-local crystal_input =
-{
+    }
+
+    local crystal_input =
     {
         type = "item", 
-        name = prefix_name .. "-procedural-crystal",
+        name = "procedural-crystal-" ..  prefix_name,
         amount = 1
     }
-}
-table.insert(out.ingredients, crystal_input  )
-return out
+
+    table.insert(out.ingredients, crystal_input  )
+    return out
 end
 
 function create_procedural_ore_concentration_recipe(prefix_name,input_tint, in_order)
