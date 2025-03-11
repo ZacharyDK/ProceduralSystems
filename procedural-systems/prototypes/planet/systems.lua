@@ -47,6 +47,46 @@ data:extend({
 	},
 })
 
+local solar_distance_table = --key distance, value solar power in space. Used from space ages values
+{
+    ["10"] = [600],
+    ["15"] = [300],
+    ["20"] = [200],
+    ["25"] = [120],
+    ["35"] = [60],
+    ["50"] = [1],
+    ["80"] = [0.1],
+    ["10000"] = [0],
+}
+
+local function calculate_solar_power_in_space(in_distance,in_star_multiplier)
+    local x_1 = 0
+    local y_1 = 0
+    local x_2 = 0
+    local y_2 = 0
+
+    local get_next_and_break = false
+    for k,v in pairs(solar_distance_table) do
+        if(in_distance > tonumber(k) and get_next_and_break == false) then
+            x_1 = tonumber(k)
+            y_1 = v
+            get_next_and_break = true --Continue until next iteration
+        end
+        if(get_next_and_break == true) then
+            x_2 = tonumber(k)
+            y_2 = v
+            break --we got the next numbers for our interpolation
+        end
+
+    end
+
+    --in_distance is x
+    --out_distance is y
+    out_distance = (x_2 - x_1 / y_2 - y_1)*(in_distance - x_1) + y_1
+    out_distance = out_distance*in_star_multiplier
+    return out_distance
+
+end
 
 local function create_star_system_framework(in_system_parameters,in_connection_parameters)
     local star_parent_name = in_system_parameters.parant_star or "star"
@@ -107,6 +147,7 @@ end
 --TODO connect planets
 --TODO figure out how to borrow music
 local function extend_planet(in_planet_parameters)
+    local solar_polar_space = calculate_solar_power_in_space((in_planet_parameters.parent_distance or 20),0.9 )
     PlanetsLib:extend({
         {
             type = "planet",
@@ -135,7 +176,7 @@ local function extend_planet(in_planet_parameters)
             magnitude = 1,
             order = "q[procedural]-a[" .. in_planet_parameters.name .. "]",
             pollutant_type = nil,
-            solar_power_in_space = 200, --TODO calculate
+            solar_power_in_space = solar_polar_space, 
             platform_procession_set = {
                 arrival = { "planet-to-platform-b" },
                 departure = { "platform-to-planet-a" },
@@ -148,9 +189,9 @@ local function extend_planet(in_planet_parameters)
             surface_properties = {
                 ["day-night-cycle"] = in_planet_parameters.day_night_cycle or 10 * 60 * 60,
                 ["magnetic-field"] = in_planet_parameters.magnetic_field or 30, -- Fulgora is 99
-                ["solar-power"] = in_planet_parameters.solar_power or 50, 
+                ["solar-power"] = (in_planet_parameters.solar_power or 0.5 ) * solar_polar_space, 
                 pressure = in_planet_parameters.pressure or 1000,
-                gravity = in_planet_parameters.gravity or 20, 
+                gravity = in_planet_parameters.gravity or 15, 
                 --temperature = 251,
             },
             asteroid_spawn_influence = 1,
@@ -262,8 +303,18 @@ local lake_a_preset =
     distance_min = 20,
     distance_max = 30,
 }
+        
 
---TODO, scrap system presets
+local scrap_a_preset = 
+{
+    surface_liquid = "water",
+    surface_liquid_amount = "oceanic",
+    major_feature = {"crude_oil_p"},
+    minor_feature = {"calcite_p","sulfur_ore_p","petroleum_geyser_p","coal_p"},
+    distance_min = 23,
+    distance_max = 27,
+}
+
 
 local alpha_system =
 {

@@ -18,5 +18,9 @@ data:extend({
     {
         type = "recipe-category",
         name = "blasting"
-    }
+    },
+    {
+        type = "recipe-category",
+        name = "procedural-science"
+    },
 })
