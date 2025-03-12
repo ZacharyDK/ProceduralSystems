@@ -252,9 +252,9 @@ data:extend(
     },
     {
       type = "tool",
-      name = "epilson-science-pack",
+      name = "epsilon-science-pack",
       localised_description = {"item-description.science-pack"},
-      icon = "__procedural-systems__/graphics/icons/epilson-64.png",
+      icon = "__procedural-systems__/graphics/icons/epsilon-64.png",
       icon_size = 64,
       subgroup = "procedural-science-pack",
       color_hint = { text = "Y" },
@@ -297,14 +297,14 @@ data:extend(
     create_procedural_raw_ore_entry("beta", {r = 222,g = 138,  b = 20,  a = 1},"b"), --rgb(222, 138, 20)
     create_procedural_raw_ore_entry("gamma", {r = 232, g = 221, b = 12, a = 1},"c"), --rgb(232, 221, 12)
     create_procedural_raw_ore_entry("delta", {r = 0,  g = 200,b = 0, a = 1},"d"), --rgb(0, 200, 0)
-    create_procedural_raw_ore_entry("epilson",{r = 37,  g = 18, b = 230, a = 1},"e"), --rgb(37, 42, 230)
+    create_procedural_raw_ore_entry("epsilon",{r = 37,  g = 18, b = 230, a = 1},"e"), --rgb(37, 42, 230)
     create_procedural_raw_ore_entry("omega", {r = 102,  g = 18, b = 212, a = 1},"f"), --rgb(102, 18, 212)
 
     create_single_sprite_tinted_entry("alpha-ore-concentrate", "procedural-concentrate.png",  {r = 200, g = 0,  b = 0, a = 1},"a"),   --rgb(200, 0, 0)
     create_single_sprite_tinted_entry("beta-ore-concentrate", "procedural-concentrate.png", {r = 222,  g = 138, b = 20, a = 1},"b"),  --rgb(222, 138, 20)
     create_single_sprite_tinted_entry("gamma-ore-concentrate", "procedural-concentrate.png", {r = 232, g = 221,  b = 12, a = 1},"c"), --rgb(232, 221, 12)
     create_single_sprite_tinted_entry("delta-ore-concentrate", "procedural-concentrate.png", {r = 0, g = 200, b = 0, a = 1},"d"),    --rgb(0, 200, 0)
-    create_single_sprite_tinted_entry("epilson-ore-concentrate","procedural-concentrate.png", {r = 37,  g = 18, b = 230, a = 1},"e"), --rgb(37, 42, 230)
+    create_single_sprite_tinted_entry("epsilon-ore-concentrate","procedural-concentrate.png", {r = 37,  g = 18, b = 230, a = 1},"e"), --rgb(37, 42, 230)
     create_single_sprite_tinted_entry("omega-ore-concentrate", "procedural-concentrate.png", {r = 102,  g = 18, b = 212, a = 1},"f"), --rgb(102, 18, 212)
 
     create_item_picture_table_assit("slag","ores_malcom","",1,"z"),
@@ -329,11 +329,11 @@ data:extend(
     create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-beta",4,"b",{r = 222,  g = 138, b = 20, a = 1}),
     create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-gamma",4,"c",{r = 232, g = 221,  b = 12, a = 1}),
     create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-delta",4,"d",{r = 0, g = 200, b = 0, a = 1}),
-    create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-epilson",4,"e",{r = 37,  g = 18, b = 230, a = 1}),
+    create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-epsilon",4,"e",{r = 37,  g = 18, b = 230, a = 1}),
     create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-omega",4,"f",{r = 102,  g = 18, b = 212, a = 1}),
 
-    create_item_picture_table_assit_tinted("scrap","","-epilson",6,"z",{r = 37,  g = 18, b = 230, a = 1}),
-    create_item_picture_table_assit_tinted("scrap","","-delta",6,"y",{r = 0, g = 200, b = 0, a = 1}),
+    create_item_picture_table_assit_tinted("scrap","","_epsilon",6,"z",{r = 37,  g = 18, b = 230, a = 1}),
+    create_item_picture_table_assit_tinted("scrap","","_omega",6,"y",{r = 102,  g = 18, b = 212, a = 1}),
 
     {
       type = "item",

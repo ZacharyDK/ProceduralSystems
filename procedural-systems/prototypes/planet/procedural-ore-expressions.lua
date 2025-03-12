@@ -168,7 +168,7 @@ ore_expression_util.handle_expression_generation = function()
         ["beta_ore_raw"] = "beta_ore_raw",
         ["gamma_ore_raw"] = "gamma_ore_raw",
         ["delta_ore_raw"] = "delta_ore_raw",
-        ["epilson_ore_raw"] = "epilson_ore_raw",
+        ["epsilon_ore_raw"] = "epsilon_ore_raw",
         ["omega_ore_raw"] = "omega_ore_raw",
         ["B"] = "covellite_rough",
         ["malachite_rough"] = "malachite_rough",
@@ -179,6 +179,8 @@ ore_expression_util.handle_expression_generation = function()
         ["coal_p"] = "coal_p",
         ["calcite_p"] = "calcite_p",
         ["sulfur_ore_p"] = "sulfur_ore_p",
+        ["scrap_omega"] = "scrap_omega",
+        ["scrap_epsilon"] = "scrap_epsilon",
 
     }
     local geyser_array = 

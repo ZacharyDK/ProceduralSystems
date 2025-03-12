@@ -877,7 +877,7 @@ data:extend(
 
     resource(
       {
-        name = "scrap-delta",
+        name = "scrap_omega",
         order = "b",
         map_color = {0,211,0},
         mining_time = 1,
@@ -897,7 +897,7 @@ data:extend(
     ),
     resource(
       {
-        name = "scrap-epilson",
+        name = "scrap_epsilon",
         order = "b",
         map_color = {0,0,230},
         mining_time = 1,
@@ -921,7 +921,7 @@ data:extend(
     create_procedural_ore("beta_ore_raw", {r = 222,g = 138,  b = 20,  a = 1}), --rgb(222, 138, 20)
     create_procedural_ore("gamma_ore_raw", {r = 232, g = 221, b = 12, a = 1}), --rgb(232, 221, 12)
     create_procedural_ore("delta_ore_raw", {r = 0,  g = 200,b = 0, a = 1}), --rgb(0, 200, 0)
-    create_procedural_ore("epilson_ore_raw",{r = 37,  g = 18, b = 230, a = 1}), --rgb(37, 42, 230)
+    create_procedural_ore("epsilon_ore_raw",{r = 37,  g = 18, b = 230, a = 1}), --rgb(37, 42, 230)
     create_procedural_ore("omega_ore_raw", {r = 102,  g = 18, b = 212, a = 1}), --rgb(102, 18, 212)
 
 })

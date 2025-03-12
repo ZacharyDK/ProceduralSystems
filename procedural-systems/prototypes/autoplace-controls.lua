@@ -45,11 +45,11 @@ data:extend(
   create_autoplace_control("beta_ore_raw"), 
   create_autoplace_control("gamma_ore_raw"),
   create_autoplace_control("delta_ore_raw"),
-  create_autoplace_control("epilson_ore_raw"),
+  create_autoplace_control("epsilon_ore_raw"),
   create_autoplace_control("omega_ore_raw"),
 
-  create_autoplace_control("scrap-epilson"),
-  create_autoplace_control("scrap-delta"),
+  create_autoplace_control("scrap_epsilon"),
+  create_autoplace_control("scrap_omega"),
   {
     type = "autoplace-control",
     name = "procedural_volcanism",

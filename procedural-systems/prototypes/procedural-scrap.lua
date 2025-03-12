@@ -105,8 +105,8 @@ table.insert(results_b, {type = "item", amount = 1, name = "iron-gear-wheel", pr
 
 data:extend(
 {
-    create_scrap_recipe_base("delta","scrap-delta",{r = 0, g = 200, b = 0, a = 1},results_a),
-    create_scrap_recipe_base("epilson","scrap-epilson",{r = 37,  g = 18, b = 230, a = 1},results_b),
+    create_scrap_recipe_base("omega","scrap_omega",{r = 102,  g = 18, b = 212, a = 1},results_a),
+    create_scrap_recipe_base("epsilon","scrap_epsilon",{r = 37,  g = 18, b = 230, a = 1},results_b),
 })
 
 

@@ -65,18 +65,15 @@ local function calculate_solar_power_in_space(in_distance,in_star_multiplier)
     local x_2 = 0
     local y_2 = 0
 
-    local get_next_and_break = false
     for k,v in pairs(solar_distance_table) do
-        if(in_distance > tonumber(k) and get_next_and_break == false) then
-            x_1 = tonumber(k)
-            y_1 = v
-            get_next_and_break = true --Continue until next iteration
-        end
-        if(get_next_and_break == true) then
+        if(in_distance < tonumber(k)) then
             x_2 = tonumber(k)
             y_2 = v
-            break --we got the next numbers for our interpolation
+            break
         end
+        x_1 = tonumber(k) --last nums
+        y_1 = v
+
 
     end
 
@@ -231,7 +228,7 @@ local function create_liquid_expression(in_text)
     elseif in_text == "very-high" then
         out_expression = "water_base(-2, 28000)"
     elseif in_text == "oceanic" then
-        out_expression = "water_base(-2, 35000)"
+        out_expression = "water_base(-2, 800000)"
     else
         out_expression = "water_base(-2, 17000)"
     end
@@ -332,3 +329,81 @@ generate_planet("alpha",{r = 250,g = 100, b = 100},water_a_preset,{ additional_r
 generate_planet("beta",{r = 250,  g = 155, b = 20, a = 1},desert_a_preset,{ additional_resources = {"fluorite","beta_ore_raw","pyrite","covellite","tenorite"},parent ="alpha_p"})
 generate_planet("gamma",{r = 232, g = 221, b = 12, a = 1},lake_a_preset,{ additional_resources = {"fluorite","gamma_ore_raw","hematite_rough","tenorite_rough","pyrite_rough","covellite_rough"},parent ="alpha_p"})
 generate_planet("delta",{r = 0, g = 180, b = 0, a = 1},lake_b_preset,{ additional_resources = {"fluorite","delta_ore_raw", "siderite_rough","malachite_rough","pyrite_rough","covellite_rough"},parent ="alpha_p"})
+generate_planet("epsilon",{r = 37,  g = 18, b = 230, a = 1},scrap_a_preset,{ additional_resources = {"fluorite","epsilon_ore_raw","scrap_epsilon"},parent ="alpha_p"})
+generate_planet("omega",{r = 102,  g = 18, b = 212, a = 1},scrap_a_preset,{ additional_resources = {"fluorite","omega_ore_raw","scrap_omega"},parent ="alpha_p"})
+
+--temporary connections to enusre functional prototype. Mapping out how to connect things is not trivial.
+data:extend({
+	{
+		type = "space-connection",
+		name = "alpha-edge-to-alpha",
+        icon = "__space-age__/graphics/icons/solar-system-edge.png",
+		subgroup = "planet-connections",
+		from = "alpha_p_system_edge",
+		to = "alpha",
+		order = "c",
+		length = 50000,
+        asteroid_spawn_influence = 1,
+        asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.proc_trip),
+	},
+    {
+		type = "space-connection",
+		name = "alpha-edge-to-beta",
+        icon = "__space-age__/graphics/icons/solar-system-edge.png",
+		subgroup = "planet-connections",
+		from = "alpha_p_system_edge",
+		to = "beta",
+		order = "c",
+		length = 50000,
+        asteroid_spawn_influence = 1,
+        asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.proc_trip),
+	},
+    {
+		type = "space-connection",
+		name = "alpha-edge-to-gamma",
+        icon = "__space-age__/graphics/icons/solar-system-edge.png",
+		subgroup = "planet-connections",
+		from = "alpha_p_system_edge",
+		to = "gamma",
+		order = "c",
+		length = 50000,
+        asteroid_spawn_influence = 1,
+        asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.proc_trip),
+	},
+    {
+		type = "space-connection",
+		name = "alpha-edge-to-delta",
+        icon = "__space-age__/graphics/icons/solar-system-edge.png",
+		subgroup = "planet-connections",
+		from = "alpha_p_system_edge",
+		to = "delta",
+		order = "c",
+		length = 50000,
+        asteroid_spawn_influence = 1,
+        asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.proc_trip),
+	},
+    {
+		type = "space-connection",
+		name = "alpha-edge-to-epsilon",
+        icon = "__space-age__/graphics/icons/solar-system-edge.png",
+		subgroup = "planet-connections",
+		from = "alpha_p_system_edge",
+		to = "epsilon",
+		order = "c",
+		length = 50000,
+        asteroid_spawn_influence = 1,
+        asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.proc_trip),
+	},
+    {
+		type = "space-connection",
+		name = "alpha-edge-to-omega",
+        icon = "__space-age__/graphics/icons/solar-system-edge.png",
+		subgroup = "planet-connections",
+		from = "alpha_p_system_edge",
+		to = "omega",
+		order = "c",
+		length = 50000,
+        asteroid_spawn_influence = 1,
+        asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.proc_trip),
+	},
+})
