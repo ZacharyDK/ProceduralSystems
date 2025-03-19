@@ -245,6 +245,7 @@ local function generate_planet(in_name,in_tint,in_preset,in_secondary)
     planet_parameters = create_planet_parameters(in_name,in_preset,in_secondary)
     planet_parameters.tint = in_tint
     extend_planet(planet_parameters)
+    PlanetsLib.borrow_music(data.raw["planet"]["aquilo"], data.raw["planet"][in_name])
 end
 
 
