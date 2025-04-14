@@ -1,3 +1,5 @@
+Procedural = {}
+
 require("__procedural-systems__.utility.random-stream")
 
 require("__procedural-systems__.prototypes.entities")
@@ -27,5 +29,5 @@ require("__procedural-systems__.prototypes.planet.tiles-procedural")
 
 require("__procedural-systems__.prototypes.planet.procedural-expressions-base")
 require("__procedural-systems__.prototypes.planet.procedural-ore-expressions")
-
+require("__procedural-systems__.prototypes.planet.api")
 require("__procedural-systems__.prototypes.planet.systems")

@@ -8,6 +8,7 @@ things my own way
 local stream = {}
 
 --rjdunlap's clever code to roll the global math.random() seed such that calls to math.random() are now deterministic.
+--Lets just handle this before dealing with anything else.
 stream.preFeed = function()
     -- feed seed
     local seed = settings.startup["procedural-systems-random-seed"].value
