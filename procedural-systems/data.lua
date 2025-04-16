@@ -1,4 +1,4 @@
-Procedural = {}
+Procedural = {} --Global variable that will be used as an api
 
 require("__procedural-systems__.utility.random-stream")
 

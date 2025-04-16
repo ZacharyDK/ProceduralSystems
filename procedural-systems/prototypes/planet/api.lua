@@ -4,6 +4,8 @@ local asteroid_util = require("__procedural-systems__.prototypes.planet.asteroid
 local tile_maker = require("__procedural-systems__.prototypes.planet.tiles-procedural")
 random_stream = require("__procedural-systems__/utility/random-stream")
 
+Procedural:generate_planet_tile_set = tile_maker.generate_planet_tile_set
+
 local solar_distance_table = --key distance, value solar power in space. Used from space ages values
 {
     ["10"] = 600,
@@ -43,7 +45,7 @@ function Procedural:calculate_solar_power_in_space(in_distance,in_star_multiplie
 end
 
 function Procedural:create_star_system_framework(in_system_parameters,in_connection_parameters)
-    local star_parent_name = in_system_parameters.parant_star or "star"
+    local star_parent_name = in_system_parameters.parent_star or "star"
     PlanetsLib:extend({
         {
             type = "space-location",
@@ -57,13 +59,15 @@ function Procedural:create_star_system_framework(in_system_parameters,in_connect
                 parent = 
                 {
                     type = "space-location",
-                    name = in_system_parameters.parant_star or "star",
+                    name = in_system_parameters.parent_star or "star",
                 },
                 distance = in_system_parameters.distance or 250,
                 orientation = in_system_parameters.orientation or 0.5,
             },
             sprite_only = false,
             tier = -1,
+            redrawn_connections_exclude = true,
+            --asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.proc_trip, 0.9),
         },
         {
             type = "space-location",
@@ -214,3 +218,114 @@ end
 function Procedural:borrow_music(in_from,in_target)
     PlanetsLib.borrow_music(data.raw["planet"][in_from], data.raw["planet"][in_target])
 end
+
+--See prodecural-planet-map-gen for map gen api
+--tiles-procedural-lua for api related to using tile set
+-- star_system_params.name ; star_system_params.connection_edges ;  star_system_params.planets
+-- planets and connection_edges are tables with KV pairs, value being the name of the space location to unlock
+--technology_params accepts variables related to the technology prototype.
+function Procedural:create_unlock_technology(star_system_params,technology_params)
+
+    local default_prereq = 
+    {
+        "planet-discovery-fulgora",
+        "planet-discovery-gleba",
+        "planet-discovery-vulcanus",
+        "planet-discovery-corrundum",
+        "electrochemical-science-pack",
+        "electromagnetic-science-pack",
+        "agricultural-science-pack",
+        "metallurgic-science-pack",
+    }
+    local default_unit =
+    {
+      count = 4000,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"utility-science-pack", 1},
+        {"space-science-pack", 1},
+        {"metallurgic-science-pack", 1},
+        {"agricultural-science-pack", 1},
+        {"electromagnetic-science-pack", 1},
+        {"electrochemical-science-pack", 1},
+      },
+      time = 60
+    }
+
+    local effects = 
+    {
+        {
+            type = "unlock-space-location",
+            space_location = star_system_params.name,
+            use_icon_overlay_constant = true
+        }
+    }
+
+    if(star_system_params.connection_edges ~= nil) then
+        for k,v in pairs(star_system_params.connection_edges) do
+            local unlock_teck = 
+            {
+                type = "unlock-space-location",
+                space_location = v,
+                use_icon_overlay_constant = true
+            }
+            table.insert(effects,unlock_teck)
+        end
+    end
+
+
+    if(star_system_params.planets ~= nil) then
+        for k,v in pairs(star_system_params.planets) do
+            local unlock_teck = 
+            {
+                type = "unlock-space-location",
+                space_location = v,
+                use_icon_overlay_constant = true
+            }
+            table.insert(effects,unlock_teck)
+        end
+    end
+
+
+    return
+    {
+        type = "technology",
+        name = star_system_params.name.."-intersellar",
+        localised_name = ("",(star_system_params.name.."-intersellar")),
+        essential = technology_params.essential or true
+        prerequisites = technology_params.prerequisites or default_prereq,
+        unit = technology_params.unit or default_unit,
+        icon = technology_params.icon or "__procedural-systems__/graphics/icons/planet-icon-desat.png",
+        icon_size = technology_params.icon_size or 64, --default is 256
+        icons = technology_params.icons = {},
+        effects = effects,
+    }
+end
+
+--Example
+--[[
+in_star_system_params = 
+{
+    name = "alpha_p"
+    connection_edges = 
+    {
+        a = "main-system-alpha-edge",
+        b = "alpha_p_system_edge"
+    },
+    planets = 
+    {
+        a = "alpha",
+        b = "beta",
+        c = "gamma",
+        d = "delta",
+        e = "epsilon",
+        f = "omega"
+    }
+}
+
+Procedural.create_unlock_technology(in_star_system_params,{})
+--]]

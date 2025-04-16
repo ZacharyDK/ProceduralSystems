@@ -123,6 +123,11 @@ local alpha_system_connections =
     destination = "main-system-alpha-edge",
 }
 
+Procedural.water_a_preset = water_a_preset
+Procedural.desert_a_preset = desert_a_preset
+Procedural.lake_b_preset = lake_b_preset
+Procedural.lake_a_preset = lake_a_preset
+Procedural.scrap_a_preset = scrap_a_preset
  
 Procedural:create_star_system_framework(alpha_system,alpha_system_connections)
 Procedural:generate_planet("alpha",{r = 250,g = 100, b = 100},water_a_preset,{ additional_resources = {"fluorite","alpha_ore_raw","siderite","malachite","hematite"},parent ="alpha_p"})

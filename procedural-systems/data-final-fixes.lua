@@ -1,3 +1,4 @@
+local asteroid_util = require("__procedural-systems__.prototypes.planet.asteroid-spawn-definitions")
 
 new_science_packs = 
 {

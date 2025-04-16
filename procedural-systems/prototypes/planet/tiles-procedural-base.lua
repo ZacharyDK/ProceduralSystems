@@ -724,8 +724,6 @@ local procedural_tile_base =
 }
 
 
-
-
 local stone_driving_sound =
 {
   sound =

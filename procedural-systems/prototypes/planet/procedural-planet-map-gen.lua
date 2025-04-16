@@ -4,6 +4,10 @@ local ore_expression = require("__procedural-systems__/prototypes/planet/procedu
 
 ore_expression.handle_expression_generation()
 
+Procedural.create_ore_expression_table = ore_expression.create_ore_expression_table --(in_name,in_seed)
+Procedural.create_geyser_expression_table = ore_expression.create_geyser_expression_table --(in_name, in_seed)
+Procedural.extend_expression_table = ore_expression.extend_expression_table --(in_table)
+
 planet_map_gen.procedural = function(in_name_postfix,in_entity_table) --Maybe a table that can hadnle stuff
   out = 
   {
