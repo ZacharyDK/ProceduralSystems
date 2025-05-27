@@ -8,6 +8,8 @@ local meld = require("meld")
 --local simulations = require("__space-age__.prototypes.factoriopedia-simulations")
 --local simulations_corrundum = require("__corrundum__.prototypes.factoriopedia-simulations")
 
+--Moved to mineral chemistry, but I'll keep a reference here.
+--[[
 local explosionEffect = table.deepcopy(data.raw.explosion["big-explosion"])
 
 explosionEffect.name = "fluorine-explosion"
@@ -17,7 +19,7 @@ explosionEffect.icons = {
 }
 
 data:extend { explosionEffect }
-
+--]]
 
 function create_procedural_raw_ore_entry(prefix_name, input_tint, in_order)
 return {
@@ -136,7 +138,7 @@ end
 
 function create_item_picture_table_assit_tinted(input_name, subfolder, name_postfix, num_pictures, in_order, in_tint)
 
-  picture_table_root = "__procedural-systems__/graphics/icons/" .. subfolder .. "/" .. input_name .. "/"
+  picture_table_root = "__mineral-chemistry__/graphics/icons/" .. subfolder .. "/" .. input_name .. "/"
   icon_path = picture_table_root .. input_name .. "-1.png"
   picture_table = create_picture_table_tinted(picture_table_root,input_name,num_pictures,in_tint)
   return {
@@ -307,23 +309,7 @@ data:extend(
     create_single_sprite_tinted_entry("epsilon-ore-concentrate","procedural-concentrate.png", {r = 37,  g = 18, b = 230, a = 1},"e"), --rgb(37, 42, 230)
     create_single_sprite_tinted_entry("omega-ore-concentrate", "procedural-concentrate.png", {r = 102,  g = 18, b = 212, a = 1},"f"), --rgb(102, 18, 212)
 
-    create_item_picture_table_assit("slag","ores_malcom","",1,"z"),
-
-    create_item_picture_table_assit("covellite","ores_malcom","",3,"b"),
-    create_item_picture_table_assit("hematite","ores_malcom","", 3,"c"),
-    create_item_picture_table_assit("malachite","ores_malcom","", 4,"f"),
-    create_item_picture_table_assit("pyrite","ores_malcom","", 3, "a"),
-    create_item_picture_table_assit("siderite","ores_malcom","",3,"e"),
-    create_item_picture_table_assit("tenorite","ores_malcom","",4,"d"),
-    
-    create_item_picture_table_assit("fluorite","ores_malcom","",3,"z"),
-
-    create_item_picture_table_assit("covellite","ores_malcom/low-quality","_rough",3,"h"),
-    create_item_picture_table_assit("hematite","ores_malcom/low-quality","_rough", 3,"i"),
-    create_item_picture_table_assit("malachite","ores_malcom/low-quality","_rough", 4,"l"),
-    create_item_picture_table_assit("pyrite","ores_malcom/low-quality","_rough", 3,"g"),
-    create_item_picture_table_assit("siderite","ores_malcom/low-quality","_rough",3,"k"),
-    create_item_picture_table_assit("tenorite","ores_malcom/low-quality","_rough",4,"j"),
+   
 
     create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-alpha",4,"a",{r = 200, g = 0,  b = 0, a = 1}),
     create_item_picture_table_assit_tinted("procedural-crystal","ores_malcom","-beta",4,"b",{r = 222,  g = 138, b = 20, a = 1}),
@@ -335,162 +321,7 @@ data:extend(
     create_item_picture_table_assit_tinted("scrap","","_epsilon",6,"z",{r = 37,  g = 18, b = 230, a = 1}),
     create_item_picture_table_assit_tinted("scrap","","_omega",6,"y",{r = 102,  g = 18, b = 212, a = 1}),
 
-    {
-      type = "item",
-      name = "blast-furnace",
-      icon = "__procedural-systems__/graphics/icons/blast-furnace.png",
-      subgroup = "smelting-machine",
-      order = "z[steel-furnace]",
-      inventory_move_sound = item_sounds.metal_large_inventory_move,
-      pick_sound = item_sounds.metal_large_inventory_pickup,
-      drop_sound = item_sounds.metal_large_inventory_move,
-      place_result = "blast-furnace",
-      stack_size = 50,
-      default_import_location = "nauvis",
-    },
-    {
-      type = "item",
-      name = "dangerous-cryogenic-plant",
-      icon = "__procedural-systems__/graphics/icons/cryogenic-plant.png",
-      subgroup = "production-machine",
-      order = "z[cryogenic-plant]",
-      inventory_move_sound = item_sounds.mechanical_large_inventory_move,
-      pick_sound = item_sounds.mechanical_large_inventory_pickup,
-      drop_sound = item_sounds.mechanical_large_inventory_move,
-      place_result = "dangerous-cryogenic-plant",
-      stack_size = 20,
-      default_import_location = "aquilo", --TODO
-      weight = 200 * kg
-    },
-    {
-      type = "item",
-      name = "froth-floatation-plant",
-      icon = "__procedural-systems__/graphics/icons/froth-floatator.png",
-      subgroup = "production-machine",
-      order = "w[chemical-plant]",
-      inventory_move_sound = item_sounds.fluid_inventory_move,
-      pick_sound = item_sounds.fluid_inventory_pickup,
-      drop_sound = item_sounds.fluid_inventory_move,
-      place_result = "froth-floatation-plant",
-      stack_size = 5,
-      weight = 50 * kg,
-      default_import_location = "nauvis",
-    },
-    {
-      type = "item",
-      name = "blast-fuel",
-      icon = "__procedural-systems__/graphics/icons/blast-fuel.png",
-      fuel_category = "chemical",
-      fuel_value = "12.2MJ",
-      fuel_acceleration_multiplier = 0.9,
-      fuel_top_speed_multiplier = 1.00,
-      subgroup = "raw-material",
-      order = "b[chemistry]-b[blast-fuel]",
-      inventory_move_sound = item_sounds.solid_fuel_inventory_move,
-      pick_sound = item_sounds.solid_fuel_inventory_pickup,
-      drop_sound = item_sounds.solid_fuel_inventory_move,
-      stack_size = 50,
-      weight = 1 * kg,
-      random_tint_color = item_tints.yellowing_coal
-    },
-    {
-      type = "item",
-      name = "fluorine-explosion",
-      icon = "__base__/graphics/icons/explosion.png",
-      subgroup = "procedural-science-pack", --I want this to be at the bottom
-      order = "zzzzzz",
-      inventory_move_sound = item_sounds.solid_fuel_inventory_move,
-      pick_sound = item_sounds.solid_fuel_inventory_pickup,
-      drop_sound = item_sounds.solid_fuel_inventory_move,
-      stack_size = 50,
-      weight = 1 * kg,
-      random_tint_color = item_tints.yellowing_coal,
-      spoil_ticks = 1,
-      spoil_to_trigger_result = 
-      {
-        items_per_trigger = 1,
-        trigger = 
-        {
-          type = "direct",
-          action_delivery = 
-          {
-            type = "instant",
-            target_effects = 
-            {
-              {
-                type = "create-explosion",
-                entity_name = "fluorine-explosion",
-              },
-              {
-                type = "nested-result",
-                action = 
-                {
-                  type = "area",
-                  radius = 10,
-                  target_entities = true,
-                  action_delivery = 
-                  {
-                    type = "instant",
-                    target_effects = 
-                    {
-                      {
-                        type = "damage",
-                        damage = 
-                        {
-                          amount = 1000,
-                          type = "explosion",
-                        },
-                        apply_damage_to_trees = true,
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
 
-    },
-    {
-      type = "item",
-      name = "thruster-barrel",
-      icon = "__procedural-systems__/graphics/icons/thruster-barrel-fill.png",
-      subgroup = "space-related",
-      order = "e[thruster]",
-      inventory_move_sound = item_sounds.fluid_inventory_move,
-      pick_sound = item_sounds.fluid_inventory_pickup,
-      drop_sound = item_sounds.fluid_inventory_move,
-      stack_size = 10,
-      weight = 8 * kg,
-      random_tint_color = item_tints.yellowing_coal
-    },
-    {
-      type = "item",
-      name = "oxidizer-barrel",
-      icon = "__procedural-systems__/graphics/icons/oxidizer-barrel-fill.png",
-      subgroup = "space-related",
-      order = "f[oxidizer]",
-      inventory_move_sound = item_sounds.fluid_inventory_move,
-      pick_sound = item_sounds.fluid_inventory_pickup,
-      drop_sound = item_sounds.fluid_inventory_move,
-      stack_size = 10,
-      weight = 8 * kg,
-      random_tint_color = item_tints.yellowing_coal
-    },
-    {
-      type = "item",
-      name = "terra-asteroid-chunk",
-      icon = "__procedural-systems__/graphics/icons/terra-asteroid-chunk.png",
-      subgroup = "space-material",
-      order = "t[terra]-e[chunk]",
-      inventory_move_sound = space_age_item_sounds.rock_inventory_move,
-      pick_sound = space_age_item_sounds.rock_inventory_pickup,
-      drop_sound = space_age_item_sounds.rock_inventory_move,
-      stack_size = 1,
-      weight = 100 * kg,
-      random_tint_color = item_tints.iron_rust,
-    },
 }
 
 )

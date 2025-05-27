@@ -1,10 +1,16 @@
 local planet_map_gen = require("__procedural-systems__/prototypes/planet/procedural-planet-map-gen")
 local planet_catalogue_vulcanus = require("__space-age__.prototypes.planet.procession-catalogue-vulcanus")
-local asteroid_util = require("__procedural-systems__.prototypes.planet.asteroid-spawn-definitions")
+local asteroid_util = require("__mineral-chemistry__.prototypes.planet.asteroid-spawn-definitions")
 local tile_maker = require("__procedural-systems__.prototypes.planet.tiles-procedural")
 random_stream = require("__procedural-systems__/utility/random-stream")
 
-Procedural:generate_planet_tile_set = tile_maker.generate_planet_tile_set
+--Procedural:generate_planet_tile_set = tile_maker.generate_planet_tile_set
+
+function Procedural:generate_planet_tile_set(in_name,in_tint,in_liquid_map_color, in_liquid, in_liquid_expression)
+    tile_maker.generate_planet_tile_set(in_name,in_tint,in_liquid_map_color, in_liquid, in_liquid_expression)
+end
+
+
 
 local solar_distance_table = --key distance, value solar power in space. Used from space ages values
 {
@@ -219,11 +225,11 @@ function Procedural:borrow_music(in_from,in_target)
     PlanetsLib.borrow_music(data.raw["planet"][in_from], data.raw["planet"][in_target])
 end
 
---See prodecural-planet-map-gen for map gen api
---tiles-procedural-lua for api related to using tile set
+-- See prodecural-planet-map-gen for map gen api
+-- tiles-procedural-lua for api related to using tile set
 -- star_system_params.name ; star_system_params.connection_edges ;  star_system_params.planets
 -- planets and connection_edges are tables with KV pairs, value being the name of the space location to unlock
---technology_params accepts variables related to the technology prototype.
+-- technology_params accepts variables related to the technology prototype.
 function Procedural:create_unlock_technology(star_system_params,technology_params)
 
     local default_prereq = 
@@ -231,12 +237,11 @@ function Procedural:create_unlock_technology(star_system_params,technology_param
         "planet-discovery-fulgora",
         "planet-discovery-gleba",
         "planet-discovery-vulcanus",
-        "planet-discovery-corrundum",
-        "electrochemical-science-pack",
         "electromagnetic-science-pack",
         "agricultural-science-pack",
         "metallurgic-science-pack",
     }
+
     local default_unit =
     {
       count = 4000,
@@ -251,7 +256,6 @@ function Procedural:create_unlock_technology(star_system_params,technology_param
         {"metallurgic-science-pack", 1},
         {"agricultural-science-pack", 1},
         {"electromagnetic-science-pack", 1},
-        {"electrochemical-science-pack", 1},
       },
       time = 60
     }
@@ -295,16 +299,20 @@ function Procedural:create_unlock_technology(star_system_params,technology_param
     {
         type = "technology",
         name = star_system_params.name.."-intersellar",
-        localised_name = ("",(star_system_params.name.."-intersellar")),
-        essential = technology_params.essential or true
-        prerequisites = technology_params.prerequisites or default_prereq,
-        unit = technology_params.unit or default_unit,
-        icon = technology_params.icon or "__procedural-systems__/graphics/icons/planet-icon-desat.png",
-        icon_size = technology_params.icon_size or 64, --default is 256
-        icons = technology_params.icons = {},
+        localised_name = {"",(star_system_params.name .."-intersellar")},
+        essential = (technology_params.essential or true),
+        prerequisites = (technology_params.prerequisites or default_prereq),
+        unit = (technology_params.unit or default_unit),
+        icon = (technology_params.icon or "__procedural-systems__/graphics/icons/planet-icon-desat.png"),
+        icon_size = (technology_params.icon_size or 64), --default is 256
+        icons = technology_params.icons or {},
         effects = effects,
     }
 end
+
+
+
+
 
 --Example
 --[[

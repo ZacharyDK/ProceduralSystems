@@ -191,7 +191,7 @@ return {
     icons = 
     {
         {
-            icon = "__procedural-systems__/graphics/icons/ores_malcom/procedural-crystal/procedural-crystal-4.png",
+            icon = "__mineral-chemistry__/graphics/icons/ores_malcom/procedural-crystal/procedural-crystal-4.png",
             tint = input_tint,
         }
     },

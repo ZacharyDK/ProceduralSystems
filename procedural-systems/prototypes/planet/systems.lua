@@ -1,6 +1,6 @@
 
 require("__procedural-systems__.prototypes.planet.api")
-local asteroid_util = require("__procedural-systems__.prototypes.planet.asteroid-spawn-definitions")
+local asteroid_util = require("__mineral-chemistry__.prototypes.planet.asteroid-spawn-definitions")
 
 PlanetsLib:extend({
     {

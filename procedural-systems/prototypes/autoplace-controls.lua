@@ -25,22 +25,6 @@ data:extend(
   create_autoplace_control("calcite_p"),
   create_autoplace_control("sulfur_ore_p"),
 
-  create_autoplace_control("covellite"),
-  create_autoplace_control("malachite"),
-  create_autoplace_control("tenorite"),
-  create_autoplace_control("pyrite"),
-  create_autoplace_control("siderite"),
-  create_autoplace_control("hematite"),
-
-  create_autoplace_control("covellite_rough"),
-  create_autoplace_control("malachite_rough"),
-  create_autoplace_control("tenorite_rough"),
-  create_autoplace_control("pyrite_rough"),
-  create_autoplace_control("siderite_rough"),
-  create_autoplace_control("hematite_rough"),
-
-  create_autoplace_control("fluorite"),
-
   create_autoplace_control("alpha_ore_raw"),
   create_autoplace_control("beta_ore_raw"), 
   create_autoplace_control("gamma_ore_raw"),
