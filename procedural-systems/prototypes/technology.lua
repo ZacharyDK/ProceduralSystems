@@ -9,8 +9,8 @@ data:extend({
     {
         type = "technology",
         name = "planet-discovery-interstellar",
-        icon = "__procedural-systems__/graphics/icons/planet-icon-desat.png",
-        icon_size = 64, --default is 256
+        icon = "__procedural-systems__/graphics/technology/planet-rainbow.png",
+        icon_size = 256, --default is 256
 
 
         essential = true,
@@ -294,7 +294,7 @@ data:extend({
     },
     {
       type = "technology",
-      name = "promethium-productivity-infinite",
+      name = "promethium-productivity-procedural-infinite",
       icons = util.technology_icon_constant_recipe_productivity("__space-age__/graphics/technology/promethium-science-pack.png"),
       icon_size = 256,
       effects =

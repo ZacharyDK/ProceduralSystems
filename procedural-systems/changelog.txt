@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 6. 16. 2025
+  Major Features:
+    - Modified planet-discovery-interstellar image.
+    - Quality glassware optional dependency - but I recommend it over my crappy graphics.
+    - Changed internal name of promethium productivity technology
+---------------------------------------------------------------------------------------------------
 Version: 1.0.3
 Date: 5. 27. 2025
   Major Features:
