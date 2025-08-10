@@ -323,5 +323,7 @@ data:extend(
 
 
 }
-
 )
+
+data.raw.item["scrap_epsilon"].auto_recycle = false
+data.raw.item["scrap_omega"].auto_recycle = false

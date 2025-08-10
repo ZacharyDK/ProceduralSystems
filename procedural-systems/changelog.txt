@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: 8. 10. 2025
+  Major Features:
+    - Fixed bug that scrap epsilon and scrap omega were not recyclable and autorecycled into themselves. 
+    - Haven't actually figured out why all the planets are dark even when dicovered
+---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 6. 16. 2025
   Major Features:

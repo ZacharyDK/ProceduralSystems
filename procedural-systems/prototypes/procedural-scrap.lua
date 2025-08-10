@@ -50,11 +50,11 @@ local scrap_table =
 }
 --Needs 10% iron gear wheel. alpha ore etc at 6%
 
-function create_scrap_recipe_base(in_name_post_fix,in_scrap_item,in_tint,in_results)
+function create_scrap_recipe_base(in_scrap_item,in_tint,in_results)
     return
     {
         type = "recipe",
-        name = "scrap-".. in_name_post_fix .. "-recycling",
+        name = in_scrap_item .. "-recycling",
         icons = {
           {
             icon = "__quality__/graphics/icons/recycling.png"
@@ -105,8 +105,8 @@ table.insert(results_b, {type = "item", amount = 1, name = "iron-gear-wheel", pr
 
 data:extend(
 {
-    create_scrap_recipe_base("omega","scrap_omega",{r = 102,  g = 18, b = 212, a = 1},results_a),
-    create_scrap_recipe_base("epsilon","scrap_epsilon",{r = 37,  g = 18, b = 230, a = 1},results_b),
+    create_scrap_recipe_base("scrap_omega",{r = 102,  g = 18, b = 212, a = 1},results_a),
+    create_scrap_recipe_base("scrap_epsilon",{r = 37,  g = 18, b = 230, a = 1},results_b),
 })
 
 

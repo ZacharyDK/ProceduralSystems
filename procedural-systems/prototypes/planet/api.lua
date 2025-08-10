@@ -135,7 +135,7 @@ function Procedural:extend_planet(in_planet_parameters)
             icon = in_planet_parameters.icon or "__procedural-systems__/graphics/icons/planet-icon-desat.png",
             icons = in_planet_parameters.icons or { {icon = (in_planet_parameters.icon or "__procedural-systems__/graphics/icons/planet-icon-desat.png"), tint = (in_planet_parameters.tint or {255,255,255})} },
             icon_size = in_planet_parameters.icon_size or 64,
-            --starmap_icon = "__procedural-systems__/graphics/planet/starmap-planet-desat.png",
+            starmap_icon = "__procedural-systems__/graphics/planet/starmap-planet-desat.png",
             starmap_icons = in_planet_parameters.starmap_icons or { {icon = (in_planet_parameters.starmap_icon or "__procedural-systems__/graphics/planet/starmap-planet-desat.png"), tint = (in_planet_parameters.tint or {255,255,255})} },
             starmap_icon_size = in_planet_parameters.starmap_icon or 512,
             map_gen_settings = planet_map_gen.procedural(in_planet_parameters.name,in_planet_parameters.resources),

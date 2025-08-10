@@ -224,3 +224,5 @@ data:extend({
         redrawn_connections_keep = false,
 	},
 })
+
+--log(serpent.block(data.raw.planet["alpha"]))
